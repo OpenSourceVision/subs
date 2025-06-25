@@ -1,0 +1,430 @@
+name: Update Node Subscriptions
+
+on:
+  # 定时触发：每天UTC时间7点
+  schedule:
+    - cron: '0 23 * * *'
+  # 手动触发
+  workflow_dispatch:
+    inputs:
+      force_update:
+        description: '强制更新所有节点'
+        required: false
+        default: false
+        type: boolean
+  # 推送main.py、Subscriptions、requirements.txt、工作流文件时触发
+  push:
+    branches: [ main, master ]
+    paths:
+      - 'main.py'
+      - 'Subscriptions.yaml'
+      - 'requirements.txt'
+      - '.github/workflows/*.yml'# 工作流名称
+name: Update Node Subscriptions
+
+# 触发条件配置
+on:
+  # 定时触发器（每天UTC时间23点，即北京时间次日7点）
+  schedule:
+    - cron: '0 23 * * *'
+  
+  # 手动触发配置（支持参数输入）
+  workflow_dispatch:
+    inputs:
+      force_update:
+        description: '强制更新所有节点'
+        required: false
+        default: false
+        type: boolean
+
+  # 代码推送触发条件（特定路径的文件变更时触发）
+  push:
+    branches: [ main, master ]
+    paths:
+      - 'main.py'               # 主程序文件
+      - 'Subscriptions.yaml'    # 订阅配置文件
+      - 'requirements.txt'      # Python依赖文件
+      - '.github/workflows/*.yml' # 工作流文件自身
+
+# 任务定义
+jobs:
+  update-nodes:
+    runs-on: ubuntu-latest      # 使用最新版Ubuntu系统
+    permissions:
+      contents: write           # 允许写入仓库内容
+      actions: read             # 允许读取actions信息
+
+    # 步骤序列
+    steps:
+    # 检出代码仓库
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0          # 获取完整提交历史
+        token: ${{ secrets.GITHUB_TOKEN }}
+
+    # Python环境配置
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'  # 指定Python版本
+        cache: 'pip'            # 启用pip缓存
+        cache-dependency-path: 'requirements.txt' # 依赖文件路径
+
+    # 环境变量设置
+    - name: Set environment variables
+      run: |
+        # 根据触发类型设置强制更新标志
+        if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+          echo "FORCE_UPDATE=${{ github.event.inputs.force_update == 'true' }}" >> $GITHUB_ENV
+        else
+          echo "FORCE_UPDATE=false" >> $GITHUB_ENV
+        fi
+
+    # 依赖安装
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        # 灵活处理依赖安装：优先使用requirements.txt，不存在则安装基础包
+        if [ -f requirements.txt ]; then
+          pip install -r requirements.txt
+        else
+          pip install requests PyYAML urllib3 chardet
+        fi
+
+    # 订阅文件检查
+    - name: Check if subscriptions file exists
+      run: |
+        if [ ! -f "Subscriptions" ]; then
+          echo "Error: Subscriptions file not found!"
+          exit 1  # 关键文件缺失时立即终止流程
+        fi
+
+    # 主程序执行
+    - name: Run node subscription manager
+      timeout-minutes: 15  # 设置超时防止卡死
+      run: |
+        python main.py      # 执行主更新程序
+      env:
+        PYTHONUNBUFFERED: 1 # 确保实时输出日志
+
+    # 变更检测机制
+    - name: Check for changes
+      id: check_changes     # 步骤标识符，用于后续引用
+      run: |
+        # 使用git diff检测Node.txt变更
+        if git diff --quiet HEAD -- Node.txt; then
+          echo "changes=false" >> $GITHUB_OUTPUT
+        else
+          echo "changes=true" >> $GITHUB_OUTPUT
+        fi
+
+    # 智能推送策略
+    - name: Commit and push changes
+      if: steps.check_changes.outputs.changes == 'true'
+      run: |
+        # 重试推送机制（3次尝试）
+        for i in {1..3}; do
+          if git push origin HEAD; then
+            break
+          else
+            # 冲突解决策略：rebase或新建分支
+            git pull --rebase origin HEAD || {
+              git checkout -b auto-update-$(date +%s)
+              git push origin auto-update-$(date +%s)
+              exit 0
+            }
+          fi
+        done
+
+    # 日志管理模块
+    - name: Truncate large log file
+      run: |
+        # 跨平台日志截断（兼容Linux/macOS）
+        if [ "$(stat -c%s update.log)" -gt 1048576 ]; then
+          tail -n 1000 update.log > update.log.tmp
+          mv update.log.tmp update.log
+        fi
+
+    # 可视化报告生成
+    - name: Create summary
+      run: |
+        # 生成Markdown格式的运行摘要
+        echo "## 📊 Node Update Summary" >> $GITHUB_STEP_SUMMARY
+        echo "- 节点数量: $(wc -l < Node.txt)" >> $GITHUB_STEP_SUMMARY
+        echo "- 日志摘要:" >> $GITHUB_STEP_SUMMARY
+        tail -n 20 update.log >> $GITHUB_STEP_SUMMARY
+
+  # 历史记录清理任务
+  cleanup:
+    runs-on: ubuntu-latest
+    needs: update-nodes       # 依赖主任务完成
+    if: success() && github.event_name == 'schedule'
+    steps:
+    - name: Delete old workflow runs
+      uses: Mattraks/delete-workflow-runs@v2
+      with:
+        retain_days: 30       # 保留30天记录
+        keep_minimum_runs: 10 # 至少保留10次运行
+
+
+jobs:
+  update-nodes:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      actions: read
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+        token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+        cache: 'pip'
+        cache-dependency-path: 'requirements.txt'
+
+    - name: Set environment variables
+      run: |
+        if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+          echo "FORCE_UPDATE=${{ github.event.inputs.force_update == 'true' }}" >> $GITHUB_ENV
+        else
+          echo "FORCE_UPDATE=false" >> $GITHUB_ENV
+        fi
+        echo "Event name: ${{ github.event_name }}"
+        echo "FORCE_UPDATE will be set based on trigger type"
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        if [ -f requirements.txt ]; then
+          echo "Installing dependencies from requirements.txt"
+          pip install -r requirements.txt
+        else
+          echo "requirements.txt not found, installing basic dependencies"
+          pip install requests PyYAML urllib3 chardet
+        fi
+        python -c "import requests, yaml; print('Dependencies installed successfully')"
+
+    - name: Check if subscriptions file exists
+      run: |
+        if [ ! -f "Subscriptions" ]; then
+          echo "Error: Subscriptions file not found!"
+          exit 1
+        fi
+        echo "Subscriptions file found, contains $(wc -l < Subscriptions) lines"
+
+    - name: Validate environment
+      run: |
+        echo "FORCE_UPDATE is set to: $FORCE_UPDATE"
+        echo "Event name: ${{ github.event_name }}"
+        echo "Python version: $(python --version)"
+        echo "Working directory: $(pwd)"
+        ls -la
+
+    - name: Run node subscription manager
+      timeout-minutes: 15
+      run: |
+        echo "Starting node subscription update..."
+        echo "Force update mode: $FORCE_UPDATE"
+        python main.py
+        echo "Node subscription update completed"
+      env:
+        PYTHONUNBUFFERED: 1
+
+    - name: Check for changes
+      id: check_changes
+      run: |
+        if [ -f "Node.txt" ]; then
+          echo "Node.txt file exists with $(wc -l < Node.txt) lines"
+          if [ ! -s "Node.txt" ]; then
+            echo "changes=false" >> $GITHUB_OUTPUT
+            echo "Node.txt file is empty"
+          elif git diff --quiet HEAD -- Node.txt 2>/dev/null; then
+            echo "changes=false" >> $GITHUB_OUTPUT
+            echo "No changes detected in Node.txt file"
+          else
+            echo "changes=true" >> $GITHUB_OUTPUT
+            echo "Changes detected in Node.txt file"
+          fi
+        else
+          echo "changes=false" >> $GITHUB_OUTPUT
+          echo "Node.txt file not found"
+        fi
+
+    - name: Truncate large log file
+      if: steps.check_changes.outputs.changes == 'true'
+      run: |
+        if [ -f "update.log" ]; then
+          # 兼容Linux和macOS的stat命令
+          if command -v stat >/dev/null 2>&1; then
+            if stat -c%s update.log >/dev/null 2>&1; then
+              # Linux
+              file_size=$(stat -c%s update.log)
+            elif stat -f%z update.log >/dev/null 2>&1; then
+              # macOS/BSD
+              file_size=$(stat -f%z update.log)
+            else
+              file_size=0
+            fi
+
+            if [ "$file_size" -gt 1048576 ]; then
+              echo "Truncating update.log (size: $file_size bytes) to last 1000 lines"
+              tail -n 1000 update.log > update.log.tmp
+              mv update.log.tmp update.log
+            else
+              echo "Log file size: $file_size bytes (no truncation needed)"
+            fi
+          fi
+        fi
+
+    - name: Commit and push changes
+      if: steps.check_changes.outputs.changes == 'true'
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+
+        git add Node.txt
+        if [ -f "update.log" ]; then
+          git add update.log
+        fi
+
+        if git diff --staged --quiet; then
+          echo "No staged changes to commit"
+          exit 0
+        fi
+
+        node_count=$(wc -l < Node.txt 2>/dev/null || echo "0")
+        commit_message="🔄 Auto update nodes: $node_count nodes updated (force_update=$FORCE_UPDATE)"
+
+        if git commit -m "$commit_message" -m "Updated at: $(date -u '+%Y-%m-%d %H:%M:%S UTC')"; then
+          echo "Changes committed successfully"
+        else
+          echo "Failed to commit changes"
+          exit 1
+        fi
+
+        # 推送时如遇rebase冲突则自动新建分支并推送，提示需人工处理
+        for i in {1..3}; do
+          echo "Attempting to push changes (attempt $i/3)"
+          if git push origin HEAD; then
+            echo "Successfully pushed changes"
+            break
+          else
+            echo "Push failed, attempt $i/3"
+            if [ $i -lt 3 ]; then
+              echo "Waiting 5 seconds before retry..."
+              sleep 5
+              echo "Pulling latest changes..."
+              if git pull --rebase origin HEAD; then
+                echo "Successfully rebased"
+              else
+                echo "Rebase failed, creating a pull request branch"
+                BRANCH_NAME="auto-update-$(date +%Y%m%d%H%M%S)"
+                git checkout -b $BRANCH_NAME
+                git push origin $BRANCH_NAME
+                echo "Please open a Pull Request to merge $BRANCH_NAME into main"
+                exit 0
+              fi
+            else
+              echo "Failed to push after 3 attempts"
+              exit 1
+            fi
+          fi
+        done
+
+    - name: Upload artifacts
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: node-update-logs-${{ github.run_number }}
+        path: |
+          update.log
+          Node.txt
+        retention-days: 7
+        if-no-files-found: warn
+
+    - name: Create summary
+      if: always()
+      run: |
+        echo "## 📊 Node Update Summary" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+
+        # 节点统计
+        if [ -f "Node.txt" ]; then
+          node_count=$(wc -l < Node.txt 2>/dev/null || echo "0")
+          if [ "$node_count" -gt 0 ]; then
+            echo "✅ **Nodes processed:** $node_count" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "⚠️ **Nodes processed:** 0 (empty file)" >> $GITHUB_STEP_SUMMARY
+          fi
+        else
+          echo "❌ **No nodes file generated**" >> $GITHUB_STEP_SUMMARY
+        fi
+
+        # 基本信息
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "🕐 **Update time:** $(date -u '+%Y-%m-%d %H:%M:%S UTC')" >> $GITHUB_STEP_SUMMARY
+        echo "🔄 **Workflow run:** #${{ github.run_number }}" >> $GITHUB_STEP_SUMMARY
+        echo "📋 **Trigger:** ${{ github.event_name }}" >> $GITHUB_STEP_SUMMARY
+        echo "⚡ **Force update:** $FORCE_UPDATE" >> $GITHUB_STEP_SUMMARY
+
+        # 日志信息
+        if [ -f "update.log" ] && [ -s "update.log" ]; then
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "## 📋 Recent Log Entries" >> $GITHUB_STEP_SUMMARY
+          echo "```" >> $GITHUB_STEP_SUMMARY
+          tail -n 20 update.log >> $GITHUB_STEP_SUMMARY
+          echo "```" >> $GITHUB_STEP_SUMMARY
+        else
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "## 📋 Log Status" >> $GITHUB_STEP_SUMMARY
+          echo "No log entries found or log file is empty" >> $GITHUB_STEP_SUMMARY
+        fi
+
+    - name: Notify on failure
+      if: failure()
+      run: |
+        echo "❌ Node update failed!" >> $GITHUB_STEP_SUMMARY
+        echo "Please check the logs for more details." >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "**Failure details:**" >> $GITHUB_STEP_SUMMARY
+        echo "- Workflow run: #${{ github.run_number }}" >> $GITHUB_STEP_SUMMARY
+        echo "- Branch: ${{ github.ref_name }}" >> $GITHUB_STEP_SUMMARY
+        echo "- Commit: ${{ github.sha }}" >> $GITHUB_STEP_SUMMARY
+        echo "- Trigger: ${{ github.event_name }}" >> $GITHUB_STEP_SUMMARY
+        echo "- Force update: $FORCE_UPDATE" >> $GITHUB_STEP_SUMMARY
+
+        if [ -f "update.log" ] && [ -s "update.log" ]; then
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "## 🚨 Error Log" >> $GITHUB_STEP_SUMMARY
+          echo "```" >> $GITHUB_STEP_SUMMARY
+          if grep -i "error\|exception\|failed\|traceback" update.log | tail -n 30; then
+            grep -i "error\|exception\|failed\|traceback" update.log | tail -n 30 >> $GITHUB_STEP_SUMMARY
+          else
+            echo "No specific error messages found in log" >> $GITHUB_STEP_SUMMARY
+            tail -n 30 update.log >> $GITHUB_STEP_SUMMARY
+          fi
+          echo "```" >> $GITHUB_STEP_SUMMARY
+        fi
+
+  cleanup:
+    runs-on: ubuntu-latest
+    needs: update-nodes
+    if: success() && github.event_name == 'schedule'
+    permissions:
+      actions: write
+
+    steps:
+    - name: Delete old workflow runs
+      uses: Mattraks/delete-workflow-runs@v2
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        repository: ${{ github.repository }}
+        retain_days: 30
+        keep_minimum_runs: 10
