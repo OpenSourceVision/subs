@@ -1,47 +1,56 @@
-2025-06-25 19:21:14,074 - INFO - 成功加载国旗映射表，共有59个国家码
-2025-06-25 19:21:14,074 - INFO - Force update mode: False
-2025-06-25 19:21:14,074 - INFO - Starting node subscription management task...
-2025-06-25 19:21:16,536 - INFO - IP geolocation API is available
-2025-06-25 19:21:16,536 - INFO - Starting node processing...
-2025-06-25 19:21:16,537 - INFO - 读取到 4 个有效订阅链接
-2025-06-25 19:21:16,537 - INFO - 正在拉取订阅 https://gob64.topmarco.tech ...
-2025-06-25 19:21:18,476 - WARNING - Request failed https://gob64.topmarco.tech: ('Connection aborted.', OSError(0, 'Error')) (attempt 1/3)
-2025-06-25 19:21:21,218 - WARNING - Request failed https://gob64.topmarco.tech: ('Connection aborted.', OSError(0, 'Error')) (attempt 2/3)
-2025-06-25 19:21:24,961 - WARNING - Request failed https://gob64.topmarco.tech: ('Connection aborted.', OSError(0, 'Error')) (attempt 3/3)
-2025-06-25 19:21:24,962 - ERROR - Failed to retrieve https://gob64.topmarco.tech after 3 attempts
-2025-06-25 19:21:24,962 - WARNING - 拉取订阅失败: https://gob64.topmarco.tech
-2025-06-25 19:21:24,962 - INFO - 正在拉取订阅 https://chromego-sub.netlify.app/sub/base64.txt ...
-2025-06-25 19:21:27,227 - INFO - 从 https://chromego-sub.netlify.app/sub/base64.txt 获取到 18 个节点
-2025-06-25 19:21:27,227 - INFO - 正在拉取订阅 https://subs.suitmob.dpdns.org/download/sub ...
-2025-06-25 19:21:29,138 - WARNING - Request failed https://subs.suitmob.dpdns.org/download/sub: ('Connection aborted.', OSError(0, 'Error')) (attempt 1/3)
-2025-06-25 19:21:31,928 - WARNING - Request failed https://subs.suitmob.dpdns.org/download/sub: ('Connection aborted.', OSError(0, 'Error')) (attempt 2/3)
-2025-06-25 19:21:35,675 - WARNING - Request failed https://subs.suitmob.dpdns.org/download/sub: ('Connection aborted.', OSError(0, 'Error')) (attempt 3/3)
-2025-06-25 19:21:35,675 - ERROR - Failed to retrieve https://subs.suitmob.dpdns.org/download/sub after 3 attempts
-2025-06-25 19:21:35,676 - WARNING - 拉取订阅失败: https://subs.suitmob.dpdns.org/download/sub
-2025-06-25 19:21:35,676 - INFO - 正在拉取订阅 https://raw.githubusercontent.com/Surfboardv2ray/Proxy-sorter/main/custom/udp.txt ...
-2025-06-25 19:21:47,789 - WARNING - Request timed out https://raw.githubusercontent.com/Surfboardv2ray/Proxy-sorter/main/custom/udp.txt (attempt 1/3)
-2025-06-25 19:22:00,315 - WARNING - Request timed out https://raw.githubusercontent.com/Surfboardv2ray/Proxy-sorter/main/custom/udp.txt (attempt 2/3)
-2025-06-25 19:22:08,838 - WARNING - Request failed https://raw.githubusercontent.com/Surfboardv2ray/Proxy-sorter/main/custom/udp.txt: ('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None)) (attempt 3/3)
-2025-06-25 19:22:08,838 - ERROR - Failed to retrieve https://raw.githubusercontent.com/Surfboardv2ray/Proxy-sorter/main/custom/udp.txt after 3 attempts
-2025-06-25 19:22:08,838 - WARNING - 拉取订阅失败: https://raw.githubusercontent.com/Surfboardv2ray/Proxy-sorter/main/custom/udp.txt
-2025-06-25 19:22:08,839 - INFO - Collected 18 nodes in total
-2025-06-25 19:22:08,839 - WARNING - Unknown protocol: aHR0cHM6Ly9kb25ndGFpd2FuZy5jb206ZG9uZ3RhaXdhbmcuY2...
-2025-06-25 19:22:08,839 - WARNING - Unknown protocol: aHR0cHM6Ly9kb25ndGFpd2FuZy5jb206ZG9uZ3RhaXdhbmcuY2...
-2025-06-25 19:22:08,839 - INFO - Successfully parsed 16 nodes
-2025-06-25 19:22:11,160 - INFO - IP 185.22.155.71 归属地: 俄罗斯(RU) Zelenograd
-2025-06-25 19:22:11,188 - INFO - IP 208.87.243.151 归属地: 美国(US) 洛杉矶
-2025-06-25 19:22:11,945 - INFO - IP 108.181.24.77 归属地: 美国(US) 洛杉矶
-2025-06-25 19:22:12,263 - INFO - IP 208.87.243.151 归属地: 美国(US) 洛杉矶
-2025-06-25 19:22:13,160 - INFO - IP 45.129.2.108 归属地: 俄罗斯联邦(RU) 莫斯科
-2025-06-25 19:22:13,991 - INFO - IP 46.29.163.171 归属地: 俄罗斯联邦(RU) 莫斯科
-2025-06-25 19:22:14,328 - INFO - IP 46.29.163.171 归属地: 俄罗斯联邦(RU) 莫斯科
-2025-06-25 19:22:14,926 - INFO - IP 46.17.41.217 归属地: 俄罗斯联邦(RU) 莫斯科
-2025-06-25 19:22:15,159 - INFO - IP 1.162.51.106 归属地: 台湾(TW) 台北市
-2025-06-25 19:22:15,351 - WARNING - Request failed http://ip-api.com/json/185.22.155.71?lang=zh-CN: ('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None)) (attempt 1/3)
-2025-06-25 19:22:16,295 - INFO - IP 1.162.51.106 归属地: 台湾(TW) 台北市
-2025-06-25 19:22:16,355 - INFO - IP 1.162.51.106 归属地: 台湾(TW) 台北市
-2025-06-25 19:22:16,948 - INFO - IP 1.162.51.106 归属地: 台湾(TW) 台北市
-2025-06-25 19:22:18,324 - INFO - IP 185.22.155.71 归属地: 俄罗斯(RU) Zelenograd
-2025-06-25 19:22:18,325 - INFO - After deduplication, 13 nodes remain
-2025-06-25 19:22:18,325 - INFO - Successfully wrote 13 nodes as base64 to Node.txt
-2025-06-25 19:22:18,325 - INFO - Task completed successfully!
+2025-06-25 11:47:47,010 - INFO - 成功加载国旗映射表，共有59个国家码
+2025-06-25 11:47:47,010 - INFO - Force update mode: False
+2025-06-25 11:47:47,010 - INFO - Starting node subscription management task...
+2025-06-25 11:47:48,541 - INFO - IP geolocation API is available
+2025-06-25 11:47:48,541 - INFO - Starting node processing...
+2025-06-25 11:47:48,542 - INFO - 读取到 4 个有效订阅链接
+2025-06-25 11:47:48,542 - INFO - 正在拉取订阅 https://gob64.topmarco.tech ...
+2025-06-25 11:47:51,616 - INFO - 从 https://gob64.topmarco.tech 获取到 20 个节点
+2025-06-25 11:47:51,617 - INFO - 正在拉取订阅 https://chromego-sub.netlify.app/sub/base64.txt ...
+2025-06-25 11:47:53,218 - INFO - 从 https://chromego-sub.netlify.app/sub/base64.txt 获取到 18 个节点
+2025-06-25 11:47:53,218 - INFO - 正在拉取订阅 https://subs.suitmob.dpdns.org/download/sub ...
+2025-06-25 11:48:00,375 - INFO - 从 https://subs.suitmob.dpdns.org/download/sub 获取到 14 个节点
+2025-06-25 11:48:00,376 - INFO - 正在拉取订阅 https://raw.githubusercontent.com/Surfboardv2ray/Proxy-sorter/main/custom/udp.txt ...
+2025-06-25 11:48:02,044 - ERROR - 解码订阅内容失败: string argument should contain only ASCII characters
+2025-06-25 11:48:02,044 - INFO - 从 https://raw.githubusercontent.com/Surfboardv2ray/Proxy-sorter/main/custom/udp.txt 获取到 0 个节点
+2025-06-25 11:48:02,044 - INFO - Collected 52 nodes in total
+2025-06-25 11:48:02,044 - WARNING - Unknown protocol: aHR0cHM6Ly9kb25ndGFpd2FuZy5jb206ZG9uZ3RhaXdhbmcuY2...
+2025-06-25 11:48:02,044 - WARNING - Unknown protocol: aHR0cHM6Ly9kb25ndGFpd2FuZy5jb206ZG9uZ3RhaXdhbmcuY2...
+2025-06-25 11:48:02,045 - INFO - Successfully parsed 50 nodes
+2025-06-25 11:48:03,558 - INFO - IP 185.22.155.71 归属地: 俄罗斯(RU) Zelenograd
+2025-06-25 11:48:03,568 - INFO - IP 195.154.200.40 归属地: 法国(FR) 巴黎
+2025-06-25 11:48:03,570 - INFO - IP 208.87.243.151 归属地: 美国(US) 洛杉矶
+2025-06-25 11:48:03,570 - INFO - IP 208.87.243.187 归属地: 美国(US) 洛杉矶
+2025-06-25 11:48:03,571 - INFO - IP 195.154.200.40 归属地: 法国(FR) 巴黎
+2025-06-25 11:48:05,070 - INFO - IP 51.159.226.1 归属地: 法国(FR) 巴黎
+2025-06-25 11:48:05,080 - INFO - IP 46.17.41.217 归属地: 俄罗斯联邦(RU) 莫斯科
+2025-06-25 11:48:05,082 - INFO - IP 45.129.2.248 归属地: 俄罗斯联邦(RU) 莫斯科
+2025-06-25 11:48:05,082 - INFO - IP 45.129.2.108 归属地: 俄罗斯联邦(RU) 莫斯科
+2025-06-25 11:48:05,083 - INFO - IP 46.29.163.171 归属地: 俄罗斯联邦(RU) 莫斯科
+2025-06-25 11:48:06,592 - INFO - IP 51.159.226.1 归属地: 法国(FR) 巴黎
+2025-06-25 11:48:06,592 - INFO - IP 51.159.111.32 归属地: 法国(FR) 巴黎
+2025-06-25 11:48:06,593 - INFO - IP 1.162.51.106 归属地: 台湾(TW) 台北市
+2025-06-25 11:48:06,593 - INFO - IP 46.17.41.5 归属地: 俄罗斯联邦(RU) 莫斯科
+2025-06-25 11:48:06,594 - INFO - IP 108.181.5.130 归属地: 美国(US) 洛杉矶
+2025-06-25 11:48:08,103 - INFO - IP 108.181.3.68 归属地: 美国(US) 洛杉矶
+2025-06-25 11:48:08,106 - INFO - IP 176.32.35.226 归属地: 俄罗斯联邦(RU) 莫斯科
+2025-06-25 11:48:08,106 - INFO - IP 185.22.155.105 归属地: 俄罗斯(RU) Zelenograd
+2025-06-25 11:48:08,107 - INFO - IP 195.154.200.178 归属地: 法国(FR) 巴黎
+2025-06-25 11:48:09,615 - INFO - IP 108.181.24.77 归属地: 美国(US) 洛杉矶
+2025-06-25 11:48:09,618 - INFO - IP 47.74.34.102 归属地: 日本(JP) 东京
+2025-06-25 11:48:09,618 - INFO - IP 108.181.24.77 归属地: 美国(US) 洛杉矶
+2025-06-25 11:48:09,748 - INFO - IP 111.240.201.93 归属地: 台湾(TW) 台北市
+2025-06-25 11:48:11,128 - INFO - IP 104.17.70.206 归属地: 加拿大(CA) 多伦多
+2025-06-25 11:48:11,128 - INFO - IP 129.146.241.150 归属地: 美国(US) 凤凰城
+2025-06-25 11:48:11,129 - INFO - IP 74.48.18.240 归属地: 美国(US) 洛杉矶
+2025-06-25 11:48:11,134 - INFO - IP 129.146.241.150 归属地: 美国(US) 凤凰城
+2025-06-25 11:48:12,639 - INFO - IP 104.17.70.206 归属地: 加拿大(CA) 多伦多
+2025-06-25 11:48:12,640 - INFO - IP 120.233.128.68 归属地: 中国(CN) 广州市
+2025-06-25 11:48:12,908 - INFO - IP 125.88.196.143 归属地: 中国(CN) 广州市
+2025-06-25 11:48:12,909 - INFO - After deduplication, 30 nodes remain
+2025-06-25 11:48:12,909 - INFO - Successfully wrote 30 nodes as base64 to Node.txt
+2025-06-25 11:48:12,909 - INFO - Task completed successfully!
+96.143 归属地: 中国(CN) 广州市
+2025-06-25 11:48:12,909 - INFO - After deduplication, 30 nodes remain
+2025-06-25 11:48:12,909 - INFO - Successfully wrote 30 nodes as base64 to Node.txt
+2025-06-25 11:48:12,909 - INFO - Task completed successfully!
