@@ -121,27 +121,34 @@ jobs:
           echo "未找到 Node.txt 文件"
         fi
 
-    # 步骤 8：截断大日志
+    # 步骤 8：截断大日志文件
     - name: 截断大日志文件
       if: steps.check_changes.outputs.changes == 'true'
       run: |
         if [ -f "update.log" ]; then
+          echo "找到 update.log 文件，正在检查大小..."
           if command -v stat >/dev/null 2>&1; then
             if stat -c%s update.log >/dev/null 2>&1; then
               file_size=$(stat -c%s update.log)
             elif stat -f%z update.log >/dev/null 2>&1; then
               file_size=$(stat -f%z update.log)
             else
-              file_size=0)
+              file_size=0
             fi
+            echo "日志文件大小: $file_size bytes"
             if [ "$file_size" -gt 1048576 ]; then
-              echo "日志文件大小: $file_size 字节，截断至最后 1000 行..."
+              echo "日志文件大小: $file_size bytes，超过 1MB，截断至最后 1000 行"
               tail -n 1000 update.log > update.log.tmp
               mv update.log.tmp update.log
+              echo "日志文件已截断"
             else
-              echo "日志文件大小: $file_size 字节，无需截断"
+              echo "日志文件大小: $file_size bytes，无需截断"
             fi
+          else
+            echo "未找到 stat 命令，跳过日志截断"
           fi
+        else
+          echo "未找到 update.log 文件，跳过日志截断"
         fi
 
     # 步骤 9：提交并推送变更
