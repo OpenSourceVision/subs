@@ -20,7 +20,6 @@ on:
       - 'Subscriptions.yaml'
       - 'requirements.txt'
       - '.github/workflows/*.yml'# 工作流名称
-name: Update Node Subscriptions
 
 # 触发条件配置
 on:
@@ -427,4 +426,5 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
         repository: ${{ github.repository }}
         retain_days: 30
+        keep_minimum_runs: 10
         keep_minimum_runs: 10
