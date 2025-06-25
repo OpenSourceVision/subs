@@ -1,0 +1,26 @@
+# HTTP请求相关配置
+http:
+  # 用户代理字符串，用于模拟浏览器请求
+  user_agent: "Mozilla/5.0"
+  # 最大重试次数
+  max_retries: 3
+  # 请求超时时间(秒)
+  timeout: 10
+  # 请求速率限制延迟(秒)
+  rate_limit_delay: 1.5
+  # 最大延迟时间(秒)
+  max_delay: 10
+  # 最大工作线程数
+  max_workers: 5
+
+# 日志记录相关配置
+logging:
+  # 日志文件路径
+  file: "update.log"  # Changed from app.log to match main.yml
+  # 日志级别(DEBUG/INFO/WARNING/ERROR/CRITICAL)
+  level: "INFO"
+
+# 文件路径相关配置
+files:
+  # 订阅信息存储文件路径
+  subscriptions: "subscriptions.yaml"
