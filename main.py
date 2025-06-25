@@ -78,8 +78,8 @@ class NodeSubscriptionManager:
         try:
             with open(flags_path, 'r', encoding='utf-8') as f:
                 flags_data = yaml.safe_load(f)
-            flags_map = flags_data.get('flags', {}) if isinstance(flags_data, dict) else {}
-            self.logger.info(f"成功加载国旗映射表，共有 {len(flags_map)} 个国家码")
+            flags_map = flags_data.get('flags', '{}') if isinstance(flags_data, dict) else {}
+            self.logger.info(f"成功加载国旗映射表，共有 {len(self.flags_map)} 个国家码")
             return flags_map
         except Exception as e:
             self.logger.warning(f"加载国旗映射表失败: {e}")
@@ -103,14 +103,14 @@ class NodeSubscriptionManager:
                 config_data = yaml.safe_load(f)
             logger.info(f"Successfully loaded configuration from {file_path}")
             return config_data
+        except Exception as e:
+            logger.error(f"Error loading configuration file: {file_path}: {e}")
+            raise
         except FileNotFoundError:
-            logger.error(f"Configuration file not {file_path} not found")
+            logger.error(f"Configuration file {file_path} not found")
             raise
         except yaml.YAMLError as e:
             logger.error(f"Failed to parse configuration file {file_path}: {e}")
-            raise
-        except Exception as e:
-            logger.error("Error loading configuration file: {e}")
             raise
 
     def rate_limited_request(self, url: str, headers: Optional[Dict] = None) -> Optional[requests.Response]:
@@ -123,12 +123,12 @@ class NodeSubscriptionManager:
                 response = self.session.get(url, headers=headers, timeout=10)
                 response.raise_for_status()
                 return response
-            except TimeoutError:
-                self.logger.warning(f"Request timed out for{url} on (attempt {attempt + 1}/{self.max_retries})")
+            except Timeout:
+                self.logger.warning(f"Request timed out for {url} on (attempt {attempt + 1}/ {self.max_retries})")
             except HTTPError as e:
                 self.logger.warning(f"HTTP error on {url}: {e} (attempt {attempt + 1}/{self.max_retries})")
             except RequestException as e:
-                self.logger.warning(f"Request failed {url}: {e} (attempt {attempt + 1}/{self.max_retries})")
+                self.logger.warning(f"Request failed {url}: {e} (attempt {attempt + 1}/ {self.max_retries})")
             if attempt < self.max_retries - 1:
                 time.sleep(min(2 ** attempt, self.max_delay))
         self.logger.error(f"Failed to retrieve {url} after {self.max_retries} attempts")
@@ -404,7 +404,9 @@ class NodeSubscriptionManager:
 
     def process_node(self, node_info: Dict) -> Optional[Dict]:
         """
-        处理单个节点：解析域名、验证IP、查询地理位置、生成名称。
+        处理单个节点：
+        - IP节点：直接使用IP，查询地理位置，生成名称，无需验证。
+        - 域名节点：解析域名，验证落地IP，查询地理位置，生成名称。
         """
         host = node_info.get('host', '')
         port = node_info.get('port', '')
@@ -413,18 +415,25 @@ class NodeSubscriptionManager:
             self.logger.warning(f"跳过无效节点: {node_info.get('uri', '')[:50]}...")
             return None
         
-        if re.match(r'^(\d{1,3}\.){3}\d{1,3}$', host):
+        # 检查host是否为IP
+        is_ip = bool(re.match(r'^(\d{1,3}\.){3}\d{1,3}$', host))
+        ip = None
+        
+        if is_ip:
             ip = host
+            self.logger.debug(f"处理IP节点: {ip}:{port} ({protocol})")
         else:
+            self.logger.debug(f"处理域名节点: {host}:{port} ({protocol})")
             ip = self.resolve_domain_with_dns(host)
             if not ip:
                 self.logger.warning(f"无法解析域名 {host}，跳过节点")
                 return None
+            # 验证落地IP
+            if not self.verify_landing_ip(ip, host, port):
+                self.logger.warning(f"IP {ip} 不是落地IP，跳过节点")
+                return None
         
-        if not self.verify_landing_ip(ip, host, port):
-            self.logger.warning(f"IP {ip} 不是落地IP，跳过节点")
-            return None
-        
+        # 生成唯一键用于去重
         if protocol == "vless":
             parsed = urlparse(node_info['uri'])
             uuid = parsed.username or ''
@@ -435,11 +444,12 @@ class NodeSubscriptionManager:
         else:
             unique_key = f"{protocol}:{ip}:{port}"
         
-        unique_nodes = {}
+        unique_nodes = {}  # 假设这是方法外的全局或类变量
         if unique_key in unique_nodes and not self.force_update:
             self.logger.debug(f"跳过重复节点: {ip}:{port} ({protocol}), URI: {node_info['uri'][:50]}...")
             return None
         
+        # 查询IP地理位置
         location_info = self.get_ip_location(ip)
         country_code = location_info.get('country_code', 'XX')
         country = location_info.get('country', '未知')
@@ -461,6 +471,7 @@ class NodeSubscriptionManager:
     def process_nodes(self) -> List[str]:
         """
         主处理流程：拉取、解析、去重、命名、排序、测试节点。
+        IP节点跳过落地IP测试，域名节点进行测试。
         """
         self.logger.info("开始处理节点...")
         subscription_urls = self.read_subscription_urls()
@@ -486,11 +497,15 @@ class NodeSubscriptionManager:
         
         valid_nodes = []
         for node in sorted_nodes:
-            if self.test_landing_ip(node):
+            is_ip = bool(re.match(r'^(\d{1,3}\.){3}\d{1,3}$', node['host']))
+            if is_ip:
+                self.logger.info(f"IP节点 {node['name']} 无需测试，直接保留")
                 valid_nodes.append(node['uri'])
-                self.logger.info(f"节点 {node['name']} 落地IP测试通过")
+            elif self.test_landing_ip(node):
+                self.logger.info(f"域名节点 {node['name']} 落地IP测试通过")
+                valid_nodes.append(node['uri'])
             else:
-                self.logger.warning(f"节点 {node['name']} 落地IP测试失败，跳过")
+                self.logger.warning(f"域名节点 {node['name']} 落地IP测试失败，跳过")
         
         self.logger.info(f"最终保留 {len(valid_nodes)} 个通过测试的节点")
         return valid_nodes
@@ -626,7 +641,7 @@ class NodeSubscriptionManager:
             elif node_uri.startswith(('hysteria://', 'hy://')):
                 parsed = urlparse(node_uri)
                 if not parsed.hostname or not parsed.port:
-                    self.logger.warning(f"Hysteria {node_uri} 节点格式错误: {node_uri[:50]}...")
+                    self.logger.warning(f"Hysteria 节点格式错误: {node_uri[:50]}...")
                     return None
                 return {
                     'protocol': 'hysteria',
@@ -634,10 +649,10 @@ class NodeSubscriptionManager:
                     'port': str(parsed.port),
                     'uri': node_uri
                 }
-            self.logger.warning(f"Unknown protocol: {node_uri[:50]}...")
+            self.logger.warning(f"未知协议: {node_uri[:50]}...")
             return None
         except Exception as e:
-            self.logger.warning(f"Failed to parse node: {node_uri[:50]}..., error: {e}")
+            self.logger.warning(f"解析节点失败: {node_uri[:50]}..., 错误: {e}")
             return None
 
 if __name__ == "__main__":
@@ -645,4 +660,4 @@ if __name__ == "__main__":
         manager = NodeSubscriptionManager()
         manager.run()
     except Exception as e:
-        logging.getLogger(__name__).error(f"Program startup failed: {e}")
+        logging.getLogger(__name__).error(f"程序启动失败: {e}")
