@@ -1,8 +1,11 @@
-name: Update Node Subscriptions
+name: 更新节点订阅
 
+# 触发条件
 on:
+  # 定时触发：每天 UTC 时间 23:00（北京时间次日 07:00）
   schedule:
     - cron: '0 23 * * *'
+  # 手动触发：支持强制更新参数
   workflow_dispatch:
     inputs:
       force_update:
@@ -10,98 +13,116 @@ on:
         required: false
         default: false
         type: boolean
+  # 推送触发：当特定文件变更时触发
   push:
     branches: [ main, master ]
     paths:
       - 'main.py'
-      - 'Subscriptions.yaml'
+      - 'subscriptions.yaml'  # 统一使用小写文件名
       - 'requirements.txt'
       - '.github/workflows/*.yml'
 
+# 任务定义
 jobs:
   update-nodes:
     runs-on: ubuntu-latest
     permissions:
-      contents: write
-      actions: read
+      contents: write  # 允许写入仓库内容
+      actions: read    # 允许读取 Actions 信息
 
     steps:
-    - name: Checkout repository
+    # 步骤 1：检出代码仓库
+    - name: 检出代码仓库
       uses: actions/checkout@v4
       with:
-        fetch-depth: 0
+        fetch-depth: 0  # 获取完整提交历史
         token: ${{ secrets.GITHUB_TOKEN }}
 
-    - name: Set up Python
+    # 步骤 2：配置 Python 环境
+    - name: 配置 Python 环境
       uses: actions/setup-python@v5
       with:
-        python-version: '3.11'
-        cache: 'pip'
+        python-version: '3.11'  # 使用 Python 3.11
+        cache: 'pip'            # 启用 pip 缓存
         cache-dependency-path: 'requirements.txt'
 
-    - name: Set environment variables
+    # 步骤 3：设置环境变量
+    - name: 设置环境变量
       run: |
+        # 根据触发类型设置 FORCE_UPDATE
         if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
           echo "FORCE_UPDATE=${{ github.event.inputs.force_update == 'true' }}" >> $GITHUB_ENV
         else
           echo "FORCE_UPDATE=false" >> $GITHUB_ENV
         fi
+        echo "触发事件: ${{ github.event_name }}"
+        echo "FORCE_UPDATE 已设置为: $FORCE_UPDATE"
 
-    - name: Install dependencies
+    # 步骤 4：安装依赖
+    - name: 安装 Python 依赖
       run: |
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then
-          echo "Installing dependencies from requirements.txt"
+          echo "找到 requirements.txt，正在安装依赖..."
           pip install -r requirements.txt
         else
-          echo "requirements.txt not found, installing basic dependencies"
+          echo "未找到 requirements.txt，安装默认依赖..."
           pip install requests PyYAML urllib3 chardet
         fi
+        python -c "import requests, yaml; print('依赖安装成功')"
 
-    - name: Check if subscriptions file exists
+    # 步骤 5：检查订阅文件是否存在
+    - name: 检查订阅文件是否存在
       run: |
-        if [ ! -f "Subscriptions.yaml" ]; then
-          echo "Error: Subscriptions.yaml file not found!"
-          exit 1
+        echo "正在检查 subscriptions.yaml 文件..."
+        if [ -f "subscriptions.yaml" ]; then
+          echo "找到 subscriptions.yaml 文件，包含 $(wc -l < subscriptions.yaml) 行"
+        else
+          echo "错误：未找到 subscriptions.yaml 文件！"
+          echo "当前目录内容："
+          ls -la
+          exit 1  # 文件缺失时终止
         fi
-        echo "Subscriptions.yaml file found, contains $(wc -l < Subscriptions.yaml) lines"
 
-    - name: Run node subscription manager
-      timeout-minutes: 15
+    # 步骤 6：运行节点订阅管理脚本
+    - name: 运行节点订阅管理脚本
+      timeout-minutes: 15  # 设置 15 分钟超时
       run: |
-        echo "Starting node subscription update..."
-        echo "Force update mode: $FORCE_UPDATE"
+        echo "开始更新节点订阅..."
+        echo "强制更新模式: $FORCE_UPDATE"
         python main.py 2>&1 | tee -a update.log
         exit_code=${PIPESTATUS[0]}
-        echo "Node subscription update completed with exit code $exit_code"
+        echo "节点订阅更新完成，退出码: $exit_code"
         if [ $exit_code -ne 0 ]; then
-          echo "Error: main.py failed with exit code $exit_code"
+          echo "错误：main.py 执行失败，退出码 $exit_code"
           exit $exit_code
         fi
       env:
-        PYTHONUNBUFFERED: 1
+        PYTHONUNBUFFERED: 1  # 实时输出日志
 
-    - name: Check for changes
+    # 步骤 7：检查文件变更
+    - name: 检查文件变更
       id: check_changes
       run: |
         if [ -f "Node.txt" ]; then
-          echo "Node.txt file exists with $(wc -l < Node.txt) lines"
+          echo "Node.txt 文件存在，包含 $(wc -l < Node.txt) 行"
           if [ ! -s "Node.txt" ]; then
             echo "changes=false" >> $GITHUB_OUTPUT
-            echo "Node.txt file is empty"
+            echo "Node.txt 文件为空"
           elif git diff --quiet HEAD -- Node.txt; then
             echo "changes=false" >> $GITHUB_OUTPUT
-            echo "No changes detected in Node.txt file"
+            echo "Node.txt 文件无变更"
           else
             echo "changes=true" >> $GITHUB_OUTPUT
-            echo "Changes detected in Node.txt file"
+            echo "Node.txt 文件有变更"
           fi
         else
           echo "changes=false" >> $GITHUB_OUTPUT
-          echo "Node.txt file not found"
+          echo "未找到 Node.txt 文件"
         fi
 
-    - name: Truncate large log file
+    # 步骤 8：截断大日志
+    - name: 截断大日志文件
       if: steps.check_changes.outputs.changes == 'true'
       run: |
         if [ -f "update.log" ]; then
@@ -111,19 +132,20 @@ jobs:
             elif stat -f%z update.log >/dev/null 2>&1; then
               file_size=$(stat -f%z update.log)
             else
-              file_size=0
+              file_size=0)
             fi
             if [ "$file_size" -gt 1048576 ]; then
-              echo "Truncating update.log (size: $file_size bytes) to last 1000 lines"
+              echo "日志文件大小: $file_size 字节，截断至最后 1000 行..."
               tail -n 1000 update.log > update.log.tmp
               mv update.log.tmp update.log
             else
-              echo "Log file size: $file_size bytes (no truncation needed)"
+              echo "日志文件大小: $file_size 字节，无需截断"
             fi
           fi
         fi
 
-    - name: Commit and push changes
+    # 步骤 9：提交并推送变更
+    - name: 提交并推送变更
       if: steps.check_changes.outputs.changes == 'true'
       run: |
         git config --local user.email "action@github.com"
@@ -133,78 +155,118 @@ jobs:
           git add update.log
         fi
         node_count=$(wc -l < Node.txt 2>/dev/null || echo "0")
-        commit_message="🔄 Auto-update nodes: $node_count nodes (${{ github.event_name }}, force_update=$FORCE_UPDATE)"
-        git commit -m "$commit_message" -m "Updated at: $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
+        commit_message="🔄 自动更新节点: $node_count 个节点 (${{ github.event_name }}, force_update=$FORCE_UPDATE)"
+        git commit -m "$commit_message" -m "更新时间: $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
         for i in {1..3}; do
-          echo "Attempting to push changes (attempt $i/3)"
+          echo "尝试推送变更 (第 $i/3 次)"
           if git push origin HEAD; then
-            echo "Successfully pushed changes"
+            echo "推送变更成功"
             break
           else
-            echo "Push failed, attempt $i/3"
+            echo "推送失败，第 $i/3 次"
             if [ $i -lt 3 ]; then
               sleep 5
               if git pull --rebase origin HEAD; then
-                echo "Successfully rebased"
+                echo "成功执行 rebase"
               else
-                echo "Rebase failed, creating a pull request branch"
+                echo "rebase 失败，创建新分支"
                 BRANCH_NAME="auto-update-$(date +%Y%m%d%H%M%S)"
                 git checkout -b $BRANCH_NAME
                 git push origin $BRANCH_NAME
-                echo "Please open a Pull Request to merge $BRANCH_NAME into main"
+                echo "请创建 Pull Request 合并 $BRANCH_NAME 到 main"
                 break
               fi
             else
-              echo "Failed to push after 3 attempts"
+              echo "3 次推送均失败"
               exit 1
             fi
           fi
-        fi
+        done
 
-    - name: Create summary
+    # 步骤 10：上传工件
+    - name: 上传日志工件
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: node-update-logs-${{ github.run_number }}
+        path: |
+          update.log
+          Node.txt
+        retention-days: 7
+        if-no-files-found: warn
+
+    # 步骤 11：生成运行摘要
+    - name: 生成运行摘要
       if: always()
       run: |
-        echo "## 📊 Node Update Summary" >> $GITHUB_STEP_SUMMARY
+        echo "## 📊 节点更新摘要" >> $GITHUB_STEP_SUMMARY
         echo "" >> $GITHUB_STEP_SUMMARY
         if [ -f "Node.txt" ]; then
           node_count=$(wc -l < Node.txt 2>/dev/null || echo "0")
           if [ "$node_count" -gt 0 ]; then
-            echo "✅ **Nodes processed:** $node_count" >> $GITHUB_STEP_SUMMARY
+            echo "✅ **处理节点数:** $node_count" >> $GITHUB_STEP_SUMMARY
           else
-            echo "⚠️ **Nodes processed:** 0 (empty file)" >> $GITHUB_STEP_SUMMARY
+            echo "⚠️ **处理节点数:** 0 (文件为空)" >> $GITHUB_STEP_SUMMARY
           fi
         else
-          echo "❌ **No nodes file generated**" >> $GITHUB_STEP_SUMMARY
+          echo "❌ **未生成节点文件**" >> $GITHUB_STEP_SUMMARY
         fi
         echo "" >> $GITHUB_STEP_SUMMARY
-        echo "🕐 **Update time:** $(date -u '+%Y-%m-%d %H:%M:%S UTC')" >> $GITHUB_STEP_SUMMARY
-        echo "🔄 **Workflow run:** #${{ github.run_number }}" >> $GITHUB_STEP_SUMMARY
-        echo "📋 **Trigger:** ${{ github.event_name }}" >> $GITHUB_STEP_SUMMARY
-        echo "⚡ **Force update:** $FORCE_UPDATE" >> $GITHUB_STEP_SUMMARY
+        echo "🕐 **更新时间:** $(date -u '+%Y-%m-%d %H:%M:%S UTC')" >> $GITHUB_STEP_SUMMARY
+        echo "🔄 **工作流运行编号:** #${{ github.run_number }}" >> $GITHUB_STEP_SUMMARY
+        echo "📋 **触发类型:** ${{ github.event_name }}" >> $GITHUB_STEP_SUMMARY
+        echo "⚡ **强制更新:** $FORCE_UPDATE" >> $GITHUB_STEP_SUMMARY
         if [ -f "update.log" ] && [ -s "update.log" ]; then
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "## 📋 Recent Log Entries" >> $GITHUB_STEP_SUMMARY
+          echo "## 📋 最近日志" >> $GITHUB_STEP_SUMMARY
           echo "```" >> $GITHUB_STEP_SUMMARY
           tail -n 20 update.log >> $GITHUB_STEP_SUMMARY
           echo "```" >> $GITHUB_STEP_SUMMARY
         else
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "## 📋 Log Status" >> $GITHUB_STEP_SUMMARY
-          echo "No log entries found or log file is empty" >> $GITHUB_STEP_SUMMARY
+          echo "## 📋 日志状态" >> $GITHUB_STEP_SUMMARY
+          echo "未找到日志文件或日志文件为空" >> $GITHUB_STEP_SUMMARY
         fi
 
+    # 步骤 12：失败时通知
+    - name: 失败时通知
+      if: failure()
+      run: |
+        echo "❌ 节点更新失败！" >> $GITHUB_STEP_SUMMARY
+        echo "请检查日志以获取更多详情。" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "**失败详情：**" >> $GITHUB_STEP_SUMMARY
+        echo "- 工作流运行编号: #${{ github.run_number }}" >> $GITHUB_STEP_SUMMARY
+        echo "- 分支: ${{ github.ref_name }}" >> $GITHUB_STEP_SUMMARY
+        echo "- 提交: ${{ github.sha }}" >> $GITHUB_STEP_SUMMARY
+        echo "- 触发类型: ${{ github.event_name }}" >> $GITHUB_STEP_SUMMARY
+        echo "- 强制更新: $FORCE_UPDATE" >> $GITHUB_STEP_SUMMARY
+        if [ -f "update.log" ] && [ -s "update.log" ]; then
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "## 🚨 错误日志" >> $GITHUB_STEP_SUMMARY
+          echo "```" >> $GITHUB_STEP_SUMMARY
+          if grep -i "error\|exception\|failed\|traceback" update.log | tail -n 30; then
+            grep -i "error\|exception\|failed\|traceback" update.log | tail -n 30 >> $GITHUB_STEP_SUMMARY
+          else
+            echo "日志中未找到特定错误信息" >> $GITHUB_STEP_SUMMARY
+            tail -n 30 update.log >> $GITHUB_STEP_SUMMARY
+          fi
+          echo "```" >> $GITHUB_STEP_SUMMARY
+        fi
+
+  # 清理任务
   cleanup:
     runs-on: ubuntu-latest
     needs: update-nodes
-    if: success()
+    if: success()  # 仅在 update-nodes 成功时运行
     permissions:
-      actions: write
+      actions: write  # 清理工作流需要写权限
 
     steps:
-    - name: Delete old workflow runs
+    - name: 删除旧工作流运行记录
       uses: Mattraks/delete-workflow-runs@v2
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         repository: ${{ github.repository }}
-        retain_days: 30
-        keep_minimum_runs: 10
+        retain_days: 30  # 保留 30 天记录
+        keep_minimum_runs: 10  # 至少保留 10 次运行
