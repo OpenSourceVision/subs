@@ -629,7 +629,7 @@ class NodeSubscriptionManager:
                     self.logger.warning(f"Hysteria {node_uri} 节点格式错误: {node_uri[:50]}...")
                     return None
                 return {
-                    'protocol': 'hysteria,
+                    'protocol': 'hysteria',
                     'host': parsed.hostname,
                     'port': str(parsed.port),
                     'uri': node_uri
