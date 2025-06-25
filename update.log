@@ -1,103 +1,300 @@
-2025-06-25 12:59:46,132 - INFO - 成功加载国旗映射表，共有 59 个国家码
-2025-06-25 12:59:46,132 - INFO - Force update mode: False
-2025-06-25 12:59:46,132 - INFO - 开始节点订阅管理任务...
-2025-06-25 12:59:47,649 - INFO - IP地理位置API可用
-2025-06-25 12:59:47,650 - INFO - 开始处理节点...
-2025-06-25 12:59:47,650 - INFO - 读取到 3 个有效订阅链接
-2025-06-25 12:59:47,650 - INFO - 正在拉取订阅 https://gob64.topmarco.tech ...
-2025-06-25 12:59:51,037 - INFO - 从 https://gob64.topmarco.tech 获取到 20 个节点
-2025-06-25 12:59:51,037 - INFO - 正在拉取订阅 https://chromego-sub.netlify.app/sub/base64.txt ...
-2025-06-25 12:59:52,616 - INFO - 从 https://chromego-sub.netlify.app/sub/base64.txt 获取到 18 个节点
-2025-06-25 12:59:52,616 - INFO - 正在拉取订阅 https://subs.suitmob.dpdns.org/download/sub ...
-2025-06-25 12:59:54,879 - INFO - 从 https://subs.suitmob.dpdns.org/download/sub 获取到 14 个节点
-2025-06-25 12:59:54,879 - INFO - 共收集到 52 个节点
-2025-06-25 12:59:54,879 - WARNING - 未知协议: aHR0cHM6Ly9kb25ndGFpd2FuZy5jb206ZG9uZ3RhaXdhbmcuY2...
-2025-06-25 12:59:54,879 - WARNING - 未知协议: aHR0cHM6Ly9kb25ndGFpd2FuZy5jb206ZG9uZ3RhaXdhbmcuY2...
-2025-06-25 12:59:54,880 - INFO - 成功解析 50 个节点
-2025-06-25 12:59:56,386 - INFO - IP 185.22.155.71 归属地: 俄罗斯(RU) Zelenograd
-2025-06-25 12:59:56,396 - INFO - IP 195.154.200.40 归属地: 法国(FR) 巴黎
-2025-06-25 12:59:56,396 - INFO - IP 208.87.243.151 归属地: 美国(US) 洛杉矶
-2025-06-25 12:59:56,397 - INFO - IP 208.87.243.187 归属地: 美国(US) 洛杉矶
-2025-06-25 12:59:56,397 - INFO - IP 51.159.226.1 归属地: 法国(FR) 巴黎
-2025-06-25 12:59:57,896 - INFO - IP 195.154.200.40 归属地: 法国(FR) 巴黎
-2025-06-25 12:59:57,903 - INFO - IP 45.129.2.108 归属地: 俄罗斯联邦(RU) 莫斯科
-2025-06-25 12:59:57,904 - INFO - IP 46.17.41.217 归属地: 俄罗斯联邦(RU) 莫斯科
-2025-06-25 12:59:57,905 - INFO - IP 45.129.2.248 归属地: 俄罗斯联邦(RU) 莫斯科
-2025-06-25 12:59:57,905 - INFO - IP 46.29.163.171 归属地: 俄罗斯联邦(RU) 莫斯科
-2025-06-25 12:59:59,400 - INFO - IP 51.159.111.32 归属地: 法国(FR) 巴黎
-2025-06-25 12:59:59,407 - INFO - IP 51.159.226.1 归属地: 法国(FR) 巴黎
-2025-06-25 12:59:59,409 - INFO - IP 46.17.41.5 归属地: 俄罗斯联邦(RU) 莫斯科
-2025-06-25 12:59:59,409 - INFO - IP 1.162.51.106 归属地: 台湾(TW) 台北市
-2025-06-25 12:59:59,410 - INFO - IP 108.181.5.130 归属地: 美国(US) 洛杉矶
-2025-06-25 12:59:59,420 - WARNING - Google DNS 解析失败: tw-2.534582.xyz, 错误: 'A' object has no attribute 'ttl'
-2025-06-25 12:59:59,434 - WARNING - Cloudflare DNS 解析失败: tw-2.534582.xyz, 错误: 'A' object has no attribute 'ttl'
-2025-06-25 12:59:59,444 - WARNING - Quad9 DNS 解析失败: tw-2.534582.xyz, 错误: 'A' object has no attribute 'ttl'
-2025-06-25 12:59:59,450 - WARNING - MX记录解析失败: tw-2.534582.xyz, 错误: The DNS response does not contain an answer to the question: tw-2.534582.xyz. IN MX
-2025-06-25 12:59:59,506 - WARNING - 未找到非CDN IP，使用最后解析结果: tw-2.534582.xyz -> 111.240.201.93
-2025-06-25 12:59:59,928 - WARNING - 落地IP验证失败: 111.240.201.93 (域名: tw-2.534582.xyz), 错误: HTTPSConnectionPool(host='111.240.201.93', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, "[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: IP address mismatch, certificate is not valid for '111.240.201.93'. (_ssl.c:1016)")))
-2025-06-25 12:59:59,928 - WARNING - IP 111.240.201.93 不是落地IP，跳过节点
-2025-06-25 13:00:00,904 - INFO - IP 108.181.3.68 归属地: 美国(US) 洛杉矶
-2025-06-25 13:00:00,912 - INFO - IP 185.22.155.105 归属地: 俄罗斯(RU) Zelenograd
-2025-06-25 13:00:00,913 - INFO - IP 176.32.35.226 归属地: 俄罗斯联邦(RU) 莫斯科
-2025-06-25 13:00:00,915 - INFO - IP 195.154.200.178 归属地: 法国(FR) 巴黎
-2025-06-25 13:00:01,142 - WARNING - Google DNS 解析失败: aus.pagate.top, 错误: 'A' object has no attribute 'ttl'
-2025-06-25 13:00:01,161 - WARNING - Cloudflare DNS 解析失败: aus.pagate.top, 错误: 'A' object has no attribute 'ttl'
-2025-06-25 13:00:01,200 - WARNING - Quad9 DNS 解析失败: aus.pagate.top, 错误: 'A' object has no attribute 'ttl'
-2025-06-25 13:00:01,418 - WARNING - MX记录解析失败: aus.pagate.top, 错误: The DNS response does not contain an answer to the question: aus.pagate.top. IN MX
-2025-06-25 13:00:01,432 - INFO - IP 108.181.24.77 归属地: 美国(US) 洛杉矶
-2025-06-25 13:00:01,598 - WARNING - 未找到非CDN IP，使用最后解析结果: aus.pagate.top -> 129.146.241.150
-2025-06-25 13:00:01,758 - WARNING - 落地IP验证失败: 129.146.241.150 (域名: aus.pagate.top), 错误: HTTPSConnectionPool(host='129.146.241.150', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLError(1, '[SSL: TLSV1_UNRECOGNIZED_NAME] tlsv1 unrecognized name (_ssl.c:1016)')))
-2025-06-25 13:00:01,758 - WARNING - IP 129.146.241.150 不是落地IP，跳过节点
-2025-06-25 13:00:02,408 - INFO - IP 108.181.24.77 归属地: 美国(US) 洛杉矶
-2025-06-25 13:00:02,417 - INFO - IP 47.74.34.102 归属地: 日本(JP) 东京
-2025-06-25 13:00:02,419 - INFO - IP 104.17.70.206 归属地: 加拿大(CA) 多伦多
-2025-06-25 13:00:02,623 - WARNING - Google DNS 解析失败: dozo01.flztjc.top, 错误: 'A' object has no attribute 'ttl'
-2025-06-25 13:00:02,937 - INFO - IP 129.146.241.150 归属地: 美国(US) 凤凰城
-2025-06-25 13:00:03,065 - WARNING - Cloudflare DNS 解析失败: dozo01.flztjc.top, 错误: 'A' object has no attribute 'ttl'
-2025-06-25 13:00:03,263 - INFO - IP 74.48.18.240 归属地: 美国(US) 洛杉矶
-2025-06-25 13:00:03,332 - WARNING - Quad9 DNS 解析失败: dozo01.flztjc.top, 错误: 'A' object has no attribute 'ttl'
-2025-06-25 13:00:03,848 - WARNING - MX记录解析失败: dozo01.flztjc.top, 错误: The DNS response does not contain an answer to the question: dozo01.flztjc.top. IN MX
-2025-06-25 13:00:03,922 - INFO - IP 104.17.70.206 归属地: 加拿大(CA) 多伦多
-2025-06-25 13:00:03,923 - INFO - IP 120.233.128.68 归属地: 中国(CN) 广州市
-2025-06-25 13:00:05,289 - WARNING - 未找到非CDN IP，使用最后解析结果: dozo01.flztjc.top -> 125.88.196.143
-2025-06-25 13:00:15,300 - WARNING - 落地IP验证失败: 125.88.196.143 (域名: dozo01.flztjc.top), 错误: HTTPSConnectionPool(host='125.88.196.143', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f29e2107010>, 'Connection to 125.88.196.143 timed out. (connect timeout=10)'))
-2025-06-25 13:00:15,301 - WARNING - IP 125.88.196.143 不是落地IP，跳过节点
-2025-06-25 13:00:15,301 - INFO - IP节点 🇨🇦 加拿大 多伦多 01 无需测试，直接保留
-2025-06-25 13:00:15,301 - INFO - IP节点 🇨🇦 加拿大 多伦多 02 无需测试，直接保留
-2025-06-25 13:00:15,301 - INFO - IP节点 🇨🇳 中国 广州市 01 无需测试，直接保留
-2025-06-25 13:00:15,301 - INFO - IP节点 🇫🇷 法国 巴黎 01 无需测试，直接保留
-2025-06-25 13:00:15,301 - INFO - IP节点 🇫🇷 法国 巴黎 02 无需测试，直接保留
-2025-06-25 13:00:15,302 - INFO - IP节点 🇫🇷 法国 巴黎 03 无需测试，直接保留
-2025-06-25 13:00:15,302 - INFO - IP节点 🇫🇷 法国 巴黎 04 无需测试，直接保留
-2025-06-25 13:00:15,302 - INFO - IP节点 🇫🇷 法国 巴黎 05 无需测试，直接保留
-2025-06-25 13:00:15,302 - INFO - IP节点 🇫🇷 法国 巴黎 06 无需测试，直接保留
-2025-06-25 13:00:15,302 - INFO - IP节点 🇯🇵 日本 东京 01 无需测试，直接保留
-2025-06-25 13:00:15,302 - INFO - IP节点 🇷🇺 俄罗斯 Zelenograd 01 无需测试，直接保留
-2025-06-25 13:00:15,302 - INFO - IP节点 🇷🇺 俄罗斯 Zelenograd 02 无需测试，直接保留
-2025-06-25 13:00:15,302 - INFO - IP节点 🇷🇺 俄罗斯联邦 莫斯科 01 无需测试，直接保留
-2025-06-25 13:00:15,302 - INFO - IP节点 🇷🇺 俄罗斯联邦 莫斯科 02 无需测试，直接保留
-2025-06-25 13:00:15,302 - INFO - IP节点 🇷🇺 俄罗斯联邦 莫斯科 03 无需测试，直接保留
-2025-06-25 13:00:15,302 - INFO - IP节点 🇷🇺 俄罗斯联邦 莫斯科 04 无需测试，直接保留
-2025-06-25 13:00:15,302 - INFO - IP节点 🇷🇺 俄罗斯联邦 莫斯科 05 无需测试，直接保留
-2025-06-25 13:00:15,302 - INFO - IP节点 🇷🇺 俄罗斯联邦 莫斯科 06 无需测试，直接保留
-2025-06-25 13:00:15,302 - INFO - IP节点 🇹🇼 台湾 台北市 01 无需测试，直接保留
-2025-06-25 13:00:15,302 - INFO - IP节点 🇺🇸 美国 凤凰城 01 无需测试，直接保留
-2025-06-25 13:00:15,302 - INFO - IP节点 🇺🇸 美国 洛杉矶 01 无需测试，直接保留
-2025-06-25 13:00:15,302 - INFO - IP节点 🇺🇸 美国 洛杉矶 02 无需测试，直接保留
-2025-06-25 13:00:15,302 - INFO - IP节点 🇺🇸 美国 洛杉矶 03 无需测试，直接保留
-2025-06-25 13:00:15,302 - INFO - IP节点 🇺🇸 美国 洛杉矶 04 无需测试，直接保留
-2025-06-25 13:00:15,302 - INFO - IP节点 🇺🇸 美国 洛杉矶 05 无需测试，直接保留
-2025-06-25 13:00:15,303 - INFO - IP节点 🇺🇸 美国 洛杉矶 06 无需测试，直接保留
-2025-06-25 13:00:15,303 - INFO - IP节点 🇺🇸 美国 洛杉矶 07 无需测试，直接保留
-2025-06-25 13:00:15,303 - INFO - 最终保留 27 个通过测试的节点
-2025-06-25 13:00:15,303 - INFO - 成功将 27 个节点以base64格式写入 Node.txt
-2025-06-25 13:00:15,303 - INFO - 任务成功完成！
-25 13:00:15,302 - INFO - IP节点 🇺🇸 美国 洛杉矶 02 无需测试，直接保留
-2025-06-25 13:00:15,302 - INFO - IP节点 🇺🇸 美国 洛杉矶 03 无需测试，直接保留
-2025-06-25 13:00:15,302 - INFO - IP节点 🇺🇸 美国 洛杉矶 04 无需测试，直接保留
-2025-06-25 13:00:15,302 - INFO - IP节点 🇺🇸 美国 洛杉矶 05 无需测试，直接保留
-2025-06-25 13:00:15,303 - INFO - IP节点 🇺🇸 美国 洛杉矶 06 无需测试，直接保留
-2025-06-25 13:00:15,303 - INFO - IP节点 🇺🇸 美国 洛杉矶 07 无需测试，直接保留
-2025-06-25 13:00:15,303 - INFO - 最终保留 27 个通过测试的节点
-2025-06-25 13:00:15,303 - INFO - 成功将 27 个节点以base64格式写入 Node.txt
-2025-06-25 13:00:15,303 - INFO - 任务成功完成！
+2025-06-25 13:43:24,671 - INFO - 成功加载国旗映射表，共有 59 个国家码
+2025-06-25 13:43:24,671 - INFO - Force update mode: False
+2025-06-25 13:43:24,671 - INFO - 开始节点订阅管理任务...
+2025-06-25 13:43:26,200 - INFO - IP地理位置API可用
+2025-06-25 13:43:26,200 - INFO - 开始处理节点...
+2025-06-25 13:43:26,200 - INFO - 读取到 1 个有效订阅链接
+2025-06-25 13:43:26,200 - INFO - 正在拉取订阅 https://gist.githubusercontent.com/OpenSourceVision/4ef9e5f621efef1d4a4c36c37501c748/raw/node ...
+2025-06-25 13:43:27,861 - INFO - 从 https://gist.githubusercontent.com/OpenSourceVision/4ef9e5f621efef1d4a4c36c37501c748/raw/node 获取到 88 个节点
+2025-06-25 13:43:27,862 - INFO - 共收集到 88 个节点
+2025-06-25 13:43:27,862 - INFO - 成功解析 88 个节点
+2025-06-25 13:43:29,370 - INFO - IP 208.87.243.151 归属地: 美国(US) 洛杉矶
+2025-06-25 13:43:29,381 - INFO - IP 108.181.5.130 归属地: 美国(US) 洛杉矶
+2025-06-25 13:43:29,382 - INFO - IP 129.146.241.150 归属地: 美国(US) 凤凰城
+2025-06-25 13:43:29,393 - INFO - IP 108.181.24.77 归属地: 美国(US) 洛杉矶
+2025-06-25 13:43:29,394 - INFO - IP 208.87.243.187 归属地: 美国(US) 洛杉矶
+2025-06-25 13:43:30,879 - INFO - IP 74.48.18.240 归属地: 美国(US) 洛杉矶
+2025-06-25 13:43:30,889 - INFO - IP 108.181.3.68 归属地: 美国(US) 洛杉矶
+2025-06-25 13:43:30,891 - INFO - IP 37.19.198.244 归属地: 美国(US) 紐約
+2025-06-25 13:43:30,901 - INFO - IP 37.19.198.236 归属地: 美国(US) 紐約
+2025-06-25 13:43:30,901 - INFO - IP 37.19.198.160 归属地: 美国(US) 紐約
+2025-06-25 13:43:32,388 - INFO - IP 37.19.198.243 归属地: 美国(US) 紐約
+2025-06-25 13:43:32,397 - INFO - IP 194.5.215.59 归属地: 美国(US) 海厄利亞
+2025-06-25 13:43:32,398 - INFO - IP 156.146.38.170 归属地: 美国(US) 達拉斯
+2025-06-25 13:43:32,409 - INFO - IP 156.146.38.168 归属地: 美国(US) 達拉斯
+2025-06-25 13:43:32,410 - INFO - IP 156.146.38.167 归属地: 美国(US) 達拉斯
+2025-06-25 13:43:33,896 - INFO - IP 156.146.38.169 归属地: 美国(US) 達拉斯
+2025-06-25 13:43:33,905 - INFO - IP 184.170.241.194 归属地: 美国(US) 凤凰城
+2025-06-25 13:43:33,908 - INFO - IP 104.192.225.26 归属地: 美国(US) 洛杉矶
+2025-06-25 13:43:33,917 - INFO - IP 107.175.96.74 归属地: 美国(US) 水牛城
+2025-06-25 13:43:33,918 - INFO - IP 138.199.42.68 归属地: 美国(US) 芝加哥
+2025-06-25 13:43:35,405 - INFO - IP 173.244.56.6 归属地: 美国(US) 鳳凰城
+2025-06-25 13:43:35,413 - INFO - IP 173.244.56.9 归属地: 美国(US) 鳳凰城
+2025-06-25 13:43:35,416 - INFO - IP 107.155.57.51 归属地: 美国(US) 聖荷西
+2025-06-25 13:43:35,425 - INFO - IP 104.192.226.106 归属地: 美国(US) 洛杉矶
+2025-06-25 13:43:35,425 - INFO - IP 107.151.182.253 归属地: 美国(US) 洛杉矶
+2025-06-25 13:43:36,913 - INFO - IP 212.102.47.129 归属地: 美国(US) 西雅圖
+2025-06-25 13:43:36,921 - INFO - IP 212.102.47.131 归属地: 美国(US) 西雅圖
+2025-06-25 13:43:36,923 - INFO - IP 107.155.57.11 归属地: 美国(US) 聖荷西
+2025-06-25 13:43:36,933 - INFO - IP 23.251.121.242 归属地: 美国(US) 聖荷西
+2025-06-25 13:43:36,934 - INFO - IP 212.102.47.132 归属地: 美国(US) 西雅圖
+2025-06-25 13:43:38,423 - INFO - IP 45.55.2.232 归属地: 美国(US) 旧金山
+2025-06-25 13:43:38,428 - INFO - IP 79.110.53.169 归属地: 美国(US) 洛杉矶
+2025-06-25 13:43:38,432 - INFO - IP 192.9.148.64 归属地: 美国(US) San Jose
+2025-06-25 13:43:38,441 - INFO - IP 154.83.90.11 归属地: 美国(US) 洛杉矶
+2025-06-25 13:43:38,441 - INFO - IP 64.74.163.218 归属地: 加拿大(CA) Pointe-Claire
+2025-06-25 13:43:39,931 - INFO - IP 2.58.87.221 归属地: 美国(US) 洛杉矶
+2025-06-25 13:43:39,936 - INFO - IP 45.87.175.199 归属地: 美国(US) 紐約
+2025-06-25 13:43:39,939 - INFO - IP 2.58.87.221 归属地: 美国(US) 洛杉矶
+2025-06-25 13:43:39,948 - INFO - IP 92.118.112.111 归属地: 美国(US) 亚特兰大
+2025-06-25 13:43:39,950 - INFO - IP 2.58.87.221 归属地: 美国(US) 洛杉矶
+2025-06-25 13:43:41,439 - INFO - IP 129.146.133.226 归属地: 美国(US) 凤凰城
+2025-06-25 13:43:41,443 - INFO - IP 45.87.175.157 归属地: 美国(US) 紐約
+2025-06-25 13:43:41,446 - INFO - IP 67.220.95.102 归属地: 美国(US) Ashburn
+2025-06-25 13:43:41,456 - INFO - IP 67.220.95.102 归属地: 美国(US) Ashburn
+2025-06-25 13:43:41,458 - WARNING - HTTP错误: http://ip-api.com/json/38.121.43.71?lang=zh-CN: 429 Client Error: Too Many Requests for url: http://ip-api.com/json/38.121.43.71?lang=zh-CN (尝试 1/3)
+2025-06-25 13:43:42,946 - WARNING - HTTP错误: http://ip-api.com/json/38.121.43.71?lang=zh-CN: 429 Client Error: Too Many Requests for url: http://ip-api.com/json/38.121.43.71?lang=zh-CN (尝试 1/3)
+2025-06-25 13:43:42,951 - WARNING - HTTP错误: http://ip-api.com/json/38.121.43.71?lang=zh-CN: 429 Client Error: Too Many Requests for url: http://ip-api.com/json/38.121.43.71?lang=zh-CN (尝试 1/3)
+2025-06-25 13:43:42,954 - WARNING - HTTP错误: http://ip-api.com/json/142.202.49.84?lang=zh-CN: 429 Client Error: Too Many Requests for url: http://ip-api.com/json/142.202.49.84?lang=zh-CN (尝试 1/3)
+2025-06-25 13:43:42,963 - WARNING - HTTP错误: http://ip-api.com/json/142.202.49.84?lang=zh-CN: 429 Client Error: Too Many Requests for url: http://ip-api.com/json/142.202.49.84?lang=zh-CN (尝试 1/3)
+2025-06-25 13:43:43,966 - WARNING - HTTP错误: http://ip-api.com/json/38.121.43.71?lang=zh-CN: 429 Client Error: Too Many Requests for url: http://ip-api.com/json/38.121.43.71?lang=zh-CN (尝试 2/3)
+2025-06-25 13:43:45,454 - WARNING - HTTP错误: http://ip-api.com/json/38.121.43.71?lang=zh-CN: 429 Client Error: Too Many Requests for url: http://ip-api.com/json/38.121.43.71?lang=zh-CN (尝试 2/3)
+2025-06-25 13:43:45,459 - WARNING - HTTP错误: http://ip-api.com/json/38.121.43.71?lang=zh-CN: 429 Client Error: Too Many Requests for url: http://ip-api.com/json/38.121.43.71?lang=zh-CN (尝试 2/3)
+2025-06-25 13:43:45,461 - WARNING - HTTP错误: http://ip-api.com/json/142.202.49.84?lang=zh-CN: 429 Client Error: Too Many Requests for url: http://ip-api.com/json/142.202.49.84?lang=zh-CN (尝试 2/3)
+2025-06-25 13:43:45,470 - WARNING - HTTP错误: http://ip-api.com/json/142.202.49.84?lang=zh-CN: 429 Client Error: Too Many Requests for url: http://ip-api.com/json/142.202.49.84?lang=zh-CN (尝试 2/3)
+2025-06-25 13:43:47,474 - WARNING - HTTP错误: http://ip-api.com/json/38.121.43.71?lang=zh-CN: 429 Client Error: Too Many Requests for url: http://ip-api.com/json/38.121.43.71?lang=zh-CN (尝试 3/3)
+2025-06-25 13:43:47,474 - ERROR - 无法获取 http://ip-api.com/json/38.121.43.71?lang=zh-CN，已尝试 3 次
+2025-06-25 13:43:47,474 - WARNING - IP归属地查询失败: 38.121.43.71
+2025-06-25 13:43:48,962 - WARNING - HTTP错误: http://ip-api.com/json/38.121.43.71?lang=zh-CN: 429 Client Error: Too Many Requests for url: http://ip-api.com/json/38.121.43.71?lang=zh-CN (尝试 3/3)
+2025-06-25 13:43:48,962 - ERROR - 无法获取 http://ip-api.com/json/38.121.43.71?lang=zh-CN，已尝试 3 次
+2025-06-25 13:43:48,962 - WARNING - IP归属地查询失败: 38.121.43.71
+2025-06-25 13:43:48,967 - WARNING - HTTP错误: http://ip-api.com/json/38.121.43.71?lang=zh-CN: 429 Client Error: Too Many Requests for url: http://ip-api.com/json/38.121.43.71?lang=zh-CN (尝试 3/3)
+2025-06-25 13:43:48,967 - ERROR - 无法获取 http://ip-api.com/json/38.121.43.71?lang=zh-CN，已尝试 3 次
+2025-06-25 13:43:48,968 - WARNING - IP归属地查询失败: 38.121.43.71
+2025-06-25 13:43:48,968 - WARNING - HTTP错误: http://ip-api.com/json/142.202.49.84?lang=zh-CN: 429 Client Error: Too Many Requests for url: http://ip-api.com/json/142.202.49.84?lang=zh-CN (尝试 3/3)
+2025-06-25 13:43:48,968 - ERROR - 无法获取 http://ip-api.com/json/142.202.49.84?lang=zh-CN，已尝试 3 次
+2025-06-25 13:43:48,968 - WARNING - IP归属地查询失败: 142.202.49.84
+2025-06-25 13:43:48,978 - WARNING - HTTP错误: http://ip-api.com/json/142.202.49.84?lang=zh-CN: 429 Client Error: Too Many Requests for url: http://ip-api.com/json/142.202.49.84?lang=zh-CN (尝试 3/3)
+2025-06-25 13:43:48,978 - ERROR - 无法获取 http://ip-api.com/json/142.202.49.84?lang=zh-CN，已尝试 3 次
+2025-06-25 13:43:48,978 - WARNING - IP归属地查询失败: 142.202.49.84
+2025-06-25 13:43:48,982 - WARNING - HTTP错误: http://ip-api.com/json/38.121.43.71?lang=zh-CN: 429 Client Error: Too Many Requests for url: http://ip-api.com/json/38.121.43.71?lang=zh-CN (尝试 1/3)
+2025-06-25 13:43:50,474 - WARNING - HTTP错误: http://ip-api.com/json/142.202.49.84?lang=zh-CN: 429 Client Error: Too Many Requests for url: http://ip-api.com/json/142.202.49.84?lang=zh-CN (尝试 1/3)
+2025-06-25 13:43:50,475 - WARNING - HTTP错误: http://ip-api.com/json/38.121.43.71?lang=zh-CN: 429 Client Error: Too Many Requests for url: http://ip-api.com/json/38.121.43.71?lang=zh-CN (尝试 1/3)
+2025-06-25 13:43:50,475 - WARNING - HTTP错误: http://ip-api.com/json/142.202.49.84?lang=zh-CN: 429 Client Error: Too Many Requests for url: http://ip-api.com/json/142.202.49.84?lang=zh-CN (尝试 1/3)
+2025-06-25 13:43:50,485 - WARNING - HTTP错误: http://ip-api.com/json/216.39.248.133?lang=zh-CN: 429 Client Error: Too Many Requests for url: http://ip-api.com/json/216.39.248.133?lang=zh-CN (尝试 1/3)
+2025-06-25 13:43:51,490 - WARNING - HTTP错误: http://ip-api.com/json/38.121.43.71?lang=zh-CN: 429 Client Error: Too Many Requests for url: http://ip-api.com/json/38.121.43.71?lang=zh-CN (尝试 2/3)
+2025-06-25 13:43:52,981 - WARNING - HTTP错误: http://ip-api.com/json/142.202.49.84?lang=zh-CN: 429 Client Error: Too Many Requests for url: http://ip-api.com/json/142.202.49.84?lang=zh-CN (尝试 2/3)
+2025-06-25 13:43:52,982 - WARNING - HTTP错误: http://ip-api.com/json/38.121.43.71?lang=zh-CN: 429 Client Error: Too Many Requests for url: http://ip-api.com/json/38.121.43.71?lang=zh-CN (尝试 2/3)
+2025-06-25 13:43:52,984 - WARNING - HTTP错误: http://ip-api.com/json/142.202.49.84?lang=zh-CN: 429 Client Error: Too Many Requests for url: http://ip-api.com/json/142.202.49.84?lang=zh-CN (尝试 2/3)
+2025-06-25 13:43:52,992 - WARNING - HTTP错误: http://ip-api.com/json/216.39.248.133?lang=zh-CN: 429 Client Error: Too Many Requests for url: http://ip-api.com/json/216.39.248.133?lang=zh-CN (尝试 2/3)
+2025-06-25 13:43:54,998 - WARNING - HTTP错误: http://ip-api.com/json/38.121.43.71?lang=zh-CN: 429 Client Error: Too Many Requests for url: http://ip-api.com/json/38.121.43.71?lang=zh-CN (尝试 3/3)
+2025-06-25 13:43:54,998 - ERROR - 无法获取 http://ip-api.com/json/38.121.43.71?lang=zh-CN，已尝试 3 次
+2025-06-25 13:43:54,998 - WARNING - IP归属地查询失败: 38.121.43.71
+2025-06-25 13:43:56,489 - WARNING - HTTP错误: http://ip-api.com/json/142.202.49.84?lang=zh-CN: 429 Client Error: Too Many Requests for url: http://ip-api.com/json/142.202.49.84?lang=zh-CN (尝试 3/3)
+2025-06-25 13:43:56,489 - ERROR - 无法获取 http://ip-api.com/json/142.202.49.84?lang=zh-CN，已尝试 3 次
+2025-06-25 13:43:56,489 - WARNING - IP归属地查询失败: 142.202.49.84
+2025-06-25 13:43:56,490 - WARNING - HTTP错误: http://ip-api.com/json/38.121.43.71?lang=zh-CN: 429 Client Error: Too Many Requests for url: http://ip-api.com/json/38.121.43.71?lang=zh-CN (尝试 3/3)
+2025-06-25 13:43:56,490 - ERROR - 无法获取 http://ip-api.com/json/38.121.43.71?lang=zh-CN，已尝试 3 次
+2025-06-25 13:43:56,490 - WARNING - IP归属地查询失败: 38.121.43.71
+2025-06-25 13:43:56,491 - WARNING - HTTP错误: http://ip-api.com/json/142.202.49.84?lang=zh-CN: 429 Client Error: Too Many Requests for url: http://ip-api.com/json/142.202.49.84?lang=zh-CN (尝试 3/3)
+2025-06-25 13:43:56,491 - ERROR - 无法获取 http://ip-api.com/json/142.202.49.84?lang=zh-CN，已尝试 3 次
+2025-06-25 13:43:56,491 - WARNING - IP归属地查询失败: 142.202.49.84
+2025-06-25 13:43:56,500 - WARNING - HTTP错误: http://ip-api.com/json/216.39.248.133?lang=zh-CN: 429 Client Error: Too Many Requests for url: http://ip-api.com/json/216.39.248.133?lang=zh-CN (尝试 3/3)
+2025-06-25 13:43:56,500 - ERROR - 无法获取 http://ip-api.com/json/216.39.248.133?lang=zh-CN，已尝试 3 次
+2025-06-25 13:43:56,500 - WARNING - IP归属地查询失败: 216.39.248.133
+2025-06-25 13:43:56,506 - WARNING - HTTP错误: http://ip-api.com/json/38.75.136.28?lang=zh-CN: 429 Client Error: Too Many Requests for url: http://ip-api.com/json/38.75.136.28?lang=zh-CN (尝试 1/3)
+2025-06-25 13:43:57,997 - WARNING - HTTP错误: http://ip-api.com/json/142.202.49.84?lang=zh-CN: 429 Client Error: Too Many Requests for url: http://ip-api.com/json/142.202.49.84?lang=zh-CN (尝试 1/3)
+2025-06-25 13:43:57,999 - WARNING - HTTP错误: http://ip-api.com/json/38.121.43.71?lang=zh-CN: 429 Client Error: Too Many Requests for url: http://ip-api.com/json/38.121.43.71?lang=zh-CN (尝试 1/3)
+2025-06-25 13:43:57,999 - WARNING - HTTP错误: http://ip-api.com/json/38.91.107.245?lang=zh-CN: 429 Client Error: Too Many Requests for url: http://ip-api.com/json/38.91.107.245?lang=zh-CN (尝试 1/3)
+2025-06-25 13:43:58,007 - WARNING - HTTP错误: http://ip-api.com/json/38.121.43.71?lang=zh-CN: 429 Client Error: Too Many Requests for url: http://ip-api.com/json/38.121.43.71?lang=zh-CN (尝试 1/3)
+2025-06-25 13:43:59,014 - WARNING - HTTP错误: http://ip-api.com/json/38.75.136.28?lang=zh-CN: 429 Client Error: Too Many Requests for url: http://ip-api.com/json/38.75.136.28?lang=zh-CN (尝试 2/3)
+2025-06-25 13:44:00,504 - WARNING - HTTP错误: http://ip-api.com/json/142.202.49.84?lang=zh-CN: 429 Client Error: Too Many Requests for url: http://ip-api.com/json/142.202.49.84?lang=zh-CN (尝试 2/3)
+2025-06-25 13:44:00,506 - WARNING - HTTP错误: http://ip-api.com/json/38.121.43.71?lang=zh-CN: 429 Client Error: Too Many Requests for url: http://ip-api.com/json/38.121.43.71?lang=zh-CN (尝试 2/3)
+2025-06-25 13:44:00,507 - WARNING - HTTP错误: http://ip-api.com/json/38.91.107.245?lang=zh-CN: 429 Client Error: Too Many Requests for url: http://ip-api.com/json/38.91.107.245?lang=zh-CN (尝试 2/3)
+2025-06-25 13:44:00,515 - WARNING - HTTP错误: http://ip-api.com/json/38.121.43.71?lang=zh-CN: 429 Client Error: Too Many Requests for url: http://ip-api.com/json/38.121.43.71?lang=zh-CN (尝试 2/3)
+2025-06-25 13:44:02,522 - WARNING - HTTP错误: http://ip-api.com/json/38.75.136.28?lang=zh-CN: 429 Client Error: Too Many Requests for url: http://ip-api.com/json/38.75.136.28?lang=zh-CN (尝试 3/3)
+2025-06-25 13:44:02,522 - ERROR - 无法获取 http://ip-api.com/json/38.75.136.28?lang=zh-CN，已尝试 3 次
+2025-06-25 13:44:02,522 - WARNING - IP归属地查询失败: 38.75.136.28
+2025-06-25 13:44:04,012 - WARNING - HTTP错误: http://ip-api.com/json/142.202.49.84?lang=zh-CN: 429 Client Error: Too Many Requests for url: http://ip-api.com/json/142.202.49.84?lang=zh-CN (尝试 3/3)
+2025-06-25 13:44:04,012 - ERROR - 无法获取 http://ip-api.com/json/142.202.49.84?lang=zh-CN，已尝试 3 次
+2025-06-25 13:44:04,012 - WARNING - IP归属地查询失败: 142.202.49.84
+2025-06-25 13:44:04,013 - WARNING - HTTP错误: http://ip-api.com/json/38.121.43.71?lang=zh-CN: 429 Client Error: Too Many Requests for url: http://ip-api.com/json/38.121.43.71?lang=zh-CN (尝试 3/3)
+2025-06-25 13:44:04,013 - ERROR - 无法获取 http://ip-api.com/json/38.121.43.71?lang=zh-CN，已尝试 3 次
+2025-06-25 13:44:04,013 - WARNING - IP归属地查询失败: 38.121.43.71
+2025-06-25 13:44:04,014 - WARNING - HTTP错误: http://ip-api.com/json/38.91.107.245?lang=zh-CN: 429 Client Error: Too Many Requests for url: http://ip-api.com/json/38.91.107.245?lang=zh-CN (尝试 3/3)
+2025-06-25 13:44:04,014 - ERROR - 无法获取 http://ip-api.com/json/38.91.107.245?lang=zh-CN，已尝试 3 次
+2025-06-25 13:44:04,014 - WARNING - IP归属地查询失败: 38.91.107.245
+2025-06-25 13:44:04,023 - WARNING - HTTP错误: http://ip-api.com/json/38.121.43.71?lang=zh-CN: 429 Client Error: Too Many Requests for url: http://ip-api.com/json/38.121.43.71?lang=zh-CN (尝试 3/3)
+2025-06-25 13:44:04,024 - ERROR - 无法获取 http://ip-api.com/json/38.121.43.71?lang=zh-CN，已尝试 3 次
+2025-06-25 13:44:04,024 - WARNING - IP归属地查询失败: 38.121.43.71
+2025-06-25 13:44:04,030 - WARNING - HTTP错误: http://ip-api.com/json/38.121.43.71?lang=zh-CN: 429 Client Error: Too Many Requests for url: http://ip-api.com/json/38.121.43.71?lang=zh-CN (尝试 1/3)
+2025-06-25 13:44:05,520 - WARNING - HTTP错误: http://ip-api.com/json/38.121.43.71?lang=zh-CN: 429 Client Error: Too Many Requests for url: http://ip-api.com/json/38.121.43.71?lang=zh-CN (尝试 1/3)
+2025-06-25 13:44:05,521 - WARNING - HTTP错误: http://ip-api.com/json/38.121.43.71?lang=zh-CN: 429 Client Error: Too Many Requests for url: http://ip-api.com/json/38.121.43.71?lang=zh-CN (尝试 1/3)
+2025-06-25 13:44:05,522 - WARNING - HTTP错误: http://ip-api.com/json/38.121.43.71?lang=zh-CN: 429 Client Error: Too Many Requests for url: http://ip-api.com/json/38.121.43.71?lang=zh-CN (尝试 1/3)
+2025-06-25 13:44:05,531 - WARNING - HTTP错误: http://ip-api.com/json/38.121.43.71?lang=zh-CN: 429 Client Error: Too Many Requests for url: http://ip-api.com/json/38.121.43.71?lang=zh-CN (尝试 1/3)
+2025-06-25 13:44:06,538 - WARNING - HTTP错误: http://ip-api.com/json/38.121.43.71?lang=zh-CN: 429 Client Error: Too Many Requests for url: http://ip-api.com/json/38.121.43.71?lang=zh-CN (尝试 2/3)
+2025-06-25 13:44:08,028 - WARNING - HTTP错误: http://ip-api.com/json/38.121.43.71?lang=zh-CN: 429 Client Error: Too Many Requests for url: http://ip-api.com/json/38.121.43.71?lang=zh-CN (尝试 2/3)
+2025-06-25 13:44:08,028 - WARNING - HTTP错误: http://ip-api.com/json/38.121.43.71?lang=zh-CN: 429 Client Error: Too Many Requests for url: http://ip-api.com/json/38.121.43.71?lang=zh-CN (尝试 2/3)
+2025-06-25 13:44:08,030 - WARNING - HTTP错误: http://ip-api.com/json/38.121.43.71?lang=zh-CN: 429 Client Error: Too Many Requests for url: http://ip-api.com/json/38.121.43.71?lang=zh-CN (尝试 2/3)
+2025-06-25 13:44:08,039 - WARNING - HTTP错误: http://ip-api.com/json/38.121.43.71?lang=zh-CN: 429 Client Error: Too Many Requests for url: http://ip-api.com/json/38.121.43.71?lang=zh-CN (尝试 2/3)
+2025-06-25 13:44:10,258 - WARNING - 请求失败: http://ip-api.com/json/38.121.43.71?lang=zh-CN: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer')) (尝试 3/3)
+2025-06-25 13:44:10,258 - ERROR - 无法获取 http://ip-api.com/json/38.121.43.71?lang=zh-CN，已尝试 3 次
+2025-06-25 13:44:10,258 - WARNING - IP归属地查询失败: 38.121.43.71
+2025-06-25 13:44:11,547 - WARNING - 请求失败: http://ip-api.com/json/38.121.43.71?lang=zh-CN: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')) (尝试 3/3)
+2025-06-25 13:44:11,547 - ERROR - 无法获取 http://ip-api.com/json/38.121.43.71?lang=zh-CN，已尝试 3 次
+2025-06-25 13:44:11,548 - WARNING - IP归属地查询失败: 38.121.43.71
+2025-06-25 13:44:11,743 - WARNING - 请求失败: http://ip-api.com/json/38.121.43.71?lang=zh-CN: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer')) (尝试 3/3)
+2025-06-25 13:44:11,744 - ERROR - 无法获取 http://ip-api.com/json/38.121.43.71?lang=zh-CN，已尝试 3 次
+2025-06-25 13:44:11,744 - WARNING - IP归属地查询失败: 38.121.43.71
+2025-06-25 13:44:11,751 - WARNING - 请求失败: http://ip-api.com/json/38.121.43.71?lang=zh-CN: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer')) (尝试 3/3)
+2025-06-25 13:44:11,751 - ERROR - 无法获取 http://ip-api.com/json/38.121.43.71?lang=zh-CN，已尝试 3 次
+2025-06-25 13:44:11,751 - WARNING - IP归属地查询失败: 38.121.43.71
+2025-06-25 13:44:13,075 - WARNING - HTTP错误: http://ip-api.com/json/69.50.95.245?lang=zh-CN: 429 Client Error: Too Many Requests for url: http://ip-api.com/json/69.50.95.245?lang=zh-CN (尝试 1/3)
+2025-06-25 13:44:13,253 - WARNING - HTTP错误: http://ip-api.com/json/162.251.63.123?lang=zh-CN: 429 Client Error: Too Many Requests for url: http://ip-api.com/json/162.251.63.123?lang=zh-CN (尝试 1/3)
+2025-06-25 13:44:15,582 - WARNING - HTTP错误: http://ip-api.com/json/69.50.95.245?lang=zh-CN: 429 Client Error: Too Many Requests for url: http://ip-api.com/json/69.50.95.245?lang=zh-CN (尝试 2/3)
+2025-06-25 13:44:15,761 - WARNING - HTTP错误: http://ip-api.com/json/162.251.63.123?lang=zh-CN: 429 Client Error: Too Many Requests for url: http://ip-api.com/json/162.251.63.123?lang=zh-CN (尝试 2/3)
+2025-06-25 13:44:19,090 - WARNING - HTTP错误: http://ip-api.com/json/69.50.95.245?lang=zh-CN: 429 Client Error: Too Many Requests for url: http://ip-api.com/json/69.50.95.245?lang=zh-CN (尝试 3/3)
+2025-06-25 13:44:19,090 - ERROR - 无法获取 http://ip-api.com/json/69.50.95.245?lang=zh-CN，已尝试 3 次
+2025-06-25 13:44:19,090 - WARNING - IP归属地查询失败: 69.50.95.245
+2025-06-25 13:44:19,268 - WARNING - HTTP错误: http://ip-api.com/json/162.251.63.123?lang=zh-CN: 429 Client Error: Too Many Requests for url: http://ip-api.com/json/162.251.63.123?lang=zh-CN (尝试 3/3)
+2025-06-25 13:44:19,269 - ERROR - 无法获取 http://ip-api.com/json/162.251.63.123?lang=zh-CN，已尝试 3 次
+2025-06-25 13:44:19,269 - WARNING - IP归属地查询失败: 162.251.63.123
+2025-06-25 13:44:20,599 - WARNING - HTTP错误: http://ip-api.com/json/38.110.1.197?lang=zh-CN: 429 Client Error: Too Many Requests for url: http://ip-api.com/json/38.110.1.197?lang=zh-CN (尝试 1/3)
+2025-06-25 13:44:21,192 - WARNING - 请求失败: http://ip-api.com/json/38.121.43.71?lang=zh-CN: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer')) (尝试 1/3)
+2025-06-25 13:44:21,580 - WARNING - 请求超时: http://ip-api.com/json/38.121.43.71?lang=zh-CN (尝试 3/3)
+2025-06-25 13:44:21,581 - ERROR - 无法获取 http://ip-api.com/json/38.121.43.71?lang=zh-CN，已尝试 3 次
+2025-06-25 13:44:21,581 - WARNING - IP归属地查询失败: 38.121.43.71
+2025-06-25 13:44:21,914 - WARNING - 请求超时: http://ip-api.com/json/38.121.43.71?lang=zh-CN (尝试 1/3)
+2025-06-25 13:44:23,132 - WARNING - HTTP错误: http://ip-api.com/json/38.110.1.197?lang=zh-CN: 429 Client Error: Too Many Requests for url: http://ip-api.com/json/38.110.1.197?lang=zh-CN (尝试 2/3)
+2025-06-25 13:44:23,136 - WARNING - HTTP错误: http://ip-api.com/json/142.202.49.84?lang=zh-CN: 429 Client Error: Too Many Requests for url: http://ip-api.com/json/142.202.49.84?lang=zh-CN (尝试 1/3)
+2025-06-25 13:44:23,284 - WARNING - 请求超时: http://ip-api.com/json/38.121.43.71?lang=zh-CN (尝试 1/3)
+2025-06-25 13:44:24,847 - WARNING - 请求失败: http://ip-api.com/json/38.121.43.71?lang=zh-CN: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer')) (尝试 2/3)
+2025-06-25 13:44:25,684 - WARNING - HTTP错误: http://ip-api.com/json/142.202.49.84?lang=zh-CN: 429 Client Error: Too Many Requests for url: http://ip-api.com/json/142.202.49.84?lang=zh-CN (尝试 2/3)
+2025-06-25 13:44:26,207 - WARNING - 请求失败: http://ip-api.com/json/38.121.43.71?lang=zh-CN: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer')) (尝试 2/3)
+2025-06-25 13:44:26,659 - WARNING - HTTP错误: http://ip-api.com/json/38.110.1.197?lang=zh-CN: 429 Client Error: Too Many Requests for url: http://ip-api.com/json/38.110.1.197?lang=zh-CN (尝试 3/3)
+2025-06-25 13:44:26,659 - ERROR - 无法获取 http://ip-api.com/json/38.110.1.197?lang=zh-CN，已尝试 3 次
+2025-06-25 13:44:26,659 - WARNING - IP归属地查询失败: 38.110.1.197
+2025-06-25 13:44:28,167 - INFO - IP 23.157.40.101 归属地: 美国(US) 圣克拉拉
+2025-06-25 13:44:28,775 - WARNING - 请求失败: http://ip-api.com/json/38.121.43.71?lang=zh-CN: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer')) (尝试 3/3)
+2025-06-25 13:44:28,775 - ERROR - 无法获取 http://ip-api.com/json/38.121.43.71?lang=zh-CN，已尝试 3 次
+2025-06-25 13:44:28,775 - WARNING - IP归属地查询失败: 38.121.43.71
+2025-06-25 13:44:29,231 - INFO - IP 142.202.49.84 归属地: 美国(US) Ashburn
+2025-06-25 13:44:29,675 - INFO - IP 185.22.155.71 归属地: 俄罗斯(RU) Zelenograd
+2025-06-25 13:44:30,135 - WARNING - 请求失败: http://ip-api.com/json/38.121.43.71?lang=zh-CN: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer')) (尝试 3/3)
+2025-06-25 13:44:30,135 - ERROR - 无法获取 http://ip-api.com/json/38.121.43.71?lang=zh-CN，已尝试 3 次
+2025-06-25 13:44:30,135 - WARNING - IP归属地查询失败: 38.121.43.71
+2025-06-25 13:44:30,302 - INFO - IP 45.129.2.108 归属地: 俄罗斯联邦(RU) 莫斯科
+2025-06-25 13:44:30,739 - INFO - IP 46.17.41.217 归属地: 俄罗斯联邦(RU) 莫斯科
+2025-06-25 13:44:31,183 - INFO - IP 45.129.2.248 归属地: 俄罗斯联邦(RU) 莫斯科
+2025-06-25 13:44:31,643 - INFO - IP 176.32.35.226 归属地: 俄罗斯联邦(RU) 莫斯科
+2025-06-25 13:44:31,810 - INFO - IP 46.29.163.171 归属地: 俄罗斯联邦(RU) 莫斯科
+2025-06-25 13:44:32,251 - INFO - IP 46.17.41.5 归属地: 俄罗斯联邦(RU) 莫斯科
+2025-06-25 13:44:32,691 - INFO - IP 185.22.155.105 归属地: 俄罗斯(RU) Zelenograd
+2025-06-25 13:44:33,151 - INFO - IP 45.151.62.54 归属地: 俄罗斯联邦(RU) 莫斯科
+2025-06-25 13:44:33,318 - INFO - IP 195.58.49.84 归属地: 俄罗斯联邦(RU) 圣彼得堡
+2025-06-25 13:44:33,711 - WARNING - 请求超时: http://ip-api.com/json/38.121.43.71?lang=zh-CN (尝试 2/3)
+2025-06-25 13:44:33,805 - INFO - IP 68.183.227.236 归属地: 新加坡(SG) 新加坡
+2025-06-25 13:44:34,198 - INFO - IP 68.183.227.4 归属地: 新加坡(SG) 新加坡
+2025-06-25 13:44:34,659 - INFO - IP 68.183.235.122 归属地: 新加坡(SG) 新加坡
+2025-06-25 13:44:34,826 - INFO - IP 68.183.227.45 归属地: 新加坡(SG) 新加坡
+2025-06-25 13:44:35,314 - INFO - IP 64.176.85.73 归属地: 新加坡(SG) 新加坡
+2025-06-25 13:44:35,709 - INFO - IP 5.223.55.99 归属地: 新加坡(SG) 新加坡
+2025-06-25 13:44:37,431 - WARNING - 请求失败: http://ip-api.com/json/38.121.43.71?lang=zh-CN: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer')) (尝试 3/3)
+2025-06-25 13:44:37,431 - ERROR - 无法获取 http://ip-api.com/json/38.121.43.71?lang=zh-CN，已尝试 3 次
+2025-06-25 13:44:37,432 - WARNING - IP归属地查询失败: 38.121.43.71
+2025-06-25 13:44:37,432 - INFO - IP节点 🇨🇦 加拿大 Pointe-Claire 01 无需测试，直接保留
+2025-06-25 13:44:37,432 - INFO - IP节点 🇷🇺 俄罗斯 Zelenograd 01 无需测试，直接保留
+2025-06-25 13:44:37,432 - INFO - IP节点 🇷🇺 俄罗斯 Zelenograd 02 无需测试，直接保留
+2025-06-25 13:44:37,433 - INFO - IP节点 🇷🇺 俄罗斯联邦 圣彼得堡 01 无需测试，直接保留
+2025-06-25 13:44:37,433 - INFO - IP节点 🇷🇺 俄罗斯联邦 莫斯科 01 无需测试，直接保留
+2025-06-25 13:44:37,433 - INFO - IP节点 🇷🇺 俄罗斯联邦 莫斯科 02 无需测试，直接保留
+2025-06-25 13:44:37,433 - INFO - IP节点 🇷🇺 俄罗斯联邦 莫斯科 03 无需测试，直接保留
+2025-06-25 13:44:37,433 - INFO - IP节点 🇷🇺 俄罗斯联邦 莫斯科 04 无需测试，直接保留
+2025-06-25 13:44:37,433 - INFO - IP节点 🇷🇺 俄罗斯联邦 莫斯科 05 无需测试，直接保留
+2025-06-25 13:44:37,433 - INFO - IP节点 🇷🇺 俄罗斯联邦 莫斯科 06 无需测试，直接保留
+2025-06-25 13:44:37,433 - INFO - IP节点 🇷🇺 俄罗斯联邦 莫斯科 07 无需测试，直接保留
+2025-06-25 13:44:37,433 - INFO - IP节点 🇸🇬 新加坡 新加坡 01 无需测试，直接保留
+2025-06-25 13:44:37,433 - INFO - IP节点 🇸🇬 新加坡 新加坡 02 无需测试，直接保留
+2025-06-25 13:44:37,433 - INFO - IP节点 🇸🇬 新加坡 新加坡 03 无需测试，直接保留
+2025-06-25 13:44:37,433 - INFO - IP节点 🇸🇬 新加坡 新加坡 04 无需测试，直接保留
+2025-06-25 13:44:37,433 - INFO - IP节点 🇸🇬 新加坡 新加坡 05 无需测试，直接保留
+2025-06-25 13:44:37,433 - INFO - IP节点 🇸🇬 新加坡 新加坡 06 无需测试，直接保留
+2025-06-25 13:44:37,433 - INFO - IP节点 🇺🇸 美国 Ashburn 01 无需测试，直接保留
+2025-06-25 13:44:37,433 - INFO - IP节点 🇺🇸 美国 Ashburn 02 无需测试，直接保留
+2025-06-25 13:44:37,433 - INFO - IP节点 🇺🇸 美国 Ashburn 03 无需测试，直接保留
+2025-06-25 13:44:37,433 - INFO - IP节点 🇺🇸 美国 San Jose 01 无需测试，直接保留
+2025-06-25 13:44:37,433 - INFO - IP节点 🇺🇸 美国 亚特兰大 01 无需测试，直接保留
+2025-06-25 13:44:37,434 - INFO - IP节点 🇺🇸 美国 凤凰城 01 无需测试，直接保留
+2025-06-25 13:44:37,434 - INFO - IP节点 🇺🇸 美国 凤凰城 02 无需测试，直接保留
+2025-06-25 13:44:37,434 - INFO - IP节点 🇺🇸 美国 凤凰城 03 无需测试，直接保留
+2025-06-25 13:44:37,434 - INFO - IP节点 🇺🇸 美国 圣克拉拉 01 无需测试，直接保留
+2025-06-25 13:44:37,434 - INFO - IP节点 🇺🇸 美国 旧金山 01 无需测试，直接保留
+2025-06-25 13:44:37,434 - INFO - IP节点 🇺🇸 美国 水牛城 01 无需测试，直接保留
+2025-06-25 13:44:37,434 - INFO - IP节点 🇺🇸 美国 洛杉矶 01 无需测试，直接保留
+2025-06-25 13:44:37,434 - INFO - IP节点 🇺🇸 美国 洛杉矶 02 无需测试，直接保留
+2025-06-25 13:44:37,434 - INFO - IP节点 🇺🇸 美国 洛杉矶 03 无需测试，直接保留
+2025-06-25 13:44:37,434 - INFO - IP节点 🇺🇸 美国 洛杉矶 04 无需测试，直接保留
+2025-06-25 13:44:37,434 - INFO - IP节点 🇺🇸 美国 洛杉矶 05 无需测试，直接保留
+2025-06-25 13:44:37,434 - INFO - IP节点 🇺🇸 美国 洛杉矶 06 无需测试，直接保留
+2025-06-25 13:44:37,434 - INFO - IP节点 🇺🇸 美国 洛杉矶 07 无需测试，直接保留
+2025-06-25 13:44:37,434 - INFO - IP节点 🇺🇸 美国 洛杉矶 08 无需测试，直接保留
+2025-06-25 13:44:37,434 - INFO - IP节点 🇺🇸 美国 洛杉矶 09 无需测试，直接保留
+2025-06-25 13:44:37,434 - INFO - IP节点 🇺🇸 美国 洛杉矶 10 无需测试，直接保留
+2025-06-25 13:44:37,434 - INFO - IP节点 🇺🇸 美国 洛杉矶 11 无需测试，直接保留
+2025-06-25 13:44:37,434 - INFO - IP节点 🇺🇸 美国 洛杉矶 12 无需测试，直接保留
+2025-06-25 13:44:37,434 - INFO - IP节点 🇺🇸 美国 洛杉矶 13 无需测试，直接保留
+2025-06-25 13:44:37,434 - INFO - IP节点 🇺🇸 美国 洛杉矶 14 无需测试，直接保留
+2025-06-25 13:44:37,434 - INFO - IP节点 🇺🇸 美国 海厄利亞 01 无需测试，直接保留
+2025-06-25 13:44:37,435 - INFO - IP节点 🇺🇸 美国 紐約 01 无需测试，直接保留
+2025-06-25 13:44:37,435 - INFO - IP节点 🇺🇸 美国 紐約 02 无需测试，直接保留
+2025-06-25 13:44:37,435 - INFO - IP节点 🇺🇸 美国 紐約 03 无需测试，直接保留
+2025-06-25 13:44:37,435 - INFO - IP节点 🇺🇸 美国 紐約 04 无需测试，直接保留
+2025-06-25 13:44:37,435 - INFO - IP节点 🇺🇸 美国 紐約 05 无需测试，直接保留
+2025-06-25 13:44:37,435 - INFO - IP节点 🇺🇸 美国 紐約 06 无需测试，直接保留
+2025-06-25 13:44:37,435 - INFO - IP节点 🇺🇸 美国 聖荷西 01 无需测试，直接保留
+2025-06-25 13:44:37,435 - INFO - IP节点 🇺🇸 美国 聖荷西 02 无需测试，直接保留
+2025-06-25 13:44:37,435 - INFO - IP节点 🇺🇸 美国 聖荷西 03 无需测试，直接保留
+2025-06-25 13:44:37,435 - INFO - IP节点 🇺🇸 美国 芝加哥 01 无需测试，直接保留
+2025-06-25 13:44:37,435 - INFO - IP节点 🇺🇸 美国 西雅圖 01 无需测试，直接保留
+2025-06-25 13:44:37,435 - INFO - IP节点 🇺🇸 美国 西雅圖 02 无需测试，直接保留
+2025-06-25 13:44:37,435 - INFO - IP节点 🇺🇸 美国 西雅圖 03 无需测试，直接保留
+2025-06-25 13:44:37,435 - INFO - IP节点 🇺🇸 美国 達拉斯 01 无需测试，直接保留
+2025-06-25 13:44:37,435 - INFO - IP节点 🇺🇸 美国 達拉斯 02 无需测试，直接保留
+2025-06-25 13:44:37,435 - INFO - IP节点 🇺🇸 美国 達拉斯 03 无需测试，直接保留
+2025-06-25 13:44:37,435 - INFO - IP节点 🇺🇸 美国 達拉斯 04 无需测试，直接保留
+2025-06-25 13:44:37,435 - INFO - IP节点 🇺🇸 美国 鳳凰城 01 无需测试，直接保留
+2025-06-25 13:44:37,435 - INFO - IP节点 🇺🇸 美国 鳳凰城 02 无需测试，直接保留
+2025-06-25 13:44:37,435 - INFO - IP节点 🇽🇽 未知  01 无需测试，直接保留
+2025-06-25 13:44:37,436 - INFO - IP节点 🇽🇽 未知  02 无需测试，直接保留
+2025-06-25 13:44:37,436 - INFO - IP节点 🇽🇽 未知  03 无需测试，直接保留
+2025-06-25 13:44:37,436 - INFO - IP节点 🇽🇽 未知  04 无需测试，直接保留
+2025-06-25 13:44:37,436 - INFO - IP节点 🇽🇽 未知  05 无需测试，直接保留
+2025-06-25 13:44:37,436 - INFO - IP节点 🇽🇽 未知  06 无需测试，直接保留
+2025-06-25 13:44:37,436 - INFO - IP节点 🇽🇽 未知  07 无需测试，直接保留
+2025-06-25 13:44:37,436 - INFO - IP节点 🇽🇽 未知  08 无需测试，直接保留
+2025-06-25 13:44:37,436 - INFO - IP节点 🇽🇽 未知  09 无需测试，直接保留
+2025-06-25 13:44:37,436 - INFO - IP节点 🇽🇽 未知  10 无需测试，直接保留
+2025-06-25 13:44:37,436 - INFO - IP节点 🇽🇽 未知  11 无需测试，直接保留
+2025-06-25 13:44:37,436 - INFO - IP节点 🇽🇽 未知  12 无需测试，直接保留
+2025-06-25 13:44:37,436 - INFO - IP节点 🇽🇽 未知  13 无需测试，直接保留
+2025-06-25 13:44:37,436 - INFO - IP节点 🇽🇽 未知  14 无需测试，直接保留
+2025-06-25 13:44:37,436 - INFO - IP节点 🇽🇽 未知  15 无需测试，直接保留
+2025-06-25 13:44:37,436 - INFO - IP节点 🇽🇽 未知  16 无需测试，直接保留
+2025-06-25 13:44:37,436 - INFO - IP节点 🇽🇽 未知  17 无需测试，直接保留
+2025-06-25 13:44:37,436 - INFO - IP节点 🇽🇽 未知  18 无需测试，直接保留
+2025-06-25 13:44:37,436 - INFO - IP节点 🇽🇽 未知  19 无需测试，直接保留
+2025-06-25 13:44:37,436 - INFO - IP节点 🇽🇽 未知  20 无需测试，直接保留
+2025-06-25 13:44:37,436 - INFO - IP节点 🇽🇽 未知  21 无需测试，直接保留
+2025-06-25 13:44:37,436 - INFO - IP节点 🇽🇽 未知  22 无需测试，直接保留
+2025-06-25 13:44:37,437 - INFO - IP节点 🇽🇽 未知  23 无需测试，直接保留
+2025-06-25 13:44:37,437 - INFO - IP节点 🇽🇽 未知  24 无需测试，直接保留
+2025-06-25 13:44:37,437 - INFO - IP节点 🇽🇽 未知  25 无需测试，直接保留
+2025-06-25 13:44:37,437 - INFO - IP节点 🇽🇽 未知  26 无需测试，直接保留
+2025-06-25 13:44:37,437 - INFO - 最终保留 88 个通过测试的节点
+2025-06-25 13:44:37,437 - INFO - 成功将 88 个节点以base64格式写入 Node.txt
+2025-06-25 13:44:37,437 - INFO - 任务成功完成！
+试，直接保留
+2025-06-25 13:44:37,437 - INFO - IP节点 🇽🇽 未知  26 无需测试，直接保留
+2025-06-25 13:44:37,437 - INFO - 最终保留 88 个通过测试的节点
+2025-06-25 13:44:37,437 - INFO - 成功将 88 个节点以base64格式写入 Node.txt
+2025-06-25 13:44:37,437 - INFO - 任务成功完成！
