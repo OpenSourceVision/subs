@@ -1,160 +1,116 @@
-2025-06-25 12:50:20,390 - WARNING - 加载国旗映射表失败: 'NodeSubscriptionManager' object has no attribute 'flags_map'
-2025-06-25 12:50:20,391 - INFO - Force update mode: False
-2025-06-25 12:50:20,391 - INFO - 开始节点订阅管理任务...
-2025-06-25 12:50:21,918 - INFO - IP地理位置API可用
-2025-06-25 12:50:21,918 - INFO - 开始处理节点...
-2025-06-25 12:50:21,919 - INFO - 读取到 4 个有效订阅链接
-2025-06-25 12:50:21,919 - INFO - 正在拉取订阅 https://gob64.topmarco.tech ...
-2025-06-25 12:50:25,146 - INFO - 从 https://gob64.topmarco.tech 获取到 20 个节点
-2025-06-25 12:50:25,146 - INFO - 正在拉取订阅 https://chromego-sub.netlify.app/sub/base64.txt ...
-2025-06-25 12:50:26,736 - INFO - 从 https://chromego-sub.netlify.app/sub/base64.txt 获取到 18 个节点
-2025-06-25 12:50:26,736 - INFO - 正在拉取订阅 https://subs.suitmob.dpdns.org/download/sub ...
-2025-06-25 12:50:29,022 - INFO - 从 https://subs.suitmob.dpdns.org/download/sub 获取到 14 个节点
-2025-06-25 12:50:29,023 - INFO - 正在拉取订阅 https://raw.githubusercontent.com/Surfboardv2ray/Proxy-sorter/main/custom/udp.txt ...
-2025-06-25 12:50:30,576 - ERROR - 解码订阅内容失败: string argument should contain only ASCII characters
-2025-06-25 12:50:30,576 - INFO - 从 https://raw.githubusercontent.com/Surfboardv2ray/Proxy-sorter/main/custom/udp.txt 获取到 0 个节点
-2025-06-25 12:50:30,576 - INFO - 共收集到 52 个节点
-2025-06-25 12:50:30,577 - WARNING - 未知协议: aHR0cHM6Ly9kb25ndGFpd2FuZy5jb206ZG9uZ3RhaXdhbmcuY2...
-2025-06-25 12:50:30,577 - WARNING - 未知协议: aHR0cHM6Ly9kb25ndGFpd2FuZy5jb206ZG9uZ3RhaXdhbmcuY2...
-2025-06-25 12:50:30,577 - INFO - 成功解析 50 个节点
-2025-06-25 12:50:32,085 - INFO - IP 185.22.155.71 归属地: 俄罗斯(RU) Zelenograd
-2025-06-25 12:50:32,093 - INFO - IP 51.159.226.1 归属地: 法国(FR) 巴黎
-2025-06-25 12:50:32,095 - INFO - IP 195.154.200.40 归属地: 法国(FR) 巴黎
-2025-06-25 12:50:32,110 - INFO - IP 208.87.243.151 归属地: 美国(US) 洛杉矶
-2025-06-25 12:50:32,110 - INFO - IP 195.154.200.40 归属地: 法国(FR) 巴黎
-2025-06-25 12:50:33,593 - INFO - IP 46.17.41.217 归属地: 俄罗斯联邦(RU) 莫斯科
-2025-06-25 12:50:33,602 - INFO - IP 45.129.2.108 归属地: 俄罗斯联邦(RU) 莫斯科
-2025-06-25 12:50:33,602 - INFO - IP 45.129.2.248 归属地: 俄罗斯联邦(RU) 莫斯科
-2025-06-25 12:50:33,617 - INFO - IP 46.29.163.171 归属地: 俄罗斯联邦(RU) 莫斯科
-2025-06-25 12:50:33,618 - INFO - IP 51.159.111.32 归属地: 法国(FR) 巴黎
-2025-06-25 12:50:35,101 - INFO - IP 208.87.243.187 归属地: 美国(US) 洛杉矶
-2025-06-25 12:50:35,109 - INFO - IP 51.159.226.1 归属地: 法国(FR) 巴黎
-2025-06-25 12:50:35,110 - INFO - IP 108.181.5.130 归属地: 美国(US) 洛杉矶
-2025-06-25 12:50:35,121 - WARNING - Google DNS 解析失败: tw-2.534582.xyz, 错误: 'A' object has no attribute 'ttl'
-2025-06-25 12:50:35,125 - INFO - IP 46.17.41.5 归属地: 俄罗斯联邦(RU) 莫斯科
-2025-06-25 12:50:35,126 - INFO - IP 1.162.51.106 归属地: 台湾(TW) 台北市
-2025-06-25 12:50:35,131 - WARNING - Cloudflare DNS 解析失败: tw-2.534582.xyz, 错误: 'A' object has no attribute 'ttl'
-2025-06-25 12:50:35,185 - WARNING - Quad9 DNS 解析失败: tw-2.534582.xyz, 错误: 'A' object has no attribute 'ttl'
-2025-06-25 12:50:35,205 - WARNING - MX记录解析失败: tw-2.534582.xyz, 错误: The DNS response does not contain an answer to the question: tw-2.534582.xyz. IN MX
-2025-06-25 12:50:35,231 - WARNING - 未找到非CDN IP，使用最后解析结果: tw-2.534582.xyz -> 111.240.201.93
-2025-06-25 12:50:35,631 - WARNING - 落地IP验证失败: 111.240.201.93 (域名: tw-2.534582.xyz), 错误: HTTPSConnectionPool(host='111.240.201.93', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, "[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: IP address mismatch, certificate is not valid for '111.240.201.93'. (_ssl.c:1016)")))
-2025-06-25 12:50:35,631 - WARNING - IP 111.240.201.93 不是落地IP，跳过节点
-2025-06-25 12:50:36,617 - INFO - IP 108.181.3.68 归属地: 美国(US) 洛杉矶
-2025-06-25 12:50:36,617 - INFO - IP 185.22.155.105 归属地: 俄罗斯(RU) Zelenograd
-2025-06-25 12:50:36,632 - INFO - IP 195.154.200.178 归属地: 法国(FR) 巴黎
-2025-06-25 12:50:36,633 - INFO - IP 176.32.35.226 归属地: 俄罗斯联邦(RU) 莫斯科
-2025-06-25 12:50:37,140 - INFO - IP 208.87.243.151 归属地: 美国(US) 洛杉矶
-2025-06-25 12:50:38,125 - INFO - IP 185.22.155.71 归属地: 俄罗斯(RU) Zelenograd
-2025-06-25 12:50:38,126 - INFO - IP 108.181.24.77 归属地: 美国(US) 洛杉矶
-2025-06-25 12:50:38,140 - INFO - IP 185.22.155.71 归属地: 俄罗斯(RU) Zelenograd
-2025-06-25 12:50:38,141 - INFO - IP 208.87.243.151 归属地: 美国(US) 洛杉矶
-2025-06-25 12:50:38,648 - INFO - IP 185.22.155.71 归属地: 俄罗斯(RU) Zelenograd
-2025-06-25 12:50:39,634 - INFO - IP 185.22.155.71 归属地: 俄罗斯(RU) Zelenograd
-2025-06-25 12:50:39,634 - INFO - IP 185.22.155.71 归属地: 俄罗斯(RU) Zelenograd
-2025-06-25 12:50:39,647 - INFO - IP 45.129.2.108 归属地: 俄罗斯联邦(RU) 莫斯科
-2025-06-25 12:50:39,650 - INFO - IP 46.17.41.217 归属地: 俄罗斯联邦(RU) 莫斯科
-2025-06-25 12:50:40,156 - INFO - IP 45.129.2.248 归属地: 俄罗斯联邦(RU) 莫斯科
-2025-06-25 12:50:41,143 - INFO - IP 1.162.51.106 归属地: 台湾(TW) 台北市
-2025-06-25 12:50:41,147 - INFO - IP 45.129.2.248 归属地: 俄罗斯联邦(RU) 莫斯科
-2025-06-25 12:50:41,154 - INFO - IP 1.162.51.106 归属地: 台湾(TW) 台北市
-2025-06-25 12:50:41,158 - INFO - IP 1.162.51.106 归属地: 台湾(TW) 台北市
-2025-06-25 12:50:41,384 - WARNING - Google DNS 解析失败: aus.pagate.top, 错误: 'A' object has no attribute 'ttl'
-2025-06-25 12:50:41,411 - WARNING - Cloudflare DNS 解析失败: aus.pagate.top, 错误: 'A' object has no attribute 'ttl'
-2025-06-25 12:50:41,445 - WARNING - Quad9 DNS 解析失败: aus.pagate.top, 错误: 'A' object has no attribute 'ttl'
-2025-06-25 12:50:41,661 - WARNING - MX记录解析失败: aus.pagate.top, 错误: The DNS response does not contain an answer to the question: aus.pagate.top. IN MX
-2025-06-25 12:50:41,664 - INFO - IP 1.162.51.106 归属地: 台湾(TW) 台北市
-2025-06-25 12:50:41,770 - WARNING - 未找到非CDN IP，使用最后解析结果: aus.pagate.top -> 129.146.241.150
-2025-06-25 12:50:41,929 - WARNING - 落地IP验证失败: 129.146.241.150 (域名: aus.pagate.top), 错误: HTTPSConnectionPool(host='129.146.241.150', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLError(1, '[SSL: TLSV1_UNRECOGNIZED_NAME] tlsv1 unrecognized name (_ssl.c:1016)')))
-2025-06-25 12:50:41,929 - WARNING - IP 129.146.241.150 不是落地IP，跳过节点
-2025-06-25 12:50:42,651 - INFO - IP 108.181.24.77 归属地: 美国(US) 洛杉矶
-2025-06-25 12:50:42,654 - INFO - IP 47.74.34.102 归属地: 日本(JP) 东京
-2025-06-25 12:50:42,663 - INFO - IP 51.159.226.1 归属地: 法国(FR) 巴黎
-2025-06-25 12:50:43,171 - INFO - IP 104.17.70.206 归属地: 加拿大(CA) 多伦多
-2025-06-25 12:50:43,436 - INFO - IP 208.87.243.187 归属地: 美国(US) 洛杉矶
-2025-06-25 12:50:44,158 - INFO - IP 129.146.241.150 归属地: 美国(US) 凤凰城
-2025-06-25 12:50:44,162 - INFO - IP 108.181.5.130 归属地: 美国(US) 洛杉矶
-2025-06-25 12:50:44,171 - INFO - IP 176.32.35.226 归属地: 俄罗斯联邦(RU) 莫斯科
-2025-06-25 12:50:44,602 - WARNING - Google DNS 解析失败: dozo01.flztjc.top, 错误: 'A' object has no attribute 'ttl'
-2025-06-25 12:50:44,680 - INFO - IP 74.48.18.240 归属地: 美国(US) 洛杉矶
-2025-06-25 12:50:44,944 - WARNING - HTTP error on http://ip-api.com/json/195.154.200.40?lang=zh-CN: 429 Client Error: Too Many Requests for url: http://ip-api.com/json/195.154.200.40?lang=zh-CN (attempt 1/3)
-2025-06-25 12:50:45,044 - WARNING - Cloudflare DNS 解析失败: dozo01.flztjc.top, 错误: 'A' object has no attribute 'ttl'
-2025-06-25 12:50:45,368 - WARNING - Quad9 DNS 解析失败: dozo01.flztjc.top, 错误: 'A' object has no attribute 'ttl'
-2025-06-25 12:50:45,670 - WARNING - HTTP error on http://ip-api.com/json/104.17.70.206?lang=zh-CN: 429 Client Error: Too Many Requests for url: http://ip-api.com/json/104.17.70.206?lang=zh-CN (attempt 1/3)
-2025-06-25 12:50:45,678 - WARNING - HTTP error on http://ip-api.com/json/120.233.128.68?lang=zh-CN: 429 Client Error: Too Many Requests for url: http://ip-api.com/json/120.233.128.68?lang=zh-CN (attempt 1/3)
-2025-06-25 12:50:45,899 - WARNING - MX记录解析失败: dozo01.flztjc.top, 错误: The DNS response does not contain an answer to the question: dozo01.flztjc.top. IN MX
-2025-06-25 12:50:47,452 - WARNING - HTTP error on http://ip-api.com/json/195.154.200.40?lang=zh-CN: 429 Client Error: Too Many Requests for url: http://ip-api.com/json/195.154.200.40?lang=zh-CN (attempt 2/3)
-2025-06-25 12:50:48,177 - WARNING - HTTP error on http://ip-api.com/json/104.17.70.206?lang=zh-CN: 429 Client Error: Too Many Requests for url: http://ip-api.com/json/104.17.70.206?lang=zh-CN (attempt 2/3)
-2025-06-25 12:50:48,185 - WARNING - HTTP error on http://ip-api.com/json/120.233.128.68?lang=zh-CN: 429 Client Error: Too Many Requests for url: http://ip-api.com/json/120.233.128.68?lang=zh-CN (attempt 2/3)
-2025-06-25 12:50:50,967 - WARNING - HTTP error on http://ip-api.com/json/195.154.200.40?lang=zh-CN: 429 Client Error: Too Many Requests for url: http://ip-api.com/json/195.154.200.40?lang=zh-CN (attempt 3/3)
-2025-06-25 12:50:50,967 - ERROR - Failed to retrieve http://ip-api.com/json/195.154.200.40?lang=zh-CN after 3 attempts
-2025-06-25 12:50:50,967 - WARNING - IP归属地查询失败: 195.154.200.40
-2025-06-25 12:50:51,436 - WARNING - 未找到非CDN IP，使用最后解析结果: dozo01.flztjc.top -> 125.88.196.143
-2025-06-25 12:50:51,685 - WARNING - HTTP error on http://ip-api.com/json/104.17.70.206?lang=zh-CN: 429 Client Error: Too Many Requests for url: http://ip-api.com/json/104.17.70.206?lang=zh-CN (attempt 3/3)
-2025-06-25 12:50:51,685 - ERROR - Failed to retrieve http://ip-api.com/json/104.17.70.206?lang=zh-CN after 3 attempts
-2025-06-25 12:50:51,685 - WARNING - IP归属地查询失败: 104.17.70.206
-2025-06-25 12:50:51,696 - WARNING - HTTP error on http://ip-api.com/json/120.233.128.68?lang=zh-CN: 429 Client Error: Too Many Requests for url: http://ip-api.com/json/120.233.128.68?lang=zh-CN (attempt 3/3)
-2025-06-25 12:50:51,696 - ERROR - Failed to retrieve http://ip-api.com/json/120.233.128.68?lang=zh-CN after 3 attempts
-2025-06-25 12:50:51,696 - WARNING - IP归属地查询失败: 120.233.128.68
-2025-06-25 12:51:01,448 - WARNING - 落地IP验证失败: 125.88.196.143 (域名: dozo01.flztjc.top), 错误: HTTPSConnectionPool(host='125.88.196.143', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f2120216b90>, 'Connection to 125.88.196.143 timed out. (connect timeout=10)'))
-2025-06-25 12:51:01,448 - WARNING - IP 125.88.196.143 不是落地IP，跳过节点
-2025-06-25 12:51:01,448 - INFO - IP节点 🇨🇦 加拿大 多伦多 01 无需测试，直接保留
-2025-06-25 12:51:01,448 - INFO - IP节点 🇫🇷 法国 巴黎 01 无需测试，直接保留
-2025-06-25 12:51:01,449 - INFO - IP节点 🇫🇷 法国 巴黎 01 无需测试，直接保留
-2025-06-25 12:51:01,449 - INFO - IP节点 🇫🇷 法国 巴黎 01 无需测试，直接保留
-2025-06-25 12:51:01,449 - INFO - IP节点 🇫🇷 法国 巴黎 01 无需测试，直接保留
-2025-06-25 12:51:01,449 - INFO - IP节点 🇫🇷 法国 巴黎 01 无需测试，直接保留
-2025-06-25 12:51:01,449 - INFO - IP节点 🇫🇷 法国 巴黎 01 无需测试，直接保留
-2025-06-25 12:51:01,449 - INFO - IP节点 🇫🇷 法国 巴黎 01 无需测试，直接保留
-2025-06-25 12:51:01,449 - INFO - IP节点 🇯🇵 日本 东京 01 无需测试，直接保留
-2025-06-25 12:51:01,449 - INFO - IP节点 🇷🇺 俄罗斯 Zelenograd 01 无需测试，直接保留
-2025-06-25 12:51:01,449 - INFO - IP节点 🇷🇺 俄罗斯 Zelenograd 01 无需测试，直接保留
-2025-06-25 12:51:01,449 - INFO - IP节点 🇷🇺 俄罗斯 Zelenograd 01 无需测试，直接保留
-2025-06-25 12:51:01,449 - INFO - IP节点 🇷🇺 俄罗斯 Zelenograd 01 无需测试，直接保留
-2025-06-25 12:51:01,449 - INFO - IP节点 🇷🇺 俄罗斯 Zelenograd 01 无需测试，直接保留
-2025-06-25 12:51:01,449 - INFO - IP节点 🇷🇺 俄罗斯 Zelenograd 01 无需测试，直接保留
-2025-06-25 12:51:01,449 - INFO - IP节点 🇷🇺 俄罗斯 Zelenograd 01 无需测试，直接保留
-2025-06-25 12:51:01,449 - INFO - IP节点 🇷🇺 俄罗斯联邦 莫斯科 01 无需测试，直接保留
-2025-06-25 12:51:01,449 - INFO - IP节点 🇷🇺 俄罗斯联邦 莫斯科 01 无需测试，直接保留
-2025-06-25 12:51:01,449 - INFO - IP节点 🇷🇺 俄罗斯联邦 莫斯科 01 无需测试，直接保留
-2025-06-25 12:51:01,449 - INFO - IP节点 🇷🇺 俄罗斯联邦 莫斯科 01 无需测试，直接保留
-2025-06-25 12:51:01,450 - INFO - IP节点 🇷🇺 俄罗斯联邦 莫斯科 01 无需测试，直接保留
-2025-06-25 12:51:01,450 - INFO - IP节点 🇷🇺 俄罗斯联邦 莫斯科 01 无需测试，直接保留
-2025-06-25 12:51:01,450 - INFO - IP节点 🇷🇺 俄罗斯联邦 莫斯科 01 无需测试，直接保留
-2025-06-25 12:51:01,450 - INFO - IP节点 🇷🇺 俄罗斯联邦 莫斯科 01 无需测试，直接保留
-2025-06-25 12:51:01,450 - INFO - IP节点 🇷🇺 俄罗斯联邦 莫斯科 01 无需测试，直接保留
-2025-06-25 12:51:01,450 - INFO - IP节点 🇷🇺 俄罗斯联邦 莫斯科 01 无需测试，直接保留
-2025-06-25 12:51:01,450 - INFO - IP节点 🇷🇺 俄罗斯联邦 莫斯科 01 无需测试，直接保留
-2025-06-25 12:51:01,450 - INFO - IP节点 🇹🇼 台湾 台北市 01 无需测试，直接保留
-2025-06-25 12:51:01,450 - INFO - IP节点 🇹🇼 台湾 台北市 01 无需测试，直接保留
-2025-06-25 12:51:01,450 - INFO - IP节点 🇹🇼 台湾 台北市 01 无需测试，直接保留
-2025-06-25 12:51:01,450 - INFO - IP节点 🇹🇼 台湾 台北市 01 无需测试，直接保留
-2025-06-25 12:51:01,450 - INFO - IP节点 🇹🇼 台湾 台北市 01 无需测试，直接保留
-2025-06-25 12:51:01,450 - INFO - IP节点 🇺🇸 美国 凤凰城 01 无需测试，直接保留
-2025-06-25 12:51:01,450 - INFO - IP节点 🇺🇸 美国 洛杉矶 01 无需测试，直接保留
-2025-06-25 12:51:01,450 - INFO - IP节点 🇺🇸 美国 洛杉矶 01 无需测试，直接保留
-2025-06-25 12:51:01,450 - INFO - IP节点 🇺🇸 美国 洛杉矶 01 无需测试，直接保留
-2025-06-25 12:51:01,450 - INFO - IP节点 🇺🇸 美国 洛杉矶 01 无需测试，直接保留
-2025-06-25 12:51:01,450 - INFO - IP节点 🇺🇸 美国 洛杉矶 01 无需测试，直接保留
-2025-06-25 12:51:01,450 - INFO - IP节点 🇺🇸 美国 洛杉矶 01 无需测试，直接保留
-2025-06-25 12:51:01,451 - INFO - IP节点 🇺🇸 美国 洛杉矶 01 无需测试，直接保留
-2025-06-25 12:51:01,451 - INFO - IP节点 🇺🇸 美国 洛杉矶 01 无需测试，直接保留
-2025-06-25 12:51:01,451 - INFO - IP节点 🇺🇸 美国 洛杉矶 01 无需测试，直接保留
-2025-06-25 12:51:01,451 - INFO - IP节点 🇺🇸 美国 洛杉矶 01 无需测试，直接保留
-2025-06-25 12:51:01,451 - INFO - IP节点 🇺🇸 美国 洛杉矶 01 无需测试，直接保留
-2025-06-25 12:51:01,451 - INFO - IP节点 🇽🇽 未知  01 无需测试，直接保留
-2025-06-25 12:51:01,451 - INFO - IP节点 🇽🇽 未知  01 无需测试，直接保留
-2025-06-25 12:51:01,451 - INFO - IP节点 🇽🇽 未知  01 无需测试，直接保留
-2025-06-25 12:51:01,451 - INFO - 最终保留 47 个通过测试的节点
-2025-06-25 12:51:01,451 - INFO - 成功将 47 个节点以base64格式写入 Node.txt
-2025-06-25 12:51:01,451 - INFO - 任务成功完成！
-🇺🇸 美国 洛杉矶 01 无需测试，直接保留
-2025-06-25 12:51:01,451 - INFO - IP节点 🇺🇸 美国 洛杉矶 01 无需测试，直接保留
-2025-06-25 12:51:01,451 - INFO - IP节点 🇺🇸 美国 洛杉矶 01 无需测试，直接保留
-2025-06-25 12:51:01,451 - INFO - IP节点 🇺🇸 美国 洛杉矶 01 无需测试，直接保留
-2025-06-25 12:51:01,451 - INFO - IP节点 🇺🇸 美国 洛杉矶 01 无需测试，直接保留
-2025-06-25 12:51:01,451 - INFO - IP节点 🇽🇽 未知  01 无需测试，直接保留
-2025-06-25 12:51:01,451 - INFO - IP节点 🇽🇽 未知  01 无需测试，直接保留
-2025-06-25 12:51:01,451 - INFO - IP节点 🇽🇽 未知  01 无需测试，直接保留
-2025-06-25 12:51:01,451 - INFO - 最终保留 47 个通过测试的节点
-2025-06-25 12:51:01,451 - INFO - 成功将 47 个节点以base64格式写入 Node.txt
-2025-06-25 12:51:01,451 - INFO - 任务成功完成！
+2025-06-25 12:55:04,861 - INFO - 成功加载国旗映射表，共有 59 个国家码
+2025-06-25 12:55:04,862 - INFO - Force update mode: False
+2025-06-25 12:55:04,862 - INFO - 开始节点订阅管理任务...
+2025-06-25 12:55:06,400 - INFO - IP地理位置API可用
+2025-06-25 12:55:06,400 - INFO - 开始处理节点...
+2025-06-25 12:55:06,400 - INFO - 读取到 4 个有效订阅链接
+2025-06-25 12:55:06,400 - INFO - 正在拉取订阅 https://gob64.topmarco.tech ...
+2025-06-25 12:55:10,133 - INFO - 从 https://gob64.topmarco.tech 获取到 20 个节点
+2025-06-25 12:55:10,133 - INFO - 正在拉取订阅 https://chromego-sub.netlify.app/sub/base64.txt ...
+2025-06-25 12:55:11,686 - INFO - 从 https://chromego-sub.netlify.app/sub/base64.txt 获取到 18 个节点
+2025-06-25 12:55:11,686 - INFO - 正在拉取订阅 https://subs.suitmob.dpdns.org/download/sub ...
+2025-06-25 12:55:18,869 - INFO - 从 https://subs.suitmob.dpdns.org/download/sub 获取到 14 个节点
+2025-06-25 12:55:18,869 - INFO - 正在拉取订阅 https://raw.githubusercontent.com/Surfboardv2ray/Proxy-sorter/main/custom/udp.txt ...
+2025-06-25 12:55:20,418 - ERROR - 解码订阅内容失败: string argument should contain only ASCII characters
+2025-06-25 12:55:20,418 - INFO - 从 https://raw.githubusercontent.com/Surfboardv2ray/Proxy-sorter/main/custom/udp.txt 获取到 0 个节点
+2025-06-25 12:55:20,418 - INFO - 共收集到 52 个节点
+2025-06-25 12:55:20,419 - WARNING - 未知协议: aHR0cHM6Ly9kb25ndGFpd2FuZy5jb206ZG9uZ3RhaXdhbmcuY2...
+2025-06-25 12:55:20,419 - WARNING - 未知协议: aHR0cHM6Ly9kb25ndGFpd2FuZy5jb206ZG9uZ3RhaXdhbmcuY2...
+2025-06-25 12:55:20,419 - INFO - 成功解析 50 个节点
+2025-06-25 12:55:21,930 - INFO - IP 185.22.155.71 归属地: 俄罗斯(RU) Zelenograd
+2025-06-25 12:55:21,948 - INFO - IP 208.87.243.151 归属地: 美国(US) 洛杉矶
+2025-06-25 12:55:21,948 - INFO - IP 195.154.200.40 归属地: 法国(FR) 巴黎
+2025-06-25 12:55:21,948 - INFO - IP 195.154.200.40 归属地: 法国(FR) 巴黎
+2025-06-25 12:55:21,949 - INFO - IP 208.87.243.187 归属地: 美国(US) 洛杉矶
+2025-06-25 12:55:23,438 - INFO - IP 46.17.41.217 归属地: 俄罗斯联邦(RU) 莫斯科
+2025-06-25 12:55:23,456 - INFO - IP 45.129.2.108 归属地: 俄罗斯联邦(RU) 莫斯科
+2025-06-25 12:55:23,457 - INFO - IP 51.159.226.1 归属地: 法国(FR) 巴黎
+2025-06-25 12:55:23,459 - INFO - IP 45.129.2.248 归属地: 俄罗斯联邦(RU) 莫斯科
+2025-06-25 12:55:23,459 - INFO - IP 46.29.163.171 归属地: 俄罗斯联邦(RU) 莫斯科
+2025-06-25 12:55:24,946 - INFO - IP 51.159.226.1 归属地: 法国(FR) 巴黎
+2025-06-25 12:55:24,960 - WARNING - Google DNS 解析失败: tw-2.534582.xyz, 错误: 'A' object has no attribute 'ttl'
+2025-06-25 12:55:24,964 - INFO - IP 51.159.111.32 归属地: 法国(FR) 巴黎
+2025-06-25 12:55:24,965 - INFO - IP 46.17.41.5 归属地: 俄罗斯联邦(RU) 莫斯科
+2025-06-25 12:55:24,966 - INFO - IP 108.181.5.130 归属地: 美国(US) 洛杉矶
+2025-06-25 12:55:24,967 - INFO - IP 1.162.51.106 归属地: 台湾(TW) 台北市
+2025-06-25 12:55:24,970 - WARNING - Cloudflare DNS 解析失败: tw-2.534582.xyz, 错误: 'A' object has no attribute 'ttl'
+2025-06-25 12:55:25,019 - WARNING - Quad9 DNS 解析失败: tw-2.534582.xyz, 错误: 'A' object has no attribute 'ttl'
+2025-06-25 12:55:25,059 - WARNING - MX记录解析失败: tw-2.534582.xyz, 错误: The DNS response does not contain an answer to the question: tw-2.534582.xyz. IN MX
+2025-06-25 12:55:25,149 - WARNING - 未找到非CDN IP，使用最后解析结果: tw-2.534582.xyz -> 111.240.201.93
+2025-06-25 12:55:25,561 - WARNING - 落地IP验证失败: 111.240.201.93 (域名: tw-2.534582.xyz), 错误: HTTPSConnectionPool(host='111.240.201.93', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, "[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: IP address mismatch, certificate is not valid for '111.240.201.93'. (_ssl.c:1016)")))
+2025-06-25 12:55:25,561 - WARNING - IP 111.240.201.93 不是落地IP，跳过节点
+2025-06-25 12:55:26,471 - INFO - IP 108.181.3.68 归属地: 美国(US) 洛杉矶
+2025-06-25 12:55:26,472 - INFO - IP 195.154.200.178 归属地: 法国(FR) 巴黎
+2025-06-25 12:55:26,473 - INFO - IP 185.22.155.105 归属地: 俄罗斯(RU) Zelenograd
+2025-06-25 12:55:26,475 - INFO - IP 176.32.35.226 归属地: 俄罗斯联邦(RU) 莫斯科
+2025-06-25 12:55:26,486 - WARNING - Google DNS 解析失败: aus.pagate.top, 错误: 'A' object has no attribute 'ttl'
+2025-06-25 12:55:26,496 - WARNING - Cloudflare DNS 解析失败: aus.pagate.top, 错误: 'A' object has no attribute 'ttl'
+2025-06-25 12:55:26,547 - WARNING - Quad9 DNS 解析失败: aus.pagate.top, 错误: 'A' object has no attribute 'ttl'
+2025-06-25 12:55:26,767 - WARNING - MX记录解析失败: aus.pagate.top, 错误: The DNS response does not contain an answer to the question: aus.pagate.top. IN MX
+2025-06-25 12:55:26,920 - WARNING - 未找到非CDN IP，使用最后解析结果: aus.pagate.top -> 129.146.241.150
+2025-06-25 12:55:27,069 - INFO - IP 108.181.24.77 归属地: 美国(US) 洛杉矶
+2025-06-25 12:55:27,076 - WARNING - 落地IP验证失败: 129.146.241.150 (域名: aus.pagate.top), 错误: HTTPSConnectionPool(host='129.146.241.150', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLError(1, '[SSL: TLSV1_UNRECOGNIZED_NAME] tlsv1 unrecognized name (_ssl.c:1016)')))
+2025-06-25 12:55:27,076 - WARNING - IP 129.146.241.150 不是落地IP，跳过节点
+2025-06-25 12:55:27,979 - INFO - IP 108.181.24.77 归属地: 美国(US) 洛杉矶
+2025-06-25 12:55:27,980 - INFO - IP 47.74.34.102 归属地: 日本(JP) 东京
+2025-06-25 12:55:27,982 - INFO - IP 104.17.70.206 归属地: 加拿大(CA) 多伦多
+2025-06-25 12:55:28,224 - WARNING - Google DNS 解析失败: dozo01.flztjc.top, 错误: 'A' object has no attribute 'ttl'
+2025-06-25 12:55:28,578 - INFO - IP 129.146.241.150 归属地: 美国(US) 凤凰城
+2025-06-25 12:55:28,583 - INFO - IP 74.48.18.240 归属地: 美国(US) 洛杉矶
+2025-06-25 12:55:28,651 - WARNING - Cloudflare DNS 解析失败: dozo01.flztjc.top, 错误: 'A' object has no attribute 'ttl'
+2025-06-25 12:55:28,933 - WARNING - Quad9 DNS 解析失败: dozo01.flztjc.top, 错误: 'A' object has no attribute 'ttl'
+2025-06-25 12:55:29,399 - WARNING - MX记录解析失败: dozo01.flztjc.top, 错误: The DNS response does not contain an answer to the question: dozo01.flztjc.top. IN MX
+2025-06-25 12:55:29,489 - INFO - IP 104.17.70.206 归属地: 加拿大(CA) 多伦多
+2025-06-25 12:55:29,489 - INFO - IP 120.233.128.68 归属地: 中国(CN) 广州市
+2025-06-25 12:55:30,366 - WARNING - 未找到非CDN IP，使用最后解析结果: dozo01.flztjc.top -> 125.88.196.143
+2025-06-25 12:55:40,378 - WARNING - 落地IP验证失败: 125.88.196.143 (域名: dozo01.flztjc.top), 错误: HTTPSConnectionPool(host='125.88.196.143', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f56a888a490>, 'Connection to 125.88.196.143 timed out. (connect timeout=10)'))
+2025-06-25 12:55:40,378 - WARNING - IP 125.88.196.143 不是落地IP，跳过节点
+2025-06-25 12:55:40,379 - INFO - IP节点 🇨🇦 加拿大 多伦多 01 无需测试，直接保留
+2025-06-25 12:55:40,379 - INFO - IP节点 🇨🇦 加拿大 多伦多 02 无需测试，直接保留
+2025-06-25 12:55:40,379 - INFO - IP节点 🇨🇳 中国 广州市 01 无需测试，直接保留
+2025-06-25 12:55:40,379 - INFO - IP节点 🇫🇷 法国 巴黎 01 无需测试，直接保留
+2025-06-25 12:55:40,379 - INFO - IP节点 🇫🇷 法国 巴黎 02 无需测试，直接保留
+2025-06-25 12:55:40,379 - INFO - IP节点 🇫🇷 法国 巴黎 03 无需测试，直接保留
+2025-06-25 12:55:40,379 - INFO - IP节点 🇫🇷 法国 巴黎 04 无需测试，直接保留
+2025-06-25 12:55:40,379 - INFO - IP节点 🇫🇷 法国 巴黎 05 无需测试，直接保留
+2025-06-25 12:55:40,379 - INFO - IP节点 🇫🇷 法国 巴黎 06 无需测试，直接保留
+2025-06-25 12:55:40,379 - INFO - IP节点 🇯🇵 日本 东京 01 无需测试，直接保留
+2025-06-25 12:55:40,379 - INFO - IP节点 🇷🇺 俄罗斯 Zelenograd 01 无需测试，直接保留
+2025-06-25 12:55:40,379 - INFO - IP节点 🇷🇺 俄罗斯 Zelenograd 02 无需测试，直接保留
+2025-06-25 12:55:40,379 - INFO - IP节点 🇷🇺 俄罗斯联邦 莫斯科 01 无需测试，直接保留
+2025-06-25 12:55:40,380 - INFO - IP节点 🇷🇺 俄罗斯联邦 莫斯科 02 无需测试，直接保留
+2025-06-25 12:55:40,380 - INFO - IP节点 🇷🇺 俄罗斯联邦 莫斯科 03 无需测试，直接保留
+2025-06-25 12:55:40,380 - INFO - IP节点 🇷🇺 俄罗斯联邦 莫斯科 04 无需测试，直接保留
+2025-06-25 12:55:40,380 - INFO - IP节点 🇷🇺 俄罗斯联邦 莫斯科 05 无需测试，直接保留
+2025-06-25 12:55:40,380 - INFO - IP节点 🇷🇺 俄罗斯联邦 莫斯科 06 无需测试，直接保留
+2025-06-25 12:55:40,380 - INFO - IP节点 🇹🇼 台湾 台北市 01 无需测试，直接保留
+2025-06-25 12:55:40,380 - INFO - IP节点 🇺🇸 美国 凤凰城 01 无需测试，直接保留
+2025-06-25 12:55:40,380 - INFO - IP节点 🇺🇸 美国 洛杉矶 01 无需测试，直接保留
+2025-06-25 12:55:40,380 - INFO - IP节点 🇺🇸 美国 洛杉矶 02 无需测试，直接保留
+2025-06-25 12:55:40,380 - INFO - IP节点 🇺🇸 美国 洛杉矶 03 无需测试，直接保留
+2025-06-25 12:55:40,380 - INFO - IP节点 🇺🇸 美国 洛杉矶 04 无需测试，直接保留
+2025-06-25 12:55:40,380 - INFO - IP节点 🇺🇸 美国 洛杉矶 05 无需测试，直接保留
+2025-06-25 12:55:40,380 - INFO - IP节点 🇺🇸 美国 洛杉矶 06 无需测试，直接保留
+2025-06-25 12:55:40,380 - INFO - IP节点 🇺🇸 美国 洛杉矶 07 无需测试，直接保留
+2025-06-25 12:55:40,380 - INFO - 最终保留 27 个通过测试的节点
+2025-06-25 12:55:40,380 - INFO - 成功将 27 个节点以base64格式写入 Node.txt
+2025-06-25 12:55:40,380 - INFO - 任务成功完成！
+2025-06-25 12:55:40,379 - INFO - IP节点 🇷🇺 俄罗斯 Zelenograd 02 无需测试，直接保留
+2025-06-25 12:55:40,379 - INFO - IP节点 🇷🇺 俄罗斯联邦 莫斯科 01 无需测试，直接保留
+2025-06-25 12:55:40,380 - INFO - IP节点 🇷🇺 俄罗斯联邦 莫斯科 02 无需测试，直接保留
+2025-06-25 12:55:40,380 - INFO - IP节点 🇷🇺 俄罗斯联邦 莫斯科 03 无需测试，直接保留
+2025-06-25 12:55:40,380 - INFO - IP节点 🇷🇺 俄罗斯联邦 莫斯科 04 无需测试，直接保留
+2025-06-25 12:55:40,380 - INFO - IP节点 🇷🇺 俄罗斯联邦 莫斯科 05 无需测试，直接保留
+2025-06-25 12:55:40,380 - INFO - IP节点 🇷🇺 俄罗斯联邦 莫斯科 06 无需测试，直接保留
+2025-06-25 12:55:40,380 - INFO - IP节点 🇹🇼 台湾 台北市 01 无需测试，直接保留
+2025-06-25 12:55:40,380 - INFO - IP节点 🇺🇸 美国 凤凰城 01 无需测试，直接保留
+2025-06-25 12:55:40,380 - INFO - IP节点 🇺🇸 美国 洛杉矶 01 无需测试，直接保留
+2025-06-25 12:55:40,380 - INFO - IP节点 🇺🇸 美国 洛杉矶 02 无需测试，直接保留
+2025-06-25 12:55:40,380 - INFO - IP节点 🇺🇸 美国 洛杉矶 03 无需测试，直接保留
+2025-06-25 12:55:40,380 - INFO - IP节点 🇺🇸 美国 洛杉矶 04 无需测试，直接保留
+2025-06-25 12:55:40,380 - INFO - IP节点 🇺🇸 美国 洛杉矶 05 无需测试，直接保留
+2025-06-25 12:55:40,380 - INFO - IP节点 🇺🇸 美国 洛杉矶 06 无需测试，直接保留
+2025-06-25 12:55:40,380 - INFO - IP节点 🇺🇸 美国 洛杉矶 07 无需测试，直接保留
+2025-06-25 12:55:40,380 - INFO - 最终保留 27 个通过测试的节点
+2025-06-25 12:55:40,380 - INFO - 成功将 27 个节点以base64格式写入 Node.txt
+2025-06-25 12:55:40,380 - INFO - 任务成功完成！
