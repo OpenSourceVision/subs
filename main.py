@@ -78,8 +78,8 @@ class NodeSubscriptionManager:
         try:
             with open(flags_path, 'r', encoding='utf-8') as f:
                 flags_data = yaml.safe_load(f)
-            flags_map = flags_data.get('flags', '{}') if isinstance(flags_data, dict) else {}
-            self.logger.info(f"成功加载国旗映射表，共有 {len(self.flags_map)} 个国家码")
+            flags_map = flags_data.get('flags', {}) if isinstance(flags_data, dict) else {}
+            self.logger.info(f"成功加载国旗映射表，共有 {len(flags_map)} 个国家码")
             return flags_map
         except Exception as e:
             self.logger.warning(f"加载国旗映射表失败: {e}")
@@ -92,46 +92,45 @@ class NodeSubscriptionManager:
         if hasattr(self, 'session') and self.session is not None:
             self.session.close()
             self.logger.debug("HTTP session closed successfully")
-            self.logger.debug("HTTP session closed successfully.")
 
     def load_yaml(self, file_path: str, logger: logging.Logger) -> Dict:
         """
-        Load YAML configuration file.
+        加载YAML配置文件。
         """
         try:
             with open(file_path, 'r', encoding='utf-8') as f:
                 config_data = yaml.safe_load(f)
-            logger.info(f"Successfully loaded configuration from {file_path}")
+            logger.info(f"成功加载配置文件: {file_path}")
             return config_data
-        except Exception as e:
-            logger.error(f"Error loading configuration file: {file_path}: {e}")
-            raise
         except FileNotFoundError:
-            logger.error(f"Configuration file {file_path} not found")
+            logger.error(f"配置文件 {file_path} 不存在")
             raise
         except yaml.YAMLError as e:
-            logger.error(f"Failed to parse configuration file {file_path}: {e}")
+            logger.error(f"解析配置文件 {file_path} 失败: {e}")
+            raise
+        except Exception as e:
+            logger.error(f"加载配置文件 {file_path} 出错: {e}")
             raise
 
     def rate_limited_request(self, url: str, headers: Optional[Dict] = None) -> Optional[requests.Response]:
         """
-        HTTP GET request with rate limiting and retries limit.
+        发送限速的HTTP GET请求，包含重试机制。
         """
         for attempt in range(self.max_retries):
             try:
                 time.sleep(self.rate_limit_delay)
-                response = self.session.get(url, headers=headers, timeout=10)
+                response = self.session.get(url, headers=headers, timeout=self.timeout)
                 response.raise_for_status()
                 return response
             except Timeout:
-                self.logger.warning(f"Request timed out for {url} on (attempt {attempt + 1}/ {self.max_retries})")
+                self.logger.warning(f"请求超时: {url} (尝试 {attempt + 1}/{self.max_retries})")
             except HTTPError as e:
-                self.logger.warning(f"HTTP error on {url}: {e} (attempt {attempt + 1}/{self.max_retries})")
+                self.logger.warning(f"HTTP错误: {url}: {e} (尝试 {attempt + 1}/{self.max_retries})")
             except RequestException as e:
-                self.logger.warning(f"Request failed {url}: {e} (attempt {attempt + 1}/ {self.max_retries})")
+                self.logger.warning(f"请求失败: {url}: {e} (尝试 {attempt + 1}/{self.max_retries})")
             if attempt < self.max_retries - 1:
                 time.sleep(min(2 ** attempt, self.max_delay))
-        self.logger.error(f"Failed to retrieve {url} after {self.max_retries} attempts")
+        self.logger.error(f"无法获取 {url}，已尝试 {self.max_retries} 次")
         return None
 
     def read_subscription_urls(self) -> List[str]:
@@ -402,7 +401,7 @@ class NodeSubscriptionManager:
             self.logger.warning(f"更新节点名称失败: {e}")
             return node_info['uri']
 
-    def process_node(self, node_info: Dict) -> Optional[Dict]:
+    def process_node(self, node_info: Dict, unique_nodes: Dict, country_counts: Dict[str, int]) -> Optional[Dict]:
         """
         处理单个节点：
         - IP节点：直接使用IP，查询地理位置，生成名称，无需验证。
@@ -444,7 +443,6 @@ class NodeSubscriptionManager:
         else:
             unique_key = f"{protocol}:{ip}:{port}"
         
-        unique_nodes = {}  # 假设这是方法外的全局或类变量
         if unique_key in unique_nodes and not self.force_update:
             self.logger.debug(f"跳过重复节点: {ip}:{port} ({protocol}), URI: {node_info['uri'][:50]}...")
             return None
@@ -454,7 +452,6 @@ class NodeSubscriptionManager:
         country_code = location_info.get('country_code', 'XX')
         country = location_info.get('country', '未知')
         city = location_info.get('city', '')
-        country_counts = defaultdict(int)
         new_name = self.generate_unique_name(country_code, country, city, country_counts)
         new_uri = self.update_node_name(node_info, new_name)
         unique_nodes[unique_key] = True
@@ -489,10 +486,11 @@ class NodeSubscriptionManager:
             if node_info:
                 parsed_nodes.append(node_info)
         self.logger.info(f"成功解析 {len(parsed_nodes)} 个节点")
+        
         unique_nodes = {}
         country_counts = defaultdict(int)
         with ThreadPoolExecutor(max_workers=self.max_workers) as executor:
-            results = list(executor.map(lambda x: self.process_node(x), parsed_nodes))
+            results = list(executor.map(lambda x: self.process_node(x, unique_nodes, country_counts), parsed_nodes))
         sorted_nodes = sorted([r for r in results if r], key=lambda x: (x['country'], x['name']))
         
         valid_nodes = []
