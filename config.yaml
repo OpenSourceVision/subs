@@ -1,26 +1,56 @@
 # HTTP请求相关配置
 http:
   # 用户代理字符串，用于模拟浏览器请求
-  user_agent: "Mozilla/5.0"
-  # 最大重试次数
+  user_agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
+  # 最大重试次数，应对网络不稳定
   max_retries: 3
-  # 请求超时时间(秒)
+  # 请求超时时间（秒），适中以平衡速度和可靠性
   timeout: 10
-  # 请求速率限制延迟(秒)
+  # 请求速率限制延迟（秒），防止触发API限制
   rate_limit_delay: 1.5
-  # 最大延迟时间(秒)
+  # 最大延迟时间（秒），控制重试时的指数退避
   max_delay: 10
-  # 最大工作线程数
+  # 最大工作线程数，控制并发请求
   max_workers: 5
 
 # 日志记录相关配置
 logging:
   # 日志文件路径
-  file: "update.log"  # Changed from app.log to match main.yml
-  # 日志级别(DEBUG/INFO/WARNING/ERROR/CRITICAL)
+  file: "update.log"
+  # 日志级别（DEBUG/INFO/WARNING/ERROR/CRITICAL），建议调试时用DEBUG
   level: "INFO"
 
 # 文件路径相关配置
 files:
   # 订阅信息存储文件路径
   subscriptions: "subscriptions.yaml"
+  # 国旗映射文件路径（可选）
+  flags: "flags.yaml"
+
+# DNS解析相关配置
+dns:
+  # 使用的DNS服务器列表，优先级从高到低
+  servers:
+    - name: "Google DNS"
+      ip: "8.8.8.8"
+    - name: "Cloudflare DNS"
+      ip: "1.1.1.1"
+    - name: "Quad9 DNS"
+      ip: "9.9.9.9"
+  # TTL阈值（秒），低于此值视为CDN节点
+  cdn_ttl_threshold: 300
+  # 子域名列表，尝试解析以绕过CDN
+  subdomains:
+    - "direct"
+    - "www"
+    - "mail"
+
+# IP验证相关配置
+ip_validation:
+  # 验证超时时间（秒）
+  timeout: 5
+  # 支持的HTTP状态码，表示验证成功
+  valid_status_codes:
+    - 200
+    - 301
+    - 302
