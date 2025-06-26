@@ -484,13 +484,18 @@ class NodeSubscriptionManager:
             if not nodes:
                 self.logger.warning("没有节点可写入")
                 return
-            
+
+            # 获取北京时间
+            beijing_time = time.gmtime(time.time() + 8 * 3600)
+            update_time = time.strftime("%Y-%m-%d %H:%M:%S", beijing_time)
+            update_line = f"# 更新时间: {update_time} (北京时间)"
+
             nodes_text = '\n'.join(nodes)
             nodes_base64 = base64.b64encode(nodes_text.encode('utf-8')).decode('utf-8')
-            
+
             with open('Node.txt', 'w', encoding='utf-8') as f:
-                f.write(nodes_base64)
-            
+                f.write(f"{update_line}\n{nodes_base64}")
+
             self.logger.info(f"成功将 {len(nodes)} 个节点以base64格式写入 Node.txt")
         except Exception as e:
             self.logger.error(f"写入节点文件失败: {e}")
