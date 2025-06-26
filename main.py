@@ -401,11 +401,11 @@ class NodeSubscriptionManager:
             self.logger.warning(f"更新节点名称失败: {e}")
             return node_info['uri']
 
-    def process_node(self, node_info: Dict, unique_nodes: Dict, country_counts: Dict[str, int]) -> Optional[Dict]:
+    def process_node(self, node_info: Dict, country_counts: Dict[str, int]) -> Optional[Dict]:
         """
         处理单个节点：
-        - IP节点：直接使用IP，查询地理位置，生成名称，无需验证。
-        - 域名节点：解析域名，验证落地IP，查询地理位置，生成名称。
+        - IP节点：查询地理位置，生成名称。
+        - 域名节点：保留原有名称。
         """
         host = node_info.get('host', '')
         port = node_info.get('port', '')
@@ -413,62 +413,43 @@ class NodeSubscriptionManager:
         if not host or not port or not protocol:
             self.logger.warning(f"跳过无效节点: {node_info.get('uri', '')[:50]}...")
             return None
-        
-        # 检查host是否为IP
+
         is_ip = bool(re.match(r'^(\d{1,3}\.){3}\d{1,3}$', host))
-        ip = None
-        
         if is_ip:
-            ip = host
-            self.logger.debug(f"处理IP节点: {ip}:{port} ({protocol})")
+            location_info = self.get_ip_location(host)
+            country_code = location_info.get('country_code', 'XX')
+            country = location_info.get('country', '未知')
+            city = location_info.get('city', '')
+            new_name = self.generate_unique_name(country_code, country, city, country_counts)
+            new_uri = self.update_node_name(node_info, new_name)
+            return {
+                'uri': new_uri,
+                'country': country_code,
+                'name': new_name,
+                'host': host
+            }
         else:
-            self.logger.debug(f"处理域名节点: {host}:{port} ({protocol})")
-            ip = self.resolve_domain_with_dns(host)
-            if not ip:
-                self.logger.warning(f"无法解析域名 {host}，跳过节点")
-                return None
-            # 验证落地IP
-            if not self.verify_landing_ip(ip, host, port):
-                self.logger.warning(f"IP {ip} 不是落地IP，跳过节点")
-                return None
-        
-        # 生成唯一键用于去重
-        if protocol == "vless":
-            parsed = urlparse(node_info['uri'])
-            uuid = parsed.username or ''
-            if not uuid:
-                self.logger.warning(f"VLESS 节点缺少 UUID: {node_info['uri'][:50]}...")
-                return None
-            unique_key = f"{protocol}:{ip}:{port}:{uuid}"
-        else:
-            unique_key = f"{protocol}:{ip}:{port}"
-        
-        if unique_key in unique_nodes and not self.force_update:
-            self.logger.debug(f"跳过重复节点: {ip}:{port} ({protocol}), URI: {node_info['uri'][:50]}...")
-            return None
-        
-        # 查询IP地理位置
-        location_info = self.get_ip_location(ip)
-        country_code = location_info.get('country_code', 'XX')
-        country = location_info.get('country', '未知')
-        city = location_info.get('city', '')
-        new_name = self.generate_unique_name(country_code, country, city, country_counts)
-        new_uri = self.update_node_name(node_info, new_name)
-        unique_nodes[unique_key] = True
-        
-        return {
-            'uri': new_uri,
-            'country': country_code,
-            'name': new_name,
-            'ip': ip,
-            'port': port,
-            'host': host
-        }
+            # 域名节点，保留原有名称
+            # 尝试从节点信息中获取原有名称
+            name = ''
+            if protocol == 'vmess':
+                name = node_info.get('config', {}).get('ps', '')
+            else:
+                # 解析 #name
+                uri = node_info.get('uri', '')
+                if '#' in uri:
+                    name = uri.split('#', 1)[-1]
+            return {
+                'uri': node_info['uri'],
+                'country': 'ZZ',
+                'name': name or host,
+                'host': host
+            }
 
     def process_nodes(self) -> List[str]:
         """
-        主处理流程：拉取、解析、去重、命名、排序、测试节点。
-        IP节点跳过落地IP测试，域名节点进行测试。
+        主处理流程：拉取、解析、命名、排序。
+        只对IP节点进行位置解析，域名节点保留原有名称。
         """
         self.logger.info("开始处理节点...")
         subscription_urls = self.read_subscription_urls()
@@ -486,26 +467,16 @@ class NodeSubscriptionManager:
             if node_info:
                 parsed_nodes.append(node_info)
         self.logger.info(f"成功解析 {len(parsed_nodes)} 个节点")
-        
-        unique_nodes = {}
+
         country_counts = defaultdict(int)
-        with ThreadPoolExecutor(max_workers=self.max_workers) as executor:
-            results = list(executor.map(lambda x: self.process_node(x, unique_nodes, country_counts), parsed_nodes))
-        sorted_nodes = sorted([r for r in results if r], key=lambda x: (x['country'], x['name']))
-        
-        valid_nodes = []
-        for node in sorted_nodes:
-            is_ip = bool(re.match(r'^(\d{1,3}\.){3}\d{1,3}$', node['host']))
-            if is_ip:
-                self.logger.info(f"IP节点 {node['name']} 无需测试，直接保留")
-                valid_nodes.append(node['uri'])
-            elif self.test_landing_ip(node):
-                self.logger.info(f"域名节点 {node['name']} 落地IP测试通过")
-                valid_nodes.append(node['uri'])
-            else:
-                self.logger.warning(f"域名节点 {node['name']} 落地IP测试失败，跳过")
-        
-        self.logger.info(f"最终保留 {len(valid_nodes)} 个通过测试的节点")
+        results = []
+        for node in parsed_nodes:
+            r = self.process_node(node, country_counts)
+            if r:
+                results.append(r)
+        sorted_nodes = sorted(results, key=lambda x: (x['country'], x['name']))
+        valid_nodes = [n['uri'] for n in sorted_nodes]
+        self.logger.info(f"最终保留 {len(valid_nodes)} 个节点")
         return valid_nodes
 
     def write_nodes_to_file(self, nodes: List[str]) -> None:
@@ -606,25 +577,50 @@ class NodeSubscriptionManager:
                     'uri': node_uri
                 }
             elif node_uri.startswith('ss://'):
-                if '#' in node_uri:
-                    ss_part, _ = node_uri.split('#', 1)
+                # 处理 ss 节点，兼容全 base64 和分段 base64 两种格式
+                ss_uri = node_uri[5:]
+                # 先去掉 #name 部分
+                if '#' in ss_uri:
+                    ss_uri, _ = ss_uri.split('#', 1)
+                # 全 base64 格式：ss://base64(method:password@host:port)
+                if '@' not in ss_uri:
+                    try:
+                        padded = ss_uri + '=' * (-len(ss_uri) % 4)
+                        decoded = base64.b64decode(padded).decode('utf-8')
+                        # decoded: method:password@host:port
+                        match = re.match(r'^(?P<method>[^:]+):(?P<password>[^@]+)@(?P<host>[^:]+):(?P<port>\d+)$', decoded)
+                        if not match:
+                            self.logger.warning(f"Shadowsocks 节点格式错误: {node_uri[:50]}...")
+                            return None
+                        return {
+                            'protocol': 'ss',
+                            'host': match.group('host'),
+                            'port': match.group('port'),
+                            'uri': node_uri
+                        }
+                    except Exception as e:
+                        self.logger.warning(f"解析 Shadowsocks 节点失败: {node_uri[:50]}..., 错误: {e}")
+                        return None
                 else:
-                    ss_part = node_uri
-                if '@' not in ss_part or ':' not in ss_part:
-                    self.logger.warning(f"Shadowsocks 节点格式错误: {node_uri[:50]}...")
-                    return None
-                try:
-                    method_pass, server_port = ss_part[5:].split('@', 1)
-                    server, port = server_port.rsplit(':', 1)
-                    return {
-                        'protocol': 'ss',
-                        'host': server,
-                        'port': port,
-                        'uri': node_uri
-                    }
-                except ValueError as e:
-                    self.logger.warning(f"解析 Shadowsocks 节点失败: {node_uri[:50]}..., 错误: {e}")
-                    return None
+                    # 分段 base64 格式：ss://base64(method:password)@host:port
+                    try:
+                        base64_part, server_part = ss_uri.split('@', 1)
+                        padded = base64_part + '=' * (-len(base64_part) % 4)
+                        decoded = base64.b64decode(padded).decode('utf-8')
+                        # decoded: method:password
+                        if ':' not in decoded or ':' not in server_part:
+                            self.logger.warning(f"Shadowsocks 节点格式错误: {node_uri[:50]}...")
+                            return None
+                        server, port = server_part.rsplit(':', 1)
+                        return {
+                            'protocol': 'ss',
+                            'host': server,
+                            'port': port,
+                            'uri': node_uri
+                        }
+                    except Exception as e:
+                        self.logger.warning(f"解析 Shadowsocks 节点失败: {node_uri[:50]}..., 错误: {e}")
+                        return None
             elif node_uri.startswith(('hysteria2://', 'hy2://')):
                 parsed = urlparse(node_uri)
                 if not parsed.hostname or not parsed.port:
@@ -659,3 +655,4 @@ if __name__ == "__main__":
         manager.run()
     except Exception as e:
         logging.getLogger(__name__).error(f"程序启动失败: {e}")
+
