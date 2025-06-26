@@ -497,8 +497,31 @@ class NodeSubscriptionManager:
                 f.write(f"{update_line}\n{nodes_base64}")
 
             self.logger.info(f"成功将 {len(nodes)} 个节点以base64格式写入 Node.txt")
+
+            # --- 推送结果到README.md最前面 ---
+            self.push_result_to_readme(update_time, len(nodes))
         except Exception as e:
             self.logger.error(f"写入节点文件失败: {e}")
+
+    def push_result_to_readme(self, update_time: str, node_count: int) -> None:
+        """将结果推送到README.md文件最前面"""
+        try:
+            readme_path = 'README.md'
+            with open(readme_path, 'r', encoding='utf-8') as f:
+                content = f.read()
+            # 移除已有的推送信息（如果存在）
+            content = re.sub(
+                r"(^\*\*最近更新时间（北京时间）\*\*: .+?\n\n\*\*已处理节点数\*\*: .+\n*)",
+                "",
+                content,
+                flags=re.MULTILINE
+            )
+            push_text = f"**最近更新时间（北京时间）**: {update_time}\n\n**已处理节点数**: {node_count}\n\n"
+            with open(readme_path, 'w', encoding='utf-8') as f:
+                f.write(push_text + content.lstrip())
+            self.logger.info("已将结果推送到README.md最前面")
+        except Exception as e:
+            self.logger.error(f"推送结果到README.md失败: {e}")
 
     def run(self):
         """主程序入口"""
