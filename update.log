@@ -1,96 +1,149 @@
-2025-06-26 06:51:37,133 - INFO - 成功加载国旗映射表，共有 59 个国家码
-2025-06-26 06:51:37,133 - INFO - Force update mode: False
-2025-06-26 06:51:37,133 - INFO - 开始节点订阅管理任务...
-2025-06-26 06:51:39,190 - INFO - IP地理位置API可用
-2025-06-26 06:51:39,190 - INFO - 开始处理节点...
-2025-06-26 06:51:39,190 - INFO - 读取到 2 个有效订阅链接
-2025-06-26 06:51:39,190 - INFO - 正在拉取订阅 https://gist.githubusercontent.com/OpenSourceVision/4ef9e5f621efef1d4a4c36c37501c748/raw/node ...
-2025-06-26 06:51:41,418 - INFO - 从 https://gist.githubusercontent.com/OpenSourceVision/4ef9e5f621efef1d4a4c36c37501c748/raw/node 获取到 21 个节点
-2025-06-26 06:51:41,418 - INFO - 正在拉取订阅 https://subs.suitmob.dpdns.org/download/sub ...
-2025-06-26 06:51:47,908 - INFO - 从 https://subs.suitmob.dpdns.org/download/sub 获取到 15 个节点
-2025-06-26 06:51:47,909 - INFO - 共收集到 36 个节点
-2025-06-26 06:51:47,909 - WARNING - 未知协议: ssr://Y25hbWUwNGItc3Jta3g2ZmZzaXpzc21qdy5iZXN0cnVp...
-2025-06-26 06:51:47,909 - WARNING - 未知协议: ssr://c2cwMi5ncmFuaXRlcmFwaWRzLmNvbTo0NzQzNjpvcmln...
-2025-06-26 06:51:47,909 - WARNING - 未知协议: ssr://MTExMS0yMjIyLjAwMTUuYWFhYS1jbG91ZC1jZG5hLWFw...
-2025-06-26 06:51:47,909 - INFO - 成功解析 33 个节点
-2025-06-26 06:51:49,936 - INFO - IP 208.87.243.151 归属地: 美国(US) 洛杉矶
-2025-06-26 06:51:49,965 - INFO - IP 108.181.5.130 归属地: 美国(US) 洛杉矶
-2025-06-26 06:51:49,969 - INFO - IP 208.87.243.187 归属地: 美国(US) 洛杉矶
-2025-06-26 06:51:49,970 - INFO - IP 129.146.241.150 归属地: 美国(US) 凤凰城
-2025-06-26 06:51:49,975 - INFO - IP 108.181.24.77 归属地: 美国(US) 洛杉矶
-2025-06-26 06:51:51,966 - INFO - IP 74.48.18.240 归属地: 美国(US) 洛杉矶
-2025-06-26 06:51:51,991 - INFO - IP 108.181.3.68 归属地: 美国(US) 洛杉矶
-2025-06-26 06:51:51,996 - INFO - IP 192.9.148.64 归属地: 美国(US) San Jose
-2025-06-26 06:51:51,997 - INFO - IP 107.175.96.74 归属地: 美国(US) 水牛城
-2025-06-26 06:51:51,998 - INFO - IP 2.58.87.221 归属地: 美国(US) 洛杉矶
-2025-06-26 06:51:53,990 - INFO - IP 2.58.87.221 归属地: 美国(US) 洛杉矶
-2025-06-26 06:51:54,014 - INFO - IP 129.146.133.226 归属地: 美国(US) 凤凰城
-2025-06-26 06:51:54,023 - INFO - IP 45.129.2.108 归属地: 俄罗斯联邦(RU) 莫斯科
-2025-06-26 06:51:54,024 - INFO - IP 46.17.41.217 归属地: 俄罗斯联邦(RU) 莫斯科
-2025-06-26 06:51:54,024 - INFO - IP 185.22.155.71 归属地: 俄罗斯(RU) Zelenograd
-2025-06-26 06:51:56,019 - INFO - IP 45.129.2.248 归属地: 俄罗斯联邦(RU) 莫斯科
-2025-06-26 06:51:56,040 - INFO - IP 176.32.35.226 归属地: 俄罗斯联邦(RU) 莫斯科
-2025-06-26 06:51:56,049 - INFO - IP 46.17.41.5 归属地: 俄罗斯联邦(RU) 莫斯科
-2025-06-26 06:51:56,051 - INFO - IP 46.29.163.171 归属地: 俄罗斯联邦(RU) 莫斯科
-2025-06-26 06:51:56,059 - INFO - IP 185.22.155.105 归属地: 俄罗斯(RU) Zelenograd
-2025-06-26 06:51:56,185 - WARNING - Google DNS 解析失败: 8tv68qhq.slashdevslashnetslashtun.net, 错误: 'A' object has no attribute 'ttl'
-2025-06-26 06:51:56,191 - WARNING - Google DNS 解析失败: ti3hyra4.slashdevslashnetslashtun.net, 错误: 'A' object has no attribute 'ttl'
-2025-06-26 06:51:56,229 - WARNING - Cloudflare DNS 解析失败: 8tv68qhq.slashdevslashnetslashtun.net, 错误: 'A' object has no attribute 'ttl'
-2025-06-26 06:51:56,233 - WARNING - Quad9 DNS 解析失败: 8tv68qhq.slashdevslashnetslashtun.net, 错误: The DNS query name does not exist: 8tv68qhq.slashdevslashnetslashtun.net.
-2025-06-26 06:51:56,238 - WARNING - Cloudflare DNS 解析失败: ti3hyra4.slashdevslashnetslashtun.net, 错误: 'A' object has no attribute 'ttl'
-2025-06-26 06:51:56,240 - WARNING - Quad9 DNS 解析失败: ti3hyra4.slashdevslashnetslashtun.net, 错误: The DNS query name does not exist: ti3hyra4.slashdevslashnetslashtun.net.
-2025-06-26 06:51:56,269 - WARNING - MX记录解析失败: ti3hyra4.slashdevslashnetslashtun.net, 错误: The DNS response does not contain an answer to the question: ti3hyra4.slashdevslashnetslashtun.net. IN MX
-2025-06-26 06:51:56,278 - WARNING - 未找到非CDN IP，使用最后解析结果: ti3hyra4.slashdevslashnetslashtun.net -> 14.215.40.17
-2025-06-26 06:51:56,363 - WARNING - MX记录解析失败: 8tv68qhq.slashdevslashnetslashtun.net, 错误: The DNS response does not contain an answer to the question: 8tv68qhq.slashdevslashnetslashtun.net. IN MX
-2025-06-26 06:51:56,371 - WARNING - 未找到非CDN IP，使用最后解析结果: 8tv68qhq.slashdevslashnetslashtun.net -> 14.215.40.17
-2025-06-26 06:51:58,043 - INFO - IP 195.58.49.84 归属地: 俄罗斯联邦(RU) 圣彼得堡
-2025-06-26 06:51:58,074 - INFO - IP 13.230.223.36 归属地: 日本(JP) 东京
-2025-06-26 06:51:58,088 - INFO - IP 18.181.173.54 归属地: 日本(JP) 东京
-2025-06-26 06:52:00,072 - INFO - IP 43.213.42.233 归属地: 台湾(TW) 台北市
-2025-06-26 06:52:00,103 - INFO - IP 43.212.236.35 归属地: 台湾(TW) 台北市
-2025-06-26 06:52:00,111 - INFO - IP 64.227.49.49 归属地: 美国(US) 圣克拉拉
-2025-06-26 06:52:02,096 - INFO - IP 44.243.233.105 归属地: 美国(US) 波特蘭
-2025-06-26 06:52:02,126 - INFO - IP 3.71.2.243 归属地: 德国(DE) Frankfurt am Main
-2025-06-26 06:52:06,290 - WARNING - 落地IP验证失败: 14.215.40.17 (域名: ti3hyra4.slashdevslashnetslashtun.net), 错误: HTTPSConnectionPool(host='14.215.40.17', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f60e36db4d0>, 'Connection to 14.215.40.17 timed out. (connect timeout=10)'))
-2025-06-26 06:52:06,290 - WARNING - IP 14.215.40.17 不是落地IP，跳过节点
-2025-06-26 06:52:06,382 - WARNING - 落地IP验证失败: 14.215.40.17 (域名: 8tv68qhq.slashdevslashnetslashtun.net), 错误: HTTPSConnectionPool(host='14.215.40.17', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f60e36da250>, 'Connection to 14.215.40.17 timed out. (connect timeout=10)'))
-2025-06-26 06:52:06,382 - WARNING - IP 14.215.40.17 不是落地IP，跳过节点
-2025-06-26 06:52:06,383 - INFO - IP节点 🇩🇪 德国 Frankfurt am Main 01 无需测试，直接保留
-2025-06-26 06:52:06,383 - INFO - IP节点 🇯🇵 日本 东京 01 无需测试，直接保留
-2025-06-26 06:52:06,383 - INFO - IP节点 🇯🇵 日本 东京 02 无需测试，直接保留
-2025-06-26 06:52:06,383 - INFO - IP节点 🇷🇺 俄罗斯 Zelenograd 01 无需测试，直接保留
-2025-06-26 06:52:06,383 - INFO - IP节点 🇷🇺 俄罗斯 Zelenograd 02 无需测试，直接保留
-2025-06-26 06:52:06,383 - INFO - IP节点 🇷🇺 俄罗斯联邦 圣彼得堡 01 无需测试，直接保留
-2025-06-26 06:52:06,383 - INFO - IP节点 🇷🇺 俄罗斯联邦 莫斯科 01 无需测试，直接保留
-2025-06-26 06:52:06,383 - INFO - IP节点 🇷🇺 俄罗斯联邦 莫斯科 02 无需测试，直接保留
-2025-06-26 06:52:06,383 - INFO - IP节点 🇷🇺 俄罗斯联邦 莫斯科 03 无需测试，直接保留
-2025-06-26 06:52:06,384 - INFO - IP节点 🇷🇺 俄罗斯联邦 莫斯科 04 无需测试，直接保留
-2025-06-26 06:52:06,384 - INFO - IP节点 🇷🇺 俄罗斯联邦 莫斯科 05 无需测试，直接保留
-2025-06-26 06:52:06,384 - INFO - IP节点 🇷🇺 俄罗斯联邦 莫斯科 06 无需测试，直接保留
-2025-06-26 06:52:06,384 - INFO - IP节点 🇹🇼 台湾 台北市 01 无需测试，直接保留
-2025-06-26 06:52:06,384 - INFO - IP节点 🇹🇼 台湾 台北市 02 无需测试，直接保留
-2025-06-26 06:52:06,384 - INFO - IP节点 🇺🇸 美国 San Jose 01 无需测试，直接保留
-2025-06-26 06:52:06,384 - INFO - IP节点 🇺🇸 美国 凤凰城 01 无需测试，直接保留
-2025-06-26 06:52:06,384 - INFO - IP节点 🇺🇸 美国 凤凰城 02 无需测试，直接保留
-2025-06-26 06:52:06,384 - INFO - IP节点 🇺🇸 美国 圣克拉拉 01 无需测试，直接保留
-2025-06-26 06:52:06,384 - INFO - IP节点 🇺🇸 美国 水牛城 01 无需测试，直接保留
-2025-06-26 06:52:06,384 - INFO - IP节点 🇺🇸 美国 波特蘭 01 无需测试，直接保留
-2025-06-26 06:52:06,384 - INFO - IP节点 🇺🇸 美国 洛杉矶 01 无需测试，直接保留
-2025-06-26 06:52:06,384 - INFO - IP节点 🇺🇸 美国 洛杉矶 02 无需测试，直接保留
-2025-06-26 06:52:06,384 - INFO - IP节点 🇺🇸 美国 洛杉矶 03 无需测试，直接保留
-2025-06-26 06:52:06,384 - INFO - IP节点 🇺🇸 美国 洛杉矶 04 无需测试，直接保留
-2025-06-26 06:52:06,384 - INFO - IP节点 🇺🇸 美国 洛杉矶 05 无需测试，直接保留
-2025-06-26 06:52:06,384 - INFO - IP节点 🇺🇸 美国 洛杉矶 06 无需测试，直接保留
-2025-06-26 06:52:06,384 - INFO - IP节点 🇺🇸 美国 洛杉矶 07 无需测试，直接保留
-2025-06-26 06:52:06,384 - INFO - IP节点 🇺🇸 美国 洛杉矶 08 无需测试，直接保留
-2025-06-26 06:52:06,384 - INFO - 最终保留 28 个通过测试的节点
-2025-06-26 06:52:06,385 - INFO - 成功将 28 个节点以base64格式写入 Node.txt
-2025-06-26 06:52:06,385 - INFO - 任务成功完成！
-6-26 06:52:06,384 - INFO - IP节点 🇺🇸 美国 洛杉矶 04 无需测试，直接保留
-2025-06-26 06:52:06,384 - INFO - IP节点 🇺🇸 美国 洛杉矶 05 无需测试，直接保留
-2025-06-26 06:52:06,384 - INFO - IP节点 🇺🇸 美国 洛杉矶 06 无需测试，直接保留
-2025-06-26 06:52:06,384 - INFO - IP节点 🇺🇸 美国 洛杉矶 07 无需测试，直接保留
-2025-06-26 06:52:06,384 - INFO - IP节点 🇺🇸 美国 洛杉矶 08 无需测试，直接保留
-2025-06-26 06:52:06,384 - INFO - 最终保留 28 个通过测试的节点
-2025-06-26 06:52:06,385 - INFO - 成功将 28 个节点以base64格式写入 Node.txt
-2025-06-26 06:52:06,385 - INFO - 任务成功完成！
+2025-06-26 07:23:28,247 - INFO - 成功加载国旗映射表，共有 59 个国家码
+2025-06-26 07:23:28,247 - INFO - Force update mode: False
+2025-06-26 07:23:28,247 - INFO - 开始节点订阅管理任务...
+2025-06-26 07:23:30,380 - INFO - IP地理位置API可用
+2025-06-26 07:23:30,380 - INFO - 开始处理节点...
+2025-06-26 07:23:30,381 - INFO - 读取到 3 个有效订阅链接
+2025-06-26 07:23:30,381 - INFO - 正在拉取订阅 https://subs.suitmob.dpdns.org/download/sub ...
+2025-06-26 07:23:33,231 - INFO - 从 https://subs.suitmob.dpdns.org/download/sub 获取到 26 个节点
+2025-06-26 07:23:33,231 - INFO - 正在拉取订阅 https://chromego-sub.netlify.app/sub/base64.txt ...
+2025-06-26 07:23:35,324 - INFO - 从 https://chromego-sub.netlify.app/sub/base64.txt 获取到 18 个节点
+2025-06-26 07:23:35,324 - INFO - 正在拉取订阅 https://subs.suitmob.dpdns.org/download/sub ...
+2025-06-26 07:23:37,709 - INFO - 从 https://subs.suitmob.dpdns.org/download/sub 获取到 26 个节点
+2025-06-26 07:23:37,709 - INFO - 共收集到 70 个节点
+2025-06-26 07:23:37,709 - WARNING - 未知协议: ssr://c2cwMi5ncmFuaXRlcmFwaWRzLmNvbTo0NzQzNjpvcmln...
+2025-06-26 07:23:37,709 - WARNING - 未知协议: ssr://MTExMS0yMjIyLjAwMTUuYWFhYS1jbG91ZC1jZG5hLWFw...
+2025-06-26 07:23:37,709 - WARNING - 未知协议: ssr://aGthaWEwMS5ncmFuaXRlcmFwaWRzLmNvbTo0NzQzNjpv...
+2025-06-26 07:23:37,709 - WARNING - 未知协议: ssr://c2cwNS5odHoud3RmOjM3NzM5Om9yaWdpbjpyYzQtbWQ1...
+2025-06-26 07:23:37,710 - WARNING - 未知协议: ssr://c2cwNC5odHoud3RmOjM3NzM5Om9yaWdpbjpyYzQtbWQ1...
+2025-06-26 07:23:37,710 - WARNING - 未知协议: ssr://cHJvLXR3YS5naW5rZ29saW5rLm1lOjMxNTAxOmF1dGhf...
+2025-06-26 07:23:37,710 - WARNING - 未知协议: ssr://aHIxMy5ncmFuaXRlcmFwaWRzLmNvbTo0NzQzNjpvcmln...
+2025-06-26 07:23:37,710 - WARNING - 未知协议: ssr://Y25hbWVwYzAxLWQyemRyemc2aWxlY3N5bmsuYmVzdGRv...
+2025-06-26 07:23:37,710 - WARNING - 未知协议: aHR0cHM6Ly9kb25ndGFpd2FuZy5jb206ZG9uZ3RhaXdhbmcuY2...
+2025-06-26 07:23:37,710 - WARNING - 未知协议: aHR0cHM6Ly9kb25ndGFpd2FuZy5jb206ZG9uZ3RhaXdhbmcuY2...
+2025-06-26 07:23:37,710 - WARNING - 未知协议: ssr://c2cwMi5ncmFuaXRlcmFwaWRzLmNvbTo0NzQzNjpvcmln...
+2025-06-26 07:23:37,710 - WARNING - 未知协议: ssr://MTExMS0yMjIyLjAwMTUuYWFhYS1jbG91ZC1jZG5hLWFw...
+2025-06-26 07:23:37,710 - WARNING - 未知协议: ssr://aGthaWEwMS5ncmFuaXRlcmFwaWRzLmNvbTo0NzQzNjpv...
+2025-06-26 07:23:37,711 - WARNING - 未知协议: ssr://c2cwNS5odHoud3RmOjM3NzM5Om9yaWdpbjpyYzQtbWQ1...
+2025-06-26 07:23:37,711 - WARNING - 未知协议: ssr://c2cwNC5odHoud3RmOjM3NzM5Om9yaWdpbjpyYzQtbWQ1...
+2025-06-26 07:23:37,711 - WARNING - 未知协议: ssr://cHJvLXR3YS5naW5rZ29saW5rLm1lOjMxNTAxOmF1dGhf...
+2025-06-26 07:23:37,711 - WARNING - 未知协议: ssr://aHIxMy5ncmFuaXRlcmFwaWRzLmNvbTo0NzQzNjpvcmln...
+2025-06-26 07:23:37,711 - WARNING - 未知协议: ssr://Y25hbWVwYzAxLWQyemRyemc2aWxlY3N5bmsuYmVzdGRv...
+2025-06-26 07:23:37,711 - INFO - 成功解析 52 个节点
+2025-06-26 07:23:37,724 - WARNING - Google DNS 解析失败: ti3hyra4.slashdevslashnetslashtun.net, 错误: 'A' object has no attribute 'ttl'
+2025-06-26 07:23:37,726 - WARNING - Google DNS 解析失败: 8tv68qhq.slashdevslashnetslashtun.net, 错误: 'A' object has no attribute 'ttl'
+2025-06-26 07:23:37,734 - WARNING - Cloudflare DNS 解析失败: ti3hyra4.slashdevslashnetslashtun.net, 错误: 'A' object has no attribute 'ttl'
+2025-06-26 07:23:37,735 - WARNING - Cloudflare DNS 解析失败: 8tv68qhq.slashdevslashnetslashtun.net, 错误: 'A' object has no attribute 'ttl'
+2025-06-26 07:23:37,740 - WARNING - Quad9 DNS 解析失败: ti3hyra4.slashdevslashnetslashtun.net, 错误: The DNS query name does not exist: ti3hyra4.slashdevslashnetslashtun.net.
+2025-06-26 07:23:37,741 - WARNING - Quad9 DNS 解析失败: 8tv68qhq.slashdevslashnetslashtun.net, 错误: The DNS query name does not exist: 8tv68qhq.slashdevslashnetslashtun.net.
+2025-06-26 07:23:37,820 - WARNING - MX记录解析失败: ti3hyra4.slashdevslashnetslashtun.net, 错误: The DNS response does not contain an answer to the question: ti3hyra4.slashdevslashnetslashtun.net. IN MX
+2025-06-26 07:23:37,837 - WARNING - 未找到非CDN IP，使用最后解析结果: ti3hyra4.slashdevslashnetslashtun.net -> 14.215.40.17
+2025-06-26 07:23:37,854 - WARNING - MX记录解析失败: 8tv68qhq.slashdevslashnetslashtun.net, 错误: The DNS response does not contain an answer to the question: 8tv68qhq.slashdevslashnetslashtun.net. IN MX
+2025-06-26 07:23:37,872 - WARNING - 未找到非CDN IP，使用最后解析结果: 8tv68qhq.slashdevslashnetslashtun.net -> 14.215.40.17
+2025-06-26 07:23:39,721 - INFO - IP 13.230.223.36 归属地: 日本(JP) 东京
+2025-06-26 07:23:39,759 - INFO - IP 43.213.42.233 归属地: 台湾(TW) 台北市
+2025-06-26 07:23:39,761 - INFO - IP 18.181.173.54 归属地: 日本(JP) 东京
+2025-06-26 07:23:41,729 - INFO - IP 108.181.24.77 归属地: 美国(US) 洛杉矶
+2025-06-26 07:23:41,806 - INFO - IP 208.87.243.187 归属地: 美国(US) 洛杉矶
+2025-06-26 07:23:41,806 - INFO - IP 43.212.236.35 归属地: 台湾(TW) 台北市
+2025-06-26 07:23:41,813 - WARNING - Google DNS 解析失败: ti3hyra4.slashdevslashnetslashtun.net, 错误: 'A' object has no attribute 'ttl'
+2025-06-26 07:23:41,825 - WARNING - Cloudflare DNS 解析失败: ti3hyra4.slashdevslashnetslashtun.net, 错误: 'A' object has no attribute 'ttl'
+2025-06-26 07:23:41,831 - WARNING - Quad9 DNS 解析失败: ti3hyra4.slashdevslashnetslashtun.net, 错误: The DNS query name does not exist: ti3hyra4.slashdevslashnetslashtun.net.
+2025-06-26 07:23:41,846 - WARNING - MX记录解析失败: ti3hyra4.slashdevslashnetslashtun.net, 错误: The DNS response does not contain an answer to the question: ti3hyra4.slashdevslashnetslashtun.net. IN MX
+2025-06-26 07:23:41,864 - WARNING - 未找到非CDN IP，使用最后解析结果: ti3hyra4.slashdevslashnetslashtun.net -> 14.215.40.17
+2025-06-26 07:23:43,737 - INFO - IP 176.32.35.226 归属地: 俄罗斯联邦(RU) 莫斯科
+2025-06-26 07:23:43,744 - WARNING - Google DNS 解析失败: ti3hyra4.slashdevslashnetslashtun.net, 错误: 'A' object has no attribute 'ttl'
+2025-06-26 07:23:43,756 - WARNING - Cloudflare DNS 解析失败: ti3hyra4.slashdevslashnetslashtun.net, 错误: 'A' object has no attribute 'ttl'
+2025-06-26 07:23:43,761 - WARNING - Quad9 DNS 解析失败: ti3hyra4.slashdevslashnetslashtun.net, 错误: The DNS query name does not exist: ti3hyra4.slashdevslashnetslashtun.net.
+2025-06-26 07:23:43,764 - WARNING - MX记录解析失败: ti3hyra4.slashdevslashnetslashtun.net, 错误: The DNS response does not contain an answer to the question: ti3hyra4.slashdevslashnetslashtun.net. IN MX
+2025-06-26 07:23:43,782 - WARNING - 未找到非CDN IP，使用最后解析结果: ti3hyra4.slashdevslashnetslashtun.net -> 14.215.40.17
+2025-06-26 07:23:43,814 - INFO - IP 3.71.2.243 归属地: 德国(DE) Frankfurt am Main
+2025-06-26 07:23:45,826 - INFO - IP 183.240.180.48 归属地: 中国(CN) 广州市
+2025-06-26 07:23:47,834 - INFO - IP 64.227.49.49 归属地: 美国(US) 圣克拉拉
+2025-06-26 07:23:47,849 - WARNING - 落地IP验证失败: 14.215.40.17 (域名: ti3hyra4.slashdevslashnetslashtun.net), 错误: HTTPSConnectionPool(host='14.215.40.17', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fb0350ba190>, 'Connection to 14.215.40.17 timed out. (connect timeout=10)'))
+2025-06-26 07:23:47,849 - WARNING - IP 14.215.40.17 不是落地IP，跳过节点
+2025-06-26 07:23:47,883 - WARNING - 落地IP验证失败: 14.215.40.17 (域名: 8tv68qhq.slashdevslashnetslashtun.net), 错误: HTTPSConnectionPool(host='14.215.40.17', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fb0350b8690>, 'Connection to 14.215.40.17 timed out. (connect timeout=10)'))
+2025-06-26 07:23:47,883 - WARNING - IP 14.215.40.17 不是落地IP，跳过节点
+2025-06-26 07:23:49,841 - INFO - IP 52.14.165.55 归属地: 美国(US) Dublin
+2025-06-26 07:23:49,856 - INFO - IP 45.129.2.108 归属地: 俄罗斯联邦(RU) 莫斯科
+2025-06-26 07:23:49,891 - INFO - IP 45.129.2.248 归属地: 俄罗斯联邦(RU) 莫斯科
+2025-06-26 07:23:51,849 - INFO - IP 120.234.102.229 归属地: 中国(CN) 广州市
+2025-06-26 07:23:51,863 - INFO - IP 208.87.243.151 归属地: 美国(US) 洛杉矶
+2025-06-26 07:23:51,875 - WARNING - 落地IP验证失败: 14.215.40.17 (域名: ti3hyra4.slashdevslashnetslashtun.net), 错误: HTTPSConnectionPool(host='14.215.40.17', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fb0350c0190>, 'Connection to 14.215.40.17 timed out. (connect timeout=10)'))
+2025-06-26 07:23:51,875 - WARNING - IP 14.215.40.17 不是落地IP，跳过节点
+2025-06-26 07:23:51,899 - INFO - IP 185.22.155.71 归属地: 俄罗斯(RU) Zelenograd
+2025-06-26 07:23:53,793 - WARNING - 落地IP验证失败: 14.215.40.17 (域名: ti3hyra4.slashdevslashnetslashtun.net), 错误: HTTPSConnectionPool(host='14.215.40.17', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fb0350c2d90>, 'Connection to 14.215.40.17 timed out. (connect timeout=10)'))
+2025-06-26 07:23:53,793 - WARNING - IP 14.215.40.17 不是落地IP，跳过节点
+2025-06-26 07:23:53,857 - INFO - IP 208.87.243.151 归属地: 美国(US) 洛杉矶
+2025-06-26 07:23:53,870 - INFO - IP 185.22.155.71 归属地: 俄罗斯(RU) Zelenograd
+2025-06-26 07:23:53,882 - INFO - IP 185.22.155.71 归属地: 俄罗斯(RU) Zelenograd
+2025-06-26 07:23:53,906 - INFO - IP 46.17.41.217 归属地: 俄罗斯联邦(RU) 莫斯科
+2025-06-26 07:23:54,007 - WARNING - Google DNS 解析失败: 8tv68qhq.slashdevslashnetslashtun.net, 错误: 'A' object has no attribute 'ttl'
+2025-06-26 07:23:54,018 - WARNING - Cloudflare DNS 解析失败: 8tv68qhq.slashdevslashnetslashtun.net, 错误: 'A' object has no attribute 'ttl'
+2025-06-26 07:23:54,024 - WARNING - Quad9 DNS 解析失败: 8tv68qhq.slashdevslashnetslashtun.net, 错误: The DNS query name does not exist: 8tv68qhq.slashdevslashnetslashtun.net.
+2025-06-26 07:23:54,027 - WARNING - MX记录解析失败: 8tv68qhq.slashdevslashnetslashtun.net, 错误: The DNS response does not contain an answer to the question: 8tv68qhq.slashdevslashnetslashtun.net. IN MX
+2025-06-26 07:23:54,044 - WARNING - 未找到非CDN IP，使用最后解析结果: 8tv68qhq.slashdevslashnetslashtun.net -> 14.215.40.17
+2025-06-26 07:23:55,811 - INFO - IP 1.162.51.106 归属地: 台湾(TW) 台北市
+2025-06-26 07:23:55,827 - WARNING - Google DNS 解析失败: ti3hyra4.slashdevslashnetslashtun.net, 错误: 'A' object has no attribute 'ttl'
+2025-06-26 07:23:55,838 - WARNING - Cloudflare DNS 解析失败: ti3hyra4.slashdevslashnetslashtun.net, 错误: 'A' object has no attribute 'ttl'
+2025-06-26 07:23:55,844 - WARNING - Quad9 DNS 解析失败: ti3hyra4.slashdevslashnetslashtun.net, 错误: The DNS query name does not exist: ti3hyra4.slashdevslashnetslashtun.net.
+2025-06-26 07:23:55,865 - INFO - IP 1.162.51.106 归属地: 台湾(TW) 台北市
+2025-06-26 07:23:55,872 - WARNING - Google DNS 解析失败: ti3hyra4.slashdevslashnetslashtun.net, 错误: 'A' object has no attribute 'ttl'
+2025-06-26 07:23:55,878 - INFO - IP 1.162.51.106 归属地: 台湾(TW) 台北市
+2025-06-26 07:23:55,885 - WARNING - Google DNS 解析失败: ti3hyra4.slashdevslashnetslashtun.net, 错误: 'A' object has no attribute 'ttl'
+2025-06-26 07:23:55,889 - INFO - IP 1.162.51.106 归属地: 台湾(TW) 台北市
+2025-06-26 07:23:55,898 - WARNING - Cloudflare DNS 解析失败: ti3hyra4.slashdevslashnetslashtun.net, 错误: 'A' object has no attribute 'ttl'
+2025-06-26 07:23:55,904 - WARNING - Quad9 DNS 解析失败: ti3hyra4.slashdevslashnetslashtun.net, 错误: The DNS query name does not exist: ti3hyra4.slashdevslashnetslashtun.net.
+2025-06-26 07:23:55,947 - WARNING - MX记录解析失败: ti3hyra4.slashdevslashnetslashtun.net, 错误: The DNS response does not contain an answer to the question: ti3hyra4.slashdevslashnetslashtun.net. IN MX
+2025-06-26 07:23:55,948 - WARNING - MX记录解析失败: ti3hyra4.slashdevslashnetslashtun.net, 错误: The DNS response does not contain an answer to the question: ti3hyra4.slashdevslashnetslashtun.net. IN MX
+2025-06-26 07:23:55,965 - WARNING - 未找到非CDN IP，使用最后解析结果: ti3hyra4.slashdevslashnetslashtun.net -> 14.215.40.17
+2025-06-26 07:23:55,966 - WARNING - 未找到非CDN IP，使用最后解析结果: ti3hyra4.slashdevslashnetslashtun.net -> 14.215.40.17
+2025-06-26 07:23:55,975 - WARNING - Cloudflare DNS 解析失败: ti3hyra4.slashdevslashnetslashtun.net, 错误: 'A' object has no attribute 'ttl'
+2025-06-26 07:23:55,981 - WARNING - Quad9 DNS 解析失败: ti3hyra4.slashdevslashnetslashtun.net, 错误: The DNS query name does not exist: ti3hyra4.slashdevslashnetslashtun.net.
+2025-06-26 07:23:56,150 - WARNING - MX记录解析失败: ti3hyra4.slashdevslashnetslashtun.net, 错误: The DNS response does not contain an answer to the question: ti3hyra4.slashdevslashnetslashtun.net. IN MX
+2025-06-26 07:23:56,168 - WARNING - 未找到非CDN IP，使用最后解析结果: ti3hyra4.slashdevslashnetslashtun.net -> 14.215.40.17
+2025-06-26 07:24:04,056 - WARNING - 落地IP验证失败: 14.215.40.17 (域名: 8tv68qhq.slashdevslashnetslashtun.net), 错误: HTTPSConnectionPool(host='14.215.40.17', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fb035097610>, 'Connection to 14.215.40.17 timed out. (connect timeout=10)'))
+2025-06-26 07:24:04,056 - WARNING - IP 14.215.40.17 不是落地IP，跳过节点
+2025-06-26 07:24:05,971 - WARNING - 落地IP验证失败: 14.215.40.17 (域名: ti3hyra4.slashdevslashnetslashtun.net), 错误: HTTPSConnectionPool(host='14.215.40.17', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fb0350c9a10>, 'Connection to 14.215.40.17 timed out. (connect timeout=10)'))
+2025-06-26 07:24:05,971 - WARNING - IP 14.215.40.17 不是落地IP，跳过节点
+2025-06-26 07:24:05,977 - WARNING - 落地IP验证失败: 14.215.40.17 (域名: ti3hyra4.slashdevslashnetslashtun.net), 错误: HTTPSConnectionPool(host='14.215.40.17', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fb035097090>, 'Connection to 14.215.40.17 timed out. (connect timeout=10)'))
+2025-06-26 07:24:05,978 - WARNING - IP 14.215.40.17 不是落地IP，跳过节点
+2025-06-26 07:24:06,179 - WARNING - 落地IP验证失败: 14.215.40.17 (域名: ti3hyra4.slashdevslashnetslashtun.net), 错误: HTTPSConnectionPool(host='14.215.40.17', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fb0350ca210>, 'Connection to 14.215.40.17 timed out. (connect timeout=10)'))
+2025-06-26 07:24:06,179 - WARNING - IP 14.215.40.17 不是落地IP，跳过节点
+2025-06-26 07:24:06,180 - INFO - IP节点 🇨🇳 中国 广州市 01 无需测试，直接保留
+2025-06-26 07:24:06,180 - INFO - IP节点 🇨🇳 中国 广州市 02 无需测试，直接保留
+2025-06-26 07:24:06,180 - INFO - IP节点 🇩🇪 德国 Frankfurt am Main 01 无需测试，直接保留
+2025-06-26 07:24:06,180 - INFO - IP节点 🇯🇵 日本 东京 01 无需测试，直接保留
+2025-06-26 07:24:06,180 - INFO - IP节点 🇯🇵 日本 东京 02 无需测试，直接保留
+2025-06-26 07:24:06,180 - INFO - IP节点 🇷🇺 俄罗斯 Zelenograd 01 无需测试，直接保留
+2025-06-26 07:24:06,180 - INFO - IP节点 🇷🇺 俄罗斯 Zelenograd 02 无需测试，直接保留
+2025-06-26 07:24:06,180 - INFO - IP节点 🇷🇺 俄罗斯 Zelenograd 03 无需测试，直接保留
+2025-06-26 07:24:06,180 - INFO - IP节点 🇷🇺 俄罗斯联邦 莫斯科 01 无需测试，直接保留
+2025-06-26 07:24:06,180 - INFO - IP节点 🇷🇺 俄罗斯联邦 莫斯科 02 无需测试，直接保留
+2025-06-26 07:24:06,180 - INFO - IP节点 🇷🇺 俄罗斯联邦 莫斯科 03 无需测试，直接保留
+2025-06-26 07:24:06,180 - INFO - IP节点 🇷🇺 俄罗斯联邦 莫斯科 04 无需测试，直接保留
+2025-06-26 07:24:06,180 - INFO - IP节点 🇹🇼 台湾 台北市 01 无需测试，直接保留
+2025-06-26 07:24:06,180 - INFO - IP节点 🇹🇼 台湾 台北市 02 无需测试，直接保留
+2025-06-26 07:24:06,181 - INFO - IP节点 🇹🇼 台湾 台北市 03 无需测试，直接保留
+2025-06-26 07:24:06,181 - INFO - IP节点 🇹🇼 台湾 台北市 04 无需测试，直接保留
+2025-06-26 07:24:06,181 - INFO - IP节点 🇹🇼 台湾 台北市 05 无需测试，直接保留
+2025-06-26 07:24:06,181 - INFO - IP节点 🇹🇼 台湾 台北市 06 无需测试，直接保留
+2025-06-26 07:24:06,181 - INFO - IP节点 🇺🇸 美国 Dublin 01 无需测试，直接保留
+2025-06-26 07:24:06,181 - INFO - IP节点 🇺🇸 美国 圣克拉拉 01 无需测试，直接保留
+2025-06-26 07:24:06,181 - INFO - IP节点 🇺🇸 美国 洛杉矶 01 无需测试，直接保留
+2025-06-26 07:24:06,181 - INFO - IP节点 🇺🇸 美国 洛杉矶 02 无需测试，直接保留
+2025-06-26 07:24:06,181 - INFO - IP节点 🇺🇸 美国 洛杉矶 03 无需测试，直接保留
+2025-06-26 07:24:06,181 - INFO - IP节点 🇺🇸 美国 洛杉矶 04 无需测试，直接保留
+2025-06-26 07:24:06,181 - INFO - 最终保留 24 个通过测试的节点
+2025-06-26 07:24:06,181 - INFO - 成功将 24 个节点以base64格式写入 Node.txt
+2025-06-26 07:24:06,181 - INFO - 任务成功完成！
+06,181 - INFO - IP节点 🇹🇼 台湾 台北市 06 无需测试，直接保留
+2025-06-26 07:24:06,181 - INFO - IP节点 🇺🇸 美国 Dublin 01 无需测试，直接保留
+2025-06-26 07:24:06,181 - INFO - IP节点 🇺🇸 美国 圣克拉拉 01 无需测试，直接保留
+2025-06-26 07:24:06,181 - INFO - IP节点 🇺🇸 美国 洛杉矶 01 无需测试，直接保留
+2025-06-26 07:24:06,181 - INFO - IP节点 🇺🇸 美国 洛杉矶 02 无需测试，直接保留
+2025-06-26 07:24:06,181 - INFO - IP节点 🇺🇸 美国 洛杉矶 03 无需测试，直接保留
+2025-06-26 07:24:06,181 - INFO - IP节点 🇺🇸 美国 洛杉矶 04 无需测试，直接保留
+2025-06-26 07:24:06,181 - INFO - 最终保留 24 个通过测试的节点
+2025-06-26 07:24:06,181 - INFO - 成功将 24 个节点以base64格式写入 Node.txt
+2025-06-26 07:24:06,181 - INFO - 任务成功完成！
