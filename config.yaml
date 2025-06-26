@@ -3,11 +3,11 @@ http:
   # 用户代理字符串，用于模拟浏览器请求
   user_agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
   # 最大重试次数，应对网络不稳定
-  max_retries: 3
+  max_retries: 2
   # 请求超时时间（秒），适中以平衡速度和可靠性
   timeout: 10
   # 请求速率限制延迟（秒），防止触发API限制
-  rate_limit_delay: 1.5
+  rate_limit_delay: 2
   # 最大延迟时间（秒），控制重试时的指数退避
   max_delay: 10
   # 最大工作线程数，控制并发请求
