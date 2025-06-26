@@ -8,7 +8,7 @@ import time
 import logging
 import yaml
 import re
-from typing import List, Dict, Optional
+from typing import List, Dict, Optional, Set, Tuple
 from urllib.parse import urlparse
 from collections import defaultdict
 
@@ -148,6 +148,71 @@ class NodeSubscriptionManager:
         self.logger.info(f"从 {url} 获取到 {len(nodes)} 个节点")
         return nodes
 
+    def generate_node_key(self, node_info: Dict) -> str:
+        """生成节点的唯一标识符用于去重"""
+        try:
+            # 使用协议+主机+端口作为唯一标识
+            host = node_info.get('host', '').lower()
+            port = str(node_info.get('port', ''))
+            protocol = node_info.get('protocol', '')
+            
+            # 对于vmess协议，还需要考虑更多参数
+            if protocol == 'vmess' and 'config' in node_info:
+                config = node_info['config']
+                user_id = config.get('id', '')
+                # 使用前8位UUID作为标识的一部分
+                user_id_short = user_id[:8] if user_id else ''
+                return f"{protocol}://{host}:{port}:{user_id_short}"
+            else:
+                return f"{protocol}://{host}:{port}"
+        except Exception:
+            return node_info.get('uri', '')
+
+    def deduplicate_nodes(self, parsed_nodes: List[Dict]) -> List[Dict]:
+        """对解析后的节点进行去重"""
+        seen_keys: Set[str] = set()
+        unique_nodes = []
+        duplicates_count = 0
+        
+        for node in parsed_nodes:
+            node_key = self.generate_node_key(node)
+            if node_key not in seen_keys:
+                seen_keys.add(node_key)
+                unique_nodes.append(node)
+            else:
+                duplicates_count += 1
+        
+        self.logger.info(f"去重完成：保留 {len(unique_nodes)} 个唯一节点，移除 {duplicates_count} 个重复节点")
+        return unique_nodes
+
+    def get_unique_ips(self, nodes: List[Dict]) -> Set[str]:
+        """获取所有需要查询的唯一IP地址"""
+        unique_ips = set()
+        for node in nodes:
+            host = node.get('host', '')
+            if re.match(r'^(\d{1,3}\.){3}\d{1,3}$', host):
+                unique_ips.add(host)
+        return unique_ips
+
+    def batch_query_ip_locations(self, ip_addresses: Set[str]) -> Dict[str, Dict]:
+        """批量查询IP地理位置"""
+        ip_locations = {}
+        total_ips = len(ip_addresses)
+        
+        self.logger.info(f"开始批量查询 {total_ips} 个唯一IP的地理位置...")
+        
+        for i, ip in enumerate(ip_addresses, 1):
+            self.logger.info(f"查询进度: {i}/{total_ips} - {ip}")
+            location_info = self.get_ip_location(ip)
+            ip_locations[ip] = location_info
+            
+            # 每10个IP显示一次进度
+            if i % 10 == 0 or i == total_ips:
+                self.logger.info(f"IP查询进度: {i}/{total_ips} 已完成")
+        
+        self.logger.info(f"批量IP查询完成，共查询 {len(ip_locations)} 个IP")
+        return ip_locations
+
     def get_ip_location(self, ip: str) -> Dict:
         """查询IP地理位置"""
         url = f"http://ip-api.com/json/{ip}?lang=zh-CN"
@@ -172,7 +237,6 @@ class NodeSubscriptionManager:
                 country_code = 'TW'
                 country = '台湾'
             
-            self.logger.info(f"IP {ip} 归属地: {country}({country_code}) {city}")
             return {
                 'country_code': country_code,
                 'country': country,
@@ -348,12 +412,21 @@ class NodeSubscriptionManager:
         
         self.logger.info(f"成功解析 {len(parsed_nodes)} 个节点")
         
+        # 去重处理
+        unique_nodes = self.deduplicate_nodes(parsed_nodes)
+        
+        # 获取所有需要查询的唯一IP
+        unique_ips = self.get_unique_ips(unique_nodes)
+        
+        # 批量查询IP地理位置
+        ip_locations = self.batch_query_ip_locations(unique_ips) if unique_ips else {}
+        
         # 处理节点重命名
         country_counts = defaultdict(int)  # IP节点计数
         region_counts = defaultdict(int)   # 域名节点计数
         results = []
         
-        for node in parsed_nodes:
+        for node in unique_nodes:
             host = node.get('host', '')
             original_name = node.get('original_name', '')
             
@@ -361,8 +434,8 @@ class NodeSubscriptionManager:
             is_ip = bool(re.match(r'^(\d{1,3}\.){3}\d{1,3}$', host))
             
             if is_ip:
-                # IP节点：API查询位置，生成新名称
-                location_info = self.get_ip_location(host)
+                # IP节点：使用预查询的位置信息
+                location_info = ip_locations.get(host, {'country_code': 'XX', 'country': '未知', 'city': ''})
                 new_name = self.generate_ip_node_name(
                     location_info['country_code'],
                     location_info['country'],
